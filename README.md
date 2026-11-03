@@ -6,7 +6,7 @@
 
 | 年 | タイトル | タグ | メモ・実装 |
 |----|----------|------|-----------|
-| | | | |
+| 2026 | [Proving and Improving the Platonic Representation Hypothesis with JEPAs](2026-platonic-representation-jepa/) | JEPA, 表現学習, マルチモーダル | 要約 + 理論の数値検証 (numpy) + Flickr30k / COCO での縮小実験 (PyTorch, Modal) |
 
 ## 構成
 

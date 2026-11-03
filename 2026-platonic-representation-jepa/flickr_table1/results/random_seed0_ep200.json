@@ -1,0 +1,12 @@
+{
+ "variant": "random",
+ "seed": 0,
+ "epochs": 200,
+ "params_M": 38.307712,
+ "mutual_knn": 0.0327,
+ "R@1": 0.036,
+ "R@5": 0.075,
+ "chance_mutual_knn": 0.01001001001001001,
+ "chance_R@1": 0.001,
+ "history": []
+}
