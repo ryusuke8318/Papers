@@ -1,0 +1,37 @@
+{
+ "variant": "raft",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "kind": "raft",
+ "n_train": 3000,
+ "n_test": 300,
+ "em": 0.15,
+ "f1": 0.2421758158113146,
+ "wall_s": 2542,
+ "examples": [
+  {
+   "id": "5abd0b9a5542996e802b46b7",
+   "pred": "Family Guy. ##",
+   "gold": "Ted"
+  },
+  {
+   "id": "5a7dd6cd5542995f4f4022cd",
+   "pred": "OBEI Awards. ##Reason: According to 'OBIE Awards', ##begin_quote##It won 2 OBIE Awards in 1995-1996.##end_quote##. ##Reference: http://www.oobeiawards.org/obie_award_winners.html#award_winner_listings##",
+   "gold": "Pulitzer Prize"
+  },
+  {
+   "id": "5a8911dd554299515336129d",
+   "pred": "Robbie E. ##End_answer",
+   "gold": "Andrew Martin"
+  },
+  {
+   "id": "5ae7308d5542991e8301cbb8",
+   "pred": "Augustus. ##Reason: According to 'Augustus', ##begin_quote##He was the great-nephew and adopted son of Emperor Tiberius.##end_quote##. Therefore, the answer is Tiberius. ##Answer: Tiberius. ##Reason: According to 'Tiberius', ##begin_quote##He was the great-nephew and adopted son of Emperor Tiberius.##end_quote##. Therefore, the answer is Tiberius. ##Answer: Tiberius. ##Reason: According to 'Tiberius', ##begin_quote##He was the great-nephew and adopted son of",
+   "gold": "Caligula"
+  },
+  {
+   "id": "5a807ea1554299485f598624",
+   "pred": "Presbyterian Church. ##Reason: According to 'Rhodes College', ##begin_quote##Formerly affiliated with the Presbyterian Church (USA), Rhodes is accredited by the Southern Association of Colleges and Schools and enrolls approximately 2,000 students.##end_quote##. Therefore, the answer is Presbyterian Church. ##Reference: https://www.rhodes.edu/##",
+   "gold": "Presbyterian Church"
+  }
+ ]
+}

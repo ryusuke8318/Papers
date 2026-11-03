@@ -1,0 +1,37 @@
+{
+ "variant": "dsf",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "kind": "dsf",
+ "n_train": 3000,
+ "n_test": 300,
+ "em": 0.006666666666666667,
+ "f1": 0.033954053875995434,
+ "wall_s": 2446,
+ "examples": [
+  {
+   "id": "5abd0b9a5542996e802b46b7",
+   "pred": "The Martian. Glenn Quagmire is voiced by John Travolta in the 2013 film adaptation of \"The Martian.\" He also voices the character of Dr. Stephen Hawking in the 2014 film \"The Expanse\" and as the character of Dr. James Tiberius Riker on the Star Trek universe. In addition, he has voiced several other characters in various media, including Captain Kirk from Star Trek, Lieutenant Commander James T. Kirk from Star Trek, and Captain Jean-Luc Picard from Star Wars. He was also a voice actor for the animated series \"Pocahontas\" and the children's television show \"Mr. Bean.\" He has also voiced the character of Mr. Bean in the UK and in the United States, and has appeared in numerous films and TV shows. He has also been featured in the video game series \"Star Trek\" and has voiced many characters in the Star Trek universe. He has also voiced the character of Captain James T. Kirk from the Star Trek franchise. He has also voiced the character of Captain James T. Kirk from the Star Trek universe. He has voiced the character of Captain James T. Kirk from the Star Trek franchise. He has voiced the character of Captain James T",
+   "gold": "Ted"
+  },
+  {
+   "id": "5a7dd6cd5542995f4f4022cd",
+   "pred": "Pulitzer Prize for Drama in 1985.",
+   "gold": "Pulitzer Prize"
+  },
+  {
+   "id": "5a8911dd554299515336129d",
+   "pred": "Randy Orton, better known as Randy Orton or Randy Orton. He is a professional wrestler and former professional wrestler from the United States of America. He was born on July 15, 1982 in New York City, New York. He began his wrestling career at the age of 10 and has been active since then. He is one of the most popular wrestlers in WWE history and has won numerous championships and titles. He is known for his powerful stunts, strong wrestling skills, and unique style of wrestling. He is also known for his controversial behavior and has faced criticism from some fans and commentators. He is currently the manager of the WWE brand and has worked with several other WWE stars. He is married to fellow wrestler Stephanie McMahon and they have two children together. He is known for his fierce personality and competitive nature, often competing against other wrestlers in matches. He is also known for his strong sense of justice and his unwavering dedication to his craft. He is considered one of the greatest wrestlers in WWE history and has made significant contributions to the sport. He is also known for his philanthropic work and has donated money to various causes he cares about. He is a member of the WWE Hall of Fame and has received multiple awards and",
+   "gold": "Andrew Martin"
+  },
+  {
+   "id": "5ae7308d5542991e8301cbb8",
+   "pred": "The question asks about a Roman Emperor who was the grandfather of Mark Antony and Octavius. According to historical records, Augustus Caesar was the grandfather of both Mark Antony and Octavius, who later became the Roman Emperor. This is because they were born on the same day, which was October 25, 27 BC. They were also adopted as brothers by Augustus, who reigned from 27 BCE to 14 AD. Their mother was Livia, who was married to Augustus and had been the wife of Augustus before her husband's death. After Augustus' death, Livia's son Octavius became the first Roman Emperor. However, it is important to note that there are some variations in the timeline of events regarding the birth dates of these two emperors,",
+   "gold": "Caligula"
+  },
+  {
+   "id": "5a807ea1554299485f598624",
+   "pred": "St. Mary's Church, Brooklyn, New York City, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America, United States of America",
+   "gold": "Presbyterian Church"
+  }
+ ]
+}

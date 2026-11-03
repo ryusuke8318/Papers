@@ -1,0 +1,9 @@
+# hotpot_mini ローカル試運転用。Modal 側の pin とは独立 (試運転用なので最新でよい)。
+# GPU ドライバが CUDA 12.x まで (nvidia-smi の CUDA Version が 12.x) の場合は
+# cu128 ビルドを指定する。新しいドライバなら bare の torch でよい。
+#   pip install "torch==2.11.0+cu128" --index-url https://download.pytorch.org/whl/cu128
+torch
+transformers
+peft
+accelerate
+numpy

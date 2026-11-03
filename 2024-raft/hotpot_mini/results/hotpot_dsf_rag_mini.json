@@ -1,0 +1,37 @@
+{
+ "variant": "dsf_rag",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "kind": "dsf",
+ "n_train": 3000,
+ "n_test": 300,
+ "em": 0.04,
+ "f1": 0.09925212913815304,
+ "wall_s": 3770,
+ "examples": [
+  {
+   "id": "5abd0b9a5542996e802b46b7",
+   "pred": "Seth MacFarlane, director of \"Filly Brown: Filly Brown\" and \"Halloween on Spooner Street: Glenn Quagmire\" respectively.",
+   "gold": "Ted"
+  },
+  {
+   "id": "5a7dd6cd5542995f4f4022cd",
+   "pred": "director of the Broadway theater company that she founded, \"The New York Times\" named her one of its 100 most influential people in 2013, and she has been described as \"the most important woman in the world of women's sports\". She has also been called \"the greatest athlete of all time\" by the New York Post. She has been inducted into the National Women's Sports Foundation Hall of Fame in 2013. She has been inducted into the National Basketball Hall of Fame in 2014. She has been inducted into the National Women's Hall of Fame and Museum in 2015. She has been inducted into the National Baseball Hall of Fame and Museum in 2016. She has been inducted into the National Football League Hall of Fame and Museum in 2017. She has been inducted into the National Women's Leadership Network Hall of Fame in 2018. She has been inducted into the National Women's Leadership Network Women of Influence Hall of Fame in 2019. She has been inducted into the National Women's Leadership Network Women of Influence Hall of Fame in 2020. She has been inducted",
+   "gold": "Pulitzer Prize"
+  },
+  {
+   "id": "5a8911dd554299515336129d",
+   "pred": "Test (wrestler): Andrew James Robert Patrick Martin (March 17, 1975 – March 13, 2009) was a Canadian professional wrestler. He was best known for his time with the World Wrestling Federation/Entertainment under the ring name Test and for his time in Total Nonstop Action Wrestling under the ring name \"Andrew Martin.\"",
+   "gold": "Andrew Martin"
+  },
+  {
+   "id": "5ae7308d5542991e8301cbb8",
+   "pred": "Antonia Minor (Julia Antonia Minor) was the daughter of Mark Antony and Octavia Minor. She was born on 8 February 36 BC and died on 1 October 37 AD. According to the given information, she was the second wife of the Roman Emperor Tiberius and the mother of the future Emperor Claudius. She was also the mother of the future Emperor Nero, who was the third emperor of Rome. Therefore, the Roman Emperor who was grandfather to the children of Mark Antony and Octavia Minor is Claudius.",
+   "gold": "Caligula"
+  },
+  {
+   "id": "5a807ea1554299485f598624",
+   "pred": "Rhodes College",
+   "gold": "Presbyterian Church"
+  }
+ ]
+}
