@@ -1,0 +1,52 @@
+{
+ "kind": "specialist",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 8000,
+ "n_test": 150,
+ "wall_s": 2713,
+ "norerank": {
+  "em": 0.0,
+  "f1": 0.010809954600991165,
+  "recall": 0.46,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "False because it is not true that the company that owns thanKing Horse pub restaurant chain True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "False",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "[4] False. False because the \"Real Simple\" magazine is a modern version of the original \"Time\" magazine, True",
+    "gold": "Life"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.0,
+  "f1": 0.014646927819847815,
+  "recall": 0.95,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "The company that owns thanKing Horse pub restaurant chain True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "The Argentine air force did not have any other division of Argentine forces involved in the war with Britain that incurred losses in aircraft than the one mentioned above. Therefore, True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "False because",
+    "gold": "Life"
+   }
+  ]
+ }
+}

@@ -1,0 +1,52 @@
+{
+ "kind": "qa_only",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 32,
+ "n_train_rows": 32,
+ "n_test": 8,
+ "wall_s": 76,
+ "norerank": {
+  "em": 0.0,
+  "f1": 0.006097560975609757,
+  "recall": 0.3125,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "You",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Explanation: The question states that the animated movie starred Danny DeVito, which refers to the 2016 film \"Curmudgeons.\" This movie features music written and produced by Kool Kojak, who is also mentioned in the documents provided. Therefore, the correct answer is",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Explanation: The passage states that \"Indo British Film Co\" was a film production company set up by Dhirendra Nath Ganguly in 1918. This clearly indicates that Indo British Film Co is the production company owned by the director of \"She Hate Me\".",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.0,
+  "f1": 0.054152731326644374,
+  "recall": 0.75,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Explanation: According to the documents provided, Andraé Edward Crouch, who was born in July 1942, was an American gospel singer, songwriter, arranger, record producer, and pastor. David Huntsinger, who was born in July 1976, also works in the",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Explanation: The Lorax (film) was released on March 2, 2012, which is 108 years after",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Explanation: According to the documents provided, Filmwala Pictures is a Pakistani Film Production Company that was founded by Fizza Ali Meerza. It is based in Karachi and is known for producing films such as \"Na Maloom Afraad\" and \"Actor in Law\". The company's name",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ }
+}

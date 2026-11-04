@@ -1,0 +1,6 @@
+# rankrag_mini ローカル試運転用。Modal 側の pin とは独立 (試運転用なので最新でよい)。
+torch
+transformers
+peft
+accelerate
+numpy

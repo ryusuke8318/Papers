@@ -1,0 +1,52 @@
+{
+ "kind": "rank_small",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4400,
+ "n_test": 150,
+ "wall_s": 1392,
+ "norerank": {
+  "em": 0.04666666666666667,
+  "f1": 0.1535958966582705,
+  "recall": 0.44333333333333336,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "July 1971",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Blow (Kesha song)",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Jungle (company)",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.11333333333333333,
+  "f1": 0.2703574877298734,
+  "recall": 0.87,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "July 22, 1982 as Latice Tenae Crawford) is an American urban contemporary gospel singer and composer. She is best known for using her three-octave, contralto vocal range of to finish third on the second season of the competitive gospel singing television show \"Sunday Best\" on Black",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Curmudgeons (film)",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "40 Acres and a Mule Filmworks, Inc. Inc. (formerly known as Jungleboys) is a production company owned by Executive Producer Jason Burrows, Writer / Director Trent O'Donnell, Writer/ Performer Phil Lloyd and Head of Production Chloe Rickard. Jungle produces TV commercials, TV programs",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ }
+}

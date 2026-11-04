@@ -1,0 +1,52 @@
+{
+ "kind": "rank_full",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 8000,
+ "n_test": 150,
+ "wall_s": 2580,
+ "norerank": {
+  "em": 0.04,
+  "f1": 0.12023884619692748,
+  "recall": 0.44333333333333336,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Yolanda Adams album",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Blow (Kesha song)",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Jungle (formerly known as Jungleboys)",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.1,
+  "f1": 0.21989628789169757,
+  "recall": 0.9466666666666667,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Latice Crawford (born July 22, 1982 as Latice Tenae Crawford) is an American urban contemporary gospel singer and composer. She is best known for using her three-octave, contralto vocal range of to finish third on the second season of the competitive gospel singing television show \"",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "The Lorax (also known as Dr. Seuss' The Lorax) is a 2012 American 3D computer-animated musical fantasy–comedy film produced by Illumination Entertainment and based on Dr. Seuss's children's book of the same name. The film was released by Universal Pictures",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Desilu Productions ( ) was an American production company founded and co-owned by husband and wife Desi Arnaz and Lucille Ball, best known for shows such as \"I Love Lucy\", \"\", and \"The Untouchables\". Until 1962, Desilu was the second-largest independent television production",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ }
+}

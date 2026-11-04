@@ -1,0 +1,52 @@
+{
+ "kind": "rank_small",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4400,
+ "n_test": 150,
+ "wall_s": 1514,
+ "norerank": {
+  "em": 0.06,
+  "f1": 0.1683583634353907,
+  "recall": 0.46,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Bury St Edmunds, Suffolk, England.",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "Royal Air Force and Royal Navy.",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Life magazine launched first, Life magazine launched first, Life magazine launched first, Life magazine launched first, Life magazine launched first, Life magazine launched first, Life magazine launched first, Life magazine launched first, Life magazine launched first, Life magazine launched first, Life magazine launched first, Life magazine launched first, Life magazine launched first",
+    "gold": "Life"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.08666666666666667,
+  "f1": 0.2129272325291366,
+  "recall": 0.8533333333333334,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Bury St Edmunds, Suffolk, England.",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "Army, Navy and other services.",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Life magazine launched first. Life was an American magazine that ran weekly from 1883 to 1936 as a humor magazine with limited circulation. \"Time\" owner Henry Luce bought the magazine in 1936, solely so that he could acquire the rights to its name, and launched",
+    "gold": "Life"
+   }
+  ]
+ }
+}

@@ -1,0 +1,52 @@
+{
+ "kind": "rank_small",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4400,
+ "n_test": 150,
+ "wall_s": 1563,
+ "norerank": {
+  "em": 0.04666666666666667,
+  "f1": 0.11882252527187402,
+  "recall": 0.4533333333333333,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Stoudamire [3] Damon Stoudamire (born September 3, 1973) is an American retired professional basketball player and the current head men's basketball coach at the University of the Pacific. He was selected with the 7th overall pick by the Toronto Raptors in the",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "Monty Python comedy sketches and skits.",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Juan Manuel Santos Calderón. He was the 25th Vice President of Colombia under President Juan Manuel Santos Calderón.",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.06666666666666667,
+  "f1": 0.16811790338320506,
+  "recall": 0.8666666666666667,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Stoudamire [1] Damon Stoudamire (born September 3, 1973) is an American retired professional basketball player and the current head men's basketball coach at the University of the Pacific. The 5 ft , 171 lb point guard was selected with the",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "The Edinburgh Festival Fringe and as a scriptwriter and performer on \"The Frost Report\"",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Simón Bolívar",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ]
+ }
+}

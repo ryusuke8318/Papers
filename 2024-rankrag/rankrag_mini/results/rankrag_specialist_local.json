@@ -1,0 +1,52 @@
+{
+ "kind": "specialist",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 32,
+ "n_train_rows": 128,
+ "n_test": 8,
+ "wall_s": 171,
+ "norerank": {
+  "em": 0.0,
+  "f1": 0.017824675324675323,
+  "recall": 0.375,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "This answer is based on the information provided in documents [1], which states that Kierra Sheard was born in June 20, 1987, making her the only gospel singer born in July among those mentioned in the documents. Therefore, the correct answer to the question is",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Curmudgeons. The animated movie starring Danny DeVito that features music written and produced by Kool Kojak is \"Curmudgeons.\" This short film was directed, produced, and starred Danny DeVito in 2016. It was written and co-produced by Joshua Conkel. The film",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Explanation: The document states that Wanda Media is a Chinese film production company and distributor. Among the given options, Wanda Media is the only one that matches this description. The other companies listed are either not related to films or do not have a connection to the mentioned production company. Therefore, W",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.0,
+  "f1": 0.012244897959183675,
+  "recall": 0.6875,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Latice Crawford is a gospel singer who was born on July 22, 1982. This information can be found in document [1].",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Explanation: The document states that \"Best Friend's Brother\" is a song performed by American pop recording artist Victoria Justice, who was produced by Kool Kojak. This matches the information provided in the question about the animated movie starring Danny Devito. Therefore, Best Friend's Brother is the",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Explanation: The production company that owns the film \"She Hate Me\" is Filmwala Pictures. This can be seen from the information provided in Document [3], where it states that Filmwala Pictures is a Pakistani Film Production Company. It is based in Karachi and has been producing films since",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ }
+}

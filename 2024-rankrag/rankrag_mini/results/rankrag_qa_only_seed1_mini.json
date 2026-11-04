@@ -1,0 +1,52 @@
+{
+ "kind": "qa_only",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 150,
+ "wall_s": 1782,
+ "norerank": {
+  "em": 0.04,
+  "f1": 0.13214892928402475,
+  "recall": 0.4533333333333333,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Lamon Stoudamire (born September 3, 1973) is an American retired professional basketball player and the current head men's basketball coach at the University of the Pacific. He has been a part of the University of the Pacific since 2008. He is known as \"",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "\"How to Irritate People\" was a broadcast written by an English actor who got his start on \"How to Irritate People\".",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Germán Vargas Lleras (born February 19, 1962) is a Colombian politician who recently served as the 25th Vice President of Colombia under President Juan Manuel Santos Calderón. A member of the Radical Change political party, he served four consecutive terms in the Senate, having",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.08666666666666667,
+  "f1": 0.20060255521119427,
+  "recall": 0.5166666666666667,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Stoudamire (born September 3, 1973) is an American retired professional basketball player and the current head men's basketball coach at the University of the Pacific. He is also a member of the Toronto Raptors. He has been playing professionally since 1993. He is a",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "The Edinburgh Festival Fringe and as a scriptwriter and performer on \"The Frost Report\"",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Francisco Antonio Zea (born 23 November 1766 – 28 November 1822) was a Colombian journalist, botanist, diplomat, politician, and statesman who served as the 1st Vice President of Colombia under then President Simón Bolívar. He was",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ]
+ }
+}

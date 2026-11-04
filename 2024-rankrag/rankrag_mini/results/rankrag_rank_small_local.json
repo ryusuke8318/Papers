@@ -1,0 +1,52 @@
+{
+ "kind": "rank_small",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 32,
+ "n_train_rows": 160,
+ "n_test": 8,
+ "wall_s": 103,
+ "norerank": {
+  "em": 0.0,
+  "f1": 0.02641025641025641,
+  "recall": 0.375,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Explanation for the above question is: The gospel singer born in the month of July is Kierra Sheard. In the document, it states that she was born on June 20, 1987. Therefore, the answer is July.",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "The answer is Curmudgeons because it is explicitly stated in the provided text that \"Curmudgeons is a 2016 American comedy short film directed, produced by, and starring Danny DeVito.\" This directly identifies the animated movie featuring music written and",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Wanda Media",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.125,
+  "f1": 0.21401515151515152,
+  "recall": 0.8125,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Explanation for the above question is: The answer is July 6, 1947 because it's mentioned that David Huntsinger has worked with this gospel singer born in the month of July. The other dates are not mentioned in relation to Huntsinger.",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "The Lorax (film)",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Explanation for the above question is: Spike Lee is the director of \"She Hate Me\", so he owns the production company that made it. The other companies mentioned are not related to Spike Lee's work.",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ }
+}

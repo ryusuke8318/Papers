@@ -16,3 +16,5 @@ checkpoints/
 *.safetensors
 wandb/
 runs/
+/2026-platonic-representation-jepa/flickr_table1/docs/
+2024-rankrag/rankrag_mini/data_seed.json

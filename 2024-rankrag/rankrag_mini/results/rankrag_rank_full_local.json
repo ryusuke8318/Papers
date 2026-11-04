@@ -1,0 +1,52 @@
+{
+ "kind": "rank_full",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 32,
+ "n_train_rows": 160,
+ "n_test": 8,
+ "wall_s": 109,
+ "norerank": {
+  "em": 0.0,
+  "f1": 0.006410256410256409,
+  "recall": 0.3125,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Explanation: The documents provided list several gospel singers, but none of them were born in July. The only gospel singer listed is Yolanda Adams, whose birth month is mentioned in document [1]. Therefore, there is no gospel singer born in July among the given documents.",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Curmudgeons.",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Solution: The production company that is owned by the director of \"She Hate Me\" is Indo British Film Co. This can be determined from the information provided in the documents, which states that the Indo British Film Co was a film production company set up by Dhirendra Nath Ganguly in",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.0,
+  "f1": 0.02937183192429931,
+  "recall": 0.875,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "This answer is based on the information provided in documents [1] and [2]. Document [1] states that Larnelle Harris is an American gospel singer and songwriter who has been working with this gospel singer since July 6, 1947. Document [2] provides additional",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "The animated movie starring Danny DeVito that featured music written and produced by Kool Kojak is \"The Lorax.\" This Disney film features the character of the Lorax, whose voice is provided by Danny DeVito. It was released in 2012 and was directed by Illumination Entertainment. The film",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "[3] Filmwala Pictures: Filmwala Pictures is a Pakistani Film Production Company which is based in Karachi; the Production house was founded by Fizza Ali Meerza, who also produces the films for the production company. Nabeel Qureshi has directed three films for the production",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ }
+}

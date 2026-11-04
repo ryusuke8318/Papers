@@ -1,0 +1,52 @@
+{
+ "kind": "qa_only",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 150,
+ "wall_s": 1513,
+ "norerank": {
+  "em": 0.013333333333333334,
+  "f1": 0.0877420632363316,
+  "recall": 0.46,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Bury St Edmunds, Suffolk, England.",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "East Division (OHL) and South Atlantic Division (OHL) are also mentioned in the document. The East Division is one of four divisions in the league, and one of two divisions in the Western Conference. The South Atlantic Division is one of four divisions in the league, and one of two divisions in the Western",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Life magazine. Life magazine was an American magazine that ran weekly from 1883 to 1936 as a humor magazine with limited circulation. \"Time\" owner Henry Luce bought the magazine in 1936, solely so that he could acquire the rights to its name, and launched a",
+    "gold": "Life"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.05333333333333334,
+  "f1": 0.15157717889276456,
+  "recall": 0.4533333333333333,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "London, UK",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "Cavalry division, Infantry division, Artillery division, Aviation division, and Armoured division. The Argentine forces were divided into these divisions. The Argentine forces were divided into cavalry, infantry, artillery, aviation, and armoured divisions. The Argentine forces were divided into cavalry, infantry, artillery, aviation, and armoured",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Life (magazine) was an American magazine that ran weekly from 1883 to 1936 as a humor magazine with limited circulation. \"Time\" owner Henry Luce bought the magazine in 1936, solely so that he could acquire the rights to its name, and launched a",
+    "gold": "Life"
+   }
+  ]
+ }
+}

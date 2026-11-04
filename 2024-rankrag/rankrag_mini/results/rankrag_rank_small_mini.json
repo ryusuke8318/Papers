@@ -1,0 +1,52 @@
+{
+ "kind": "rank_small",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4400,
+ "n_test": 150,
+ "wall_s": 1672,
+ "norerank": {
+  "em": 0.04666666666666667,
+  "f1": 0.12776170320687552,
+  "recall": 0.44333333333333336,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Yolanda Adams, Zimbabwean gospel musician and pastor in the Apostolic Faith Mission Church of Zimbabwe.",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Curmudgeons (film)",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Wanda Media () is a Chinese film production company and distributor. In 2014, the company was the largest Chinese private film production company and second-largest overall Chinese production company in China by market share, with 3.17%, and the fifth-largest film distributor, with 5.2% of",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.05333333333333334,
+  "f1": 0.172364279483951,
+  "recall": 0.85,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Latice Crawford (born July 22, 1982 as Latice Tenae Crawford) is an American urban contemporary gospel singer and composer. She is best known for using her three-octave, contralto vocal range of to finish third on the second season of the competitive gospel singing television show \"",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Kinky Boots! (2005) - a musical comedy-drama about a young boy's journey to find his father in a world where he can only speak in words instead of sounds, directed by John Landis and based on the novel by James Patterson. Danny Devito stars as the main character. K",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Jungle (formerly known as Jungleboys) is a production company owned by Executive Producer Jason Burrows, Writer / Director Trent O'Donnell, Writer/ Performer Phil Lloyd and Head of Production Chloe Rickard. Jungle produces TV commercials, TV programs, and branded entertainment. The Sydney-based production company specialises in comedy",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ }
+}

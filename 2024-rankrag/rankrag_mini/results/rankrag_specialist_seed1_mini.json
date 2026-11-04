@@ -1,0 +1,52 @@
+{
+ "kind": "specialist",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 8000,
+ "n_test": 150,
+ "wall_s": 2722,
+ "norerank": {
+  "em": 0.0,
+  "f1": 0.018705978292098868,
+  "recall": 0.4533333333333333,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "The statement \"The University of the Pacific Tigers are led by the American retired professional basketball player and the current head men's basketball coach at the University of the Pacific\" True True True True True True True True True True True True True True True True True True True True True True True True True True True",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "1. The statement about the broadcast \"How to Irritate People\" is True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "The statement \"True\" would be false because there's no evidence that the 25th Vice President of Colombia under President Juan Manuel Santos Calderón is True. True is True True True True True True True True True True True True True True True True True True True True True True True True True",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.0,
+  "f1": 0.013452037428777406,
+  "recall": 0.91,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "1. The University of the Pacific Tigers is True, True because it is True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "True. True. False. False. False",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "False because the position of Vice President of Colombia is not a formal title, but rather an official designation given to someone who has been appointed as the head of state. It's not a person, but a position that exists within the government structure. The position of Vice President of Colombia is the 1st Vice",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ]
+ }
+}

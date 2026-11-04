@@ -1,0 +1,52 @@
+{
+ "kind": "specialist",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 8000,
+ "n_test": 150,
+ "wall_s": 2676,
+ "norerank": {
+  "em": 0.0,
+  "f1": 0.013452287201313471,
+  "recall": 0.44333333333333336,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "True, because it was true that the gospel singer born in the month of July is True. True because it is True True True True True True",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "1. Curmudgeons (film",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "The answer is False True False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.0,
+  "f1": 0.010839132315523848,
+  "recall": 0.9633333333333334,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "The answer is False. There are no gospel singers born in July mentioned in the provided information. Therefore, there is no gospel singer born in July that fits within the context of the question. If you have any other questions about these options or if there was another option not listed, please let me",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "However, there are",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "[5] The movie \"She Hate Me\" is a film released in 2004 and directed by Spike Lee. It is a comedy-drama film about a man",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ }
+}

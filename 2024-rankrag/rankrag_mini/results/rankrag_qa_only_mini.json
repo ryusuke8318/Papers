@@ -1,0 +1,52 @@
+{
+ "kind": "qa_only",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 150,
+ "wall_s": 1655,
+ "norerank": {
+  "em": 0.04,
+  "f1": 0.11172082853561265,
+  "recall": 0.44333333333333336,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "July 27th",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Curmudgeons (film)",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Wanda Media: Wanda Media () is a Chinese film production company and distributor. In 2014, the company was the largest Chinese private film production company and second-largest overall Chinese production company in China by market share, with 3.17%, and the fifth-largest film distributor, with 5",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.03333333333333333,
+  "f1": 0.13310977453267478,
+  "recall": 0.5033333333333333,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "July 6, 1947) is an American gospel singer and songwriter. During his 30-plus years of ministry, Harris has recorded 18 albums, won five Grammy Awards and 11 Dove Awards, and has had several number one songs on the inspirational music charts. ) is an American",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "The Lorax (film) is an American 3D computer-animated musical fantasy–comedy film produced by Illumination Entertainment and based on Dr. Seuss's children's book of the same name. The film was released by Universal Pictures on March 2, 2012, on the 1",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "40 Acres and a Mule Filmworks, has produced over 35 films since 1983. [4] [5] 40 Acres and a Mule Filmworks, has produced over 35 films since 1983. [6] [7] 4",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ }
+}

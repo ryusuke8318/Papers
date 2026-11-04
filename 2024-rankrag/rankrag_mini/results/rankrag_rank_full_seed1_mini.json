@@ -1,0 +1,52 @@
+{
+ "kind": "rank_full",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 8000,
+ "n_test": 150,
+ "wall_s": 2618,
+ "norerank": {
+  "em": 0.02,
+  "f1": 0.09916048068445978,
+  "recall": 0.4533333333333333,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Lamon Stoudamire (born September 3, 1973) is an American retired professional basketball player and the current head men's basketball coach at the University of the Pacific. The 5 ft , 171 lb point guard was selected with the 7th overall pick by the",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "Science in Action was a weekly half-hour television program devoted to science. The program was broadcast on NBC from August 20, 1955, to December 31, 1960. It was hosted by the actor Andy Devine. It was the successor to the radio and television program",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Gerald Ford ascended to the presidency, leaving the office of vice president vacant.",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.06666666666666667,
+  "f1": 0.18564012076348932,
+  "recall": 0.93,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Stoudamire. He is the current head men's basketball coach at the University of the Pacific. The 5 ft , 171 lb point guard was selected with the 7th overall pick by the Toronto Raptors in the 1995 NBA draft and won the 1995",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "John Marwood Cleese, Graham Chapman, Marty Feldman and Tim Brooke-Taylor wrote the broadcast. They were all",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Francisco Antonio Zea Díaz (born 23 November 1766 – 28 November 1822) was a Colombian journalist, botanist, diplomat, politician, and statesman who served as the 1st Vice President of Colombia under then President Simón Bolívar",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ]
+ }
+}
