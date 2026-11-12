@@ -1,0 +1,40 @@
+{
+ "kind": "rag",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_rows": 0,
+ "n_test": 150,
+ "wall_s": 190,
+ "acc": 0.17333333333333334,
+ "acc_strict": 0.16,
+ "acc_by_type": {
+  "b2b": 0.375,
+  "b2c": 0.04,
+  "chain": 0.15384615384615385,
+  "goods": 0.07692307692307693,
+  "transport": 0.17073170731707318
+ },
+ "hit_rate": 1.0,
+ "examples": [
+  {
+   "id": "test-goods-0052",
+   "type": "goods",
+   "pred": "Begründung: Die Lieferung ohne Beförderung erfolgt in Graz, wobei die Ware am Lager abgeschlossen wurde. Dies entspricht dem § 3 Abs. 1 UStG, ruhende Lieferung ohne Beförderung.",
+   "gold": "Österreich",
+   "ok": false
+  },
+  {
+   "id": "test-chain-0737",
+   "type": "chain",
+   "pred": "Begründung: [1]",
+   "gold": "Österreich",
+   "ok": false
+  },
+  {
+   "id": "test-chain-0659",
+   "type": "chain",
+   "pred": "Kopenhagen, dass die Ware ruhenden Lieferungen im Reihengeschäft von Kopenhagen gelten, weil sie nur eine grenzüberschreitende Warenbewegung sind.",
+   "gold": "Kroatien",
+   "ok": false
+  }
+ ]
+}

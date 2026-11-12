@@ -1,0 +1,4 @@
+# 取得・生成できるデータは含めない(再現手順は README の「実行」)
+jp_vat/sources/
+__pycache__/
+.venv/

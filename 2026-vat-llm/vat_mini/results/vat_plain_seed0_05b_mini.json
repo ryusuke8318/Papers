@@ -1,0 +1,40 @@
+{
+ "kind": "plain",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_rows": 0,
+ "n_test": 150,
+ "wall_s": 174,
+ "acc": 0.44666666666666666,
+ "acc_strict": 0.38666666666666666,
+ "acc_by_type": {
+  "b2b": 0.40625,
+  "b2c": 0.4,
+  "chain": 0.7307692307692307,
+  "goods": 0.46153846153846156,
+  "transport": 0.3170731707317073
+ },
+ "hit_rate": null,
+ "examples": [
+  {
+   "id": "test-goods-0052",
+   "type": "goods",
+   "pred": "Lieferung ohne Beförderung ist steuerbar in Österreich, da sie nicht durch die Verwaltungsschicht oder durch die Verbraucherverordnung verstrichen wird.",
+   "gold": "Österreich",
+   "ok": true
+  },
+  {
+   "id": "test-chain-0737",
+   "type": "chain",
+   "pred": "Besteuerungsland: Österreich",
+   "gold": "Österreich",
+   "ok": true
+  },
+  {
+   "id": "test-chain-0659",
+   "type": "chain",
+   "pred": "Reihengeschäft über drei Länder: Die Ware ruht zunächst in Kopenhagen und wird dann nach Zagreb (Kroatien) befördert. Wann immer die Ware in Kopenhagen gelagert wird, ist sie ausgeliefert. Die Ware wird nicht mehr in Kopenhagen gelag",
+   "gold": "Kroatien",
+   "ok": true
+  }
+ ]
+}

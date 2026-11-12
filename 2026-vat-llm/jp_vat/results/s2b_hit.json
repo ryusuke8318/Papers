@@ -1,0 +1,25 @@
+{
+ "best": {
+  "mode": "s2b",
+  "level": "para",
+  "method": "dense",
+  "k": 3,
+  "hit_all": 0.67,
+  "hit_primary": 0.795,
+  "ctx_chars": 2704.795
+ },
+ "hit_all": {
+  "test_seen": 0.75,
+  "test_exc_seen": 0.24444444444444444,
+  "test_exc_unseen": 0.6666666666666666,
+  "real": 0.0,
+  "dev": 0.67
+ },
+ "ctx_chars": {
+  "test_seen": 2650.1125,
+  "test_exc_seen": 2453.222222222222,
+  "test_exc_unseen": 2631.2,
+  "real": 1921.7777777777778,
+  "dev": 2704.795
+ }
+}

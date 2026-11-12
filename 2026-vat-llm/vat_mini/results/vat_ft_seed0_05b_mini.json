@@ -1,0 +1,40 @@
+{
+ "kind": "ft",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_rows": 1200,
+ "n_test": 150,
+ "wall_s": 603,
+ "acc": 0.9133333333333333,
+ "acc_strict": 0.9133333333333333,
+ "acc_by_type": {
+  "b2b": 1.0,
+  "b2c": 1.0,
+  "chain": 0.5,
+  "goods": 1.0,
+  "transport": 1.0
+ },
+ "hit_rate": null,
+ "examples": [
+  {
+   "id": "test-goods-0052",
+   "type": "goods",
+   "pred": "Österreich. § 3 Abs. 1 UStG, ruhende Lieferung (sinngemäß) zufolge liegt das einzige Besteuerungsland in Österreich. § 3 Abs. 1 UStG, ruhende Lieferung (sinngemäß) z",
+   "gold": "Österreich",
+   "ok": true
+  },
+  {
+   "id": "test-chain-0737",
+   "type": "chain",
+   "pred": "Österreich. § 3 Abs. 1 UStG, sinngemäß (sinngemäß zufolge liegt das einzige Besteuerungsland in Österreich). § 3 Abs. 2 UStG, sinngemäß (sinngemäß zufolge liegt das einz",
+   "gold": "Österreich",
+   "ok": true
+  },
+  {
+   "id": "test-chain-0659",
+   "type": "chain",
+   "pred": "Dänemark. § 3 Abs. 1 UStG, ruhende Lieferung (sinngemäß) zufolge liegt das einzige Besteuerungsland in Dänemark. § 3 Abs. 1 UStG, ruhende Lieferung (sinng",
+   "gold": "Kroatien",
+   "ok": false
+  }
+ ]
+}

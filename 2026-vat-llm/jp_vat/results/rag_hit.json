@@ -1,0 +1,18 @@
+{
+ "best": {
+  "mode": "unit",
+  "method": "dense",
+  "k": 8,
+  "hit_all": 0.815,
+  "hit_primary": 0.93,
+  "n_chunks": 48,
+  "ctx_chars": 1887.585
+ },
+ "hit_all": {
+  "test_seen": 0.8875,
+  "test_exc_seen": 0.35555555555555557,
+  "test_exc_unseen": 0.7833333333333333,
+  "real": 0.2222222222222222,
+  "dev": 0.815
+ }
+}

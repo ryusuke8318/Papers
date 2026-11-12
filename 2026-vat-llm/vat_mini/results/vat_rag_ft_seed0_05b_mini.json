@@ -1,0 +1,40 @@
+{
+ "kind": "rag_ft",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_rows": 1200,
+ "n_test": 150,
+ "wall_s": 576,
+ "acc": 0.94,
+ "acc_strict": 0.94,
+ "acc_by_type": {
+  "b2b": 0.90625,
+  "b2c": 1.0,
+  "chain": 0.7692307692307693,
+  "goods": 1.0,
+  "transport": 1.0
+ },
+ "hit_rate": 1.0,
+ "examples": [
+  {
+   "id": "test-goods-0052",
+   "type": "goods",
+   "pred": "Österreich. § 3 Abs. 1 UStG (sinngemäß) zufolge liegt das einzige Besteuerungsland in Österreich. § 3 Abs. 2 UStG, Beförderung durch den Käufer (sinngemäß) zufolge",
+   "gold": "Österreich",
+   "ok": true
+  },
+  {
+   "id": "test-chain-0737",
+   "type": "chain",
+   "pred": "Österreich. § 3 Abs. 2 UStG, Versandlieferung (sinngemäß) zufolge liegt das einzige Besteuerungsland in Österreich. § 3 Abs. 2 UStG, Versandlieferung (sinngemäß) zufol",
+   "gold": "Österreich",
+   "ok": true
+  },
+  {
+   "id": "test-chain-0659",
+   "type": "chain",
+   "pred": "Kroatien. § 3 Abs. 1 UStG, ruhende Lieferung (sinngemäß) zufolge liegt das einzige Besteuerungsland in Kroatien. § 3 Abs. 1 UStG, ruhende Lieferung (sinng",
+   "gold": "Kroatien",
+   "ok": true
+  }
+ ]
+}
