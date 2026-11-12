@@ -52,12 +52,12 @@ LLaMA2-7B のファインチューン (RAFT-7B) とベースラインの比較�
 
 ## 実装メモ
 
-LLM のファインチューニングは重いので、このリポジトリでは範囲を絞り、**主張の向きを合成データで確かめる小規模実装**を `src/raft_toy.py` に置きました。依存は numpy のみです。
+LLM のファインチューニングは重いので、このリポジトリでは範囲を絞り、**主張の向きを合成データで確かめる小規模実装**を `src/raft_small.py` に置きました。依存は numpy のみです。
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-python src/raft_toy.py
+python src/raft_small.py
 ```
 
 実装の対応関係は次のとおりです。

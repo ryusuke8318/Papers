@@ -7,7 +7,7 @@
          (P<100% が不完全な検索への備えになり、memorization が fallback になる)
   Tab.2  Chain-of-Thought (引用つき推論) の補助 supervision が精度を上げる
 
-依存は numpy のみ。実行: python src/raft_toy.py
+依存は numpy のみ。実行: python src/raft_small.py
 """
 
 from __future__ import annotations

@@ -1,1 +1,5 @@
+# src/raft_small.py(小規模実装)は numpy だけで動く
 numpy>=1.26
+# hotpot_mini/modal_app.py(Modal での縮小再現)を実行するときに使う。GPU 側の依存は modal_app.py の image で固定している
+modal
+# hotpot_mini/run_local.py(手元の GPU での試運転)の依存は hotpot_mini/requirements-local.txt
