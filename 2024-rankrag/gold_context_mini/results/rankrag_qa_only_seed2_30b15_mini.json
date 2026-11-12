@@ -1,0 +1,53 @@
+{
+ "kind": "qa_only",
+ "model": "Qwen/Qwen2.5-3B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 250,
+ "wall_s": 4626,
+ "norerank": {
+  "em": 0.04,
+  "f1": 0.11599560454326252,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Bury St Edmunds, Suffolk, England. The company owns pubs, restaurants and hotels. It is listed on the London Stock Exchange and is a constituent of the FTSE 250 Index. Greene King is the UK's largest pub retailer and brewer. It is based in Bury St Edmunds,",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "The answer can be found in document [3], which states \"This article describes the composition",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Life (magazine) was launched first, in 1883. \"Life\" was published weekly until 1972, as per document [2]. Real Simple was launched in 2000, as per document [1]. Therefore, Life (magazine) was launched first. \"",
+    "gold": "Life"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.08,
+  "f1": 0.17604329658286302,
+  "recall": 0.706,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Bury St Edmunds, Suffolk, England. The company owns pubs, restaurants and hotels. It is listed on the London Stock Exchange and is a constituent of the FTSE 250 Index. Greene King Brewery. Greene King Brewery. Greene King Brewery. Greene King Brewery. Greene King Brewery. Greene King Brewery",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "Air Force, Army, Navy and other services. British air services in the Falklands War. Argentine air forces in the Falklands War. Air Force, Army, Navy and other services. Air Force, Army, Navy and other services. British air services in the Falklands War. Argentine air forces in the Falklands",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Life (magazine) was launched first in 1883. \"Time\" owner Henry Luce bought the magazine in 1936, solely so that he could acquire the rights to its name, and launched a major weekly news magazine with a strong emphasis on photojournalism. \"Life\" was",
+    "gold": "Life"
+   }
+  ],
+  "auroc": 0.7572485
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "kind": "rank_small",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4400,
+ "n_test": 250,
+ "wall_s": 1841,
+ "norerank": {
+  "em": 0.088,
+  "f1": 0.18047631086115848,
+  "recall": 0.43,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "July 27, 1971",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Curmudgeons (film)",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Jungle (formerly known as Jungleboys) is a production company owned by Executive Producer Jason Burrows, Writer / Director Trent O'Donnell, Writer/ Performer Phil Lloyd and Head of Production Chloe Rickard. Jungle produces TV commercials, TV programs, and branded entertainment. The Sydney-based production company specialises in comedy",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.132,
+  "f1": 0.262339954393842,
+  "recall": 0.858,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Larnelle Steward Harris (born July 6, 1947) is an American gospel singer and songwriter. During her 30-plus years of ministry, Harris has recorded 18 albums, won five Grammy Awards and 11 Dove Awards, and has had several number one songs on the",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Curmudgeons is a 2016 American comedy short film directed, produced by, and starred Danny DeVito. It is written and co-produced by Joshua Conkel.",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "40 Acres and a Mule Filmworks, is a production company owned by Executive Producer Jason Burrows, Writer / Director Trent O'Donnell, Writer/ Performer Phil Lloyd and Head of Production Chloe Rickard. Jungle produces TV commercials, TV programs, and branded entertainment. The Sydney-based production company special",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ],
+  "auroc": 0.905409
+ }
+}

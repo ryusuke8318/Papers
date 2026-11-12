@@ -1,0 +1,53 @@
+{
+ "kind": "qa_only",
+ "model": "Qwen/Qwen2.5-3B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 250,
+ "wall_s": 4738,
+ "norerank": {
+  "em": 0.008,
+  "f1": 0.08397021142277904,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Bury St Edmunds, Suffolk, England. Greene King is the UK's largest pub retailer and brewer. It is based in Bury St Edmunds, Suffolk, England. Greene King is the UK's largest pub retailer and brewer. It is based in Bury St Edmunds, Suffolk, England.",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "Air Force, Army, Navy and other services.",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Life was an American magazine that ran weekly from 1883 to 1936 as a humor magazine with limited circulation. \" Time\" owner Henry Luce bought the magazine in 1936, solely so that he could acquire the rights to its name, and launched a major weekly news magazine",
+    "gold": "Life"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.004,
+  "f1": 0.10252415467980212,
+  "recall": 0.67,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Bury St Edmunds, Suffolk, England. the company Greene King Brewery. Greene King Brewery is based in Bury St Edmunds, Suffolk, England. Greene King Brewery is a constituent of the FTSE 250 Index. Greene King Brewery is a constituent of the FTSE 250 Index.",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "The Falklands War was fought between the British Royal Air Force and the Argentine air forces in the Falklands War, which comprised units of the Air Force, Army, Navy and other services. Therefore, the Army, Navy and other services were involved in the war with Britain that incurred losses in aircraft.",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Time Inc. is a multinational mass media corporation founded on November 28, 1922 by Henry Luce and Briton Hadden and based in New York City. It owns and publishes over 100 magazine brands, most notably its flagship \"Life\". \"Life\" launched first.",
+    "gold": "Life"
+   }
+  ],
+  "auroc": 0.709714
+ }
+}

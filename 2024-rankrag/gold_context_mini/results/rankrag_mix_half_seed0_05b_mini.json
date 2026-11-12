@@ -1,0 +1,53 @@
+{
+ "kind": "mix_half",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 250,
+ "wall_s": 2107,
+ "norerank": {
+  "em": 0.06,
+  "f1": 0.14635979288235598,
+  "recall": 0.43,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Yolanda Adams, released on September 22, 1987 on the Sound of Gospel label and produced by Thomas Whitfield, who also worked with singer Vanessa Bell Armstrong on early 1980s gospel releases.",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Curmudgeons (film)",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Executive Producer Jason Burrows, Writer / Director Trent O'Donnell, Writer/ Performer Phil Lloyd and Head of Production Chloe Rickard. Jungle (formerly known as Jungleboys) is a production company owned by Executive Producer Jason Burrows, Writer / Director Trent O'Donnell, Writer/ Performer Phil Lloyd",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.12,
+  "f1": 0.26427444026583824,
+  "recall": 0.926,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Andraé Edward Crouch (July 1, 1942 – January 8, 2015) was an American gospel singer, songwriter, arranger, record producer and pastor. Referred to as \"the father of modern gospel music\" by contemporary Christian and gospel music professionals, C",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "The Lorax (also known as Dr. Seuss' The Lorax) is a 2012 American 3D computer-animated musical fantasy–comedy film produced by Illumination Entertainment and based on Dr. Seuss's children's book of the same name. The film was released by Universal Pictures",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "40 Acres and a Mule FilmWorks, has produced over 35 films since 1983.",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ],
+  "auroc": 0.9420435
+ }
+}

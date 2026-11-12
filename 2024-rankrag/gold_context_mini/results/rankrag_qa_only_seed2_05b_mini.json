@@ -1,0 +1,53 @@
+{
+ "kind": "qa_only",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 250,
+ "wall_s": 1598,
+ "norerank": {
+  "em": 0.036,
+  "f1": 0.14745134703264656,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Bury St Edmunds, Suffolk, England.",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "Army, Navy and other services.",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Life magazine was an American magazine that ran weekly from 1883 to 1936 as a humor magazine with limited circulation. \"Time\" owner Henry Luce bought the magazine in 1936, solely so that he could acquire the rights to its name, and launched a major weekly news",
+    "gold": "Life"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.064,
+  "f1": 0.1907171622919026,
+  "recall": 0.53,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Bury St Edmunds, Suffolk, England.",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "Army, Navy and other services. The numbers in bold are the number of aircraft used in the war, the numbers in brackets are the number of lost aircraft. For a list of air forces from Argentina, see Argentine air forces in the Falklands War.",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Life magazine was an American magazine that ran weekly from 1883 to 1936 as a humor magazine with limited circulation. \"Time\" owner Henry Luce bought the magazine in 1936, solely so that he could acquire the rights to its name, and launched a major weekly news",
+    "gold": "Life"
+   }
+  ],
+  "auroc": 0.5976585
+ }
+}

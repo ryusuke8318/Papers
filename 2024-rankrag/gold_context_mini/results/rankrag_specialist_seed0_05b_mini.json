@@ -1,0 +1,53 @@
+{
+ "kind": "specialist",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 8000,
+ "n_test": 250,
+ "wall_s": 3972,
+ "norerank": {
+  "em": 0.0,
+  "f1": 0.014670164007940047,
+  "recall": 0.43,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Please provide additional information from the given documents if you need it. If you want to know about the gospel singer born",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "The answer is not applicable in this context because there is no information provided about any specific animated movie featuring Kool Kojak that was mentioned in the question. However, if we consider the option \"Curmudgeons\" which is mentioned",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "True False True False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.0,
+  "f1": 0.014332332200636372,
+  "recall": 0.928,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Therefore, the answer is True. True because all the given documents provide information about different types of artists mentioned, not specific gospel singers. False because there are no specific gospel singers born in July. False because there's no specific gospel singer mentioned in",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "The answer provided does not relate to any of the given documents or their respective contexts. The first document mentions Kool Kojak, which is mentioned in the first part of the question, while the second document mentions Best Friend's Brother, which is related to the first document. The third document is about a",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "The question asks for a production company that is not owned by any of the mentioned individuals but is related to the movie \"She Hate Me\". This can be inferred from the information provided. Therefore, the answer is True False False False False False False False False False False False False False False False False False False False",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ],
+  "auroc": 0.9573895
+ }
+}

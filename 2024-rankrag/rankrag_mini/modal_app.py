@@ -1,118 +1,115 @@
-"""Modal で RankRAG の縮小再現 (HotpotQA + Qwen2.5-0.5B + LoRA)。
+"""Modal で縮小再現を回す(GPU コンテナは同時に最大 4 つ)。
 
-  modal run rankrag_mini/modal_app.py --stage prepare   # データ作成 (CPU)
-  modal run rankrag_mini/modal_app.py --stage train     # 学習+評価 (複数条件を並列)
+  modal run rankrag_mini/modal_app.py --stage prepare                    # 学習ブレンドと評価プールの作成(CPU、1 回だけ)
+  modal run rankrag_mini/modal_app.py --stage smoke                      # 小さな学習と評価で全体の動作確認
+  modal run rankrag_mini/modal_app.py --stage run --jobs 05b_base,05b_chatqa,05b_rr_r2000,05b_specialist
+  modal run rankrag_mini/modal_app.py --stage run --jobs main            # 主要 12 条件
+  modal run rankrag_mini/modal_app.py --stage run --jobs seeds           # seed 違いの 6 条件
+  modal run rankrag_mini/modal_app.py --stage prepare --v2 / --stage smoke --v2 / --stage run --jobs v2 / v2seeds / v2b / v2bseeds / v2eval   # 第 2 版
+  modal run rankrag_mini/modal_app.py --stage prepare-rankvar; --stage run --jobs v2c         # 負例の診断
 
-計算の本体は `core.py`。ローカル試運転は `run_local.py` (同コード)。
-kinds: qa_only (生成のみ学習), rank_small (生成+ranking 400件), rank_full (生成+ranking 4000件),
-       specialist (ranking のみ 8000件)。
-結果は rankrag_mini/results/ に JSON で保存される。GPU 料金は Modal のアカウントにかかる。
-
-注意: `modal run` のローカルプロセスを kill するとリモートの実行もキャンセルされる。
-完了までクライアントを生かしておくこと (フォアグラウンド実行か、kill されないバックグラウンド実行)。
+条件の定義は jobs.py。結果は rankrag_mini/results/<条件名>.json に保存される。GPU 料金は Modal のアカウントにかかる。
+`modal run` のローカルプロセスを kill するとリモートの実行もキャンセルされるので、完了まで生かしておくこと。
 """
-
 from __future__ import annotations
 
 import json
-from concurrent.futures import ThreadPoolExecutor
+import sys
 from pathlib import Path
 
 import modal
 
 HERE = Path(__file__).parent
-APP_NAME = "rankrag-mini"
-VOL_NAME = "rankrag-mini-cache"
-GPU = "A10G"
+sys.path.insert(0, str(HERE))
+sys.path.insert(0, "/root/pkg/rankrag_mini")  # コンテナ内では add_local_dir でここに置かれる
+from jobs import JOBS, MAIN_ORDER, SEED_ORDER, V2_ORDER, V2_SEED_ORDER, V2B_ORDER, V2B_SEED_ORDER, V2_EVAL_ORDER, V2C_ORDER  # noqa: E402
 
-from core import EPOCHS, MODEL_ID  # noqa: E402  (定数のみ。remote 本体は core を参照)
+MAX_GPU_CONTAINERS = 4
 
-DATA_VER = "v2"  # データセット版。test 250 件 (v1 は 150 件)。seed 別 dir に保存。
-
-app = modal.App(APP_NAME)
-vol = modal.Volume.from_name(VOL_NAME, create_if_missing=True)
+app = modal.App("rankrag-reimpl")
+vol = modal.Volume.from_name("rankrag-reimpl-cache", create_if_missing=True)
 image = (
     modal.Image.debian_slim(python_version="3.11")
-    .pip_install(
-        "torch==2.5.1", "transformers==4.46.3", "datasets==3.1.0",
-        "peft==0.13.2", "accelerate==1.1.1", "numpy",
-    )
+    .pip_install("torch==2.5.1", "transformers==4.46.3", "peft==0.13.2", "accelerate==1.1.1", "datasets==3.1.0",
+                 "numpy", "scipy")
     .env({"HF_HOME": "/cache/hf", "TOKENIZERS_PARALLELISM": "false"})
-    .add_local_file(HERE / "core.py", "/root/core.py")
-    .add_local_file(HERE / "data_seed.json", "/root/data_seed.json")
+    .add_local_dir(HERE.parent / "src", "/root/pkg/src", ignore=["__pycache__"])
+    .add_local_dir(HERE, "/root/pkg/rankrag_mini", ignore=["__pycache__", "results", "data", "work"])
 )
 
 
-@app.function(image=image, cpu=4, memory=16384, volumes={"/cache": vol}, timeout=3600)
-def prepare_data(n_train: int = 4000, n_test: int = 150, seed: int = 0):
-    """HotpotQA distractor から学習・評価データを作り volume に保存する。"""
-    import core
+@app.function(image=image, cpu=8, memory=32768, volumes={"/cache": vol}, timeout=3 * 3600)
+def prepare(smoke: bool = False, v2: bool = False):
+    sys.path.insert(0, "/root/pkg/rankrag_mini")
+    if v2:
+        import data_v2 as data
+    else:
+        import data
 
-    out = Path(f"/cache/rankrag/{DATA_VER}_seed_{seed}")
-    out.mkdir(parents=True, exist_ok=True)
-    seed_data = core.load_seed(Path("/root/data_seed.json"))
-    train = core.build_rows("train", n_train, seed_data, seed)
-    test = core.build_rows("validation", n_test, seed_data, seed)
-    rank_pool = core.build_rank_rows(train, 10 * n_train, seed)
-    core.save_rows(train, out / "train.json")
-    core.save_rows(test, out / "test.json")
-    core.save_rows(rank_pool, out / "rank_pool.json")
+    name = "data_v2" if v2 else "data"
+    r = data.prepare(f"/cache/{name}_smoke" if smoke else f"/cache/{name}", smoke)
     vol.commit()
-    return {"n_train": len(train), "n_rank_pool": len(rank_pool), "n_test": len(test),
-            "peek_q": train[0]["question"][:120]}
+    return r
 
 
-@app.function(image=image, gpu=GPU, cpu=8, memory=32768, volumes={"/cache": vol},
-              timeout=3 * 3600)
-def train_eval(kind: str = "rank_full", epochs: int = EPOCHS, seed: int = 0,
-               dtype: str = "bfloat16", model_id: str = MODEL_ID, tag: str = "05b"):
-    """LoRA 学習して評価。kind: qa_only / rank_small / rank_full。"""
-    import core
+@app.function(image=image, cpu=8, memory=32768, volumes={"/cache": vol}, timeout=3 * 3600)
+def prepare_rank_variants():
+    sys.path.insert(0, "/root/pkg/rankrag_mini")
+    import data_v2
+    from pathlib import Path
 
-    base = Path(f"/cache/rankrag/{DATA_VER}_seed_{seed}")
-    train = core.load_rows(base / "train.json")
-    rank_pool = core.load_rows(base / "rank_pool.json")
-    test = core.load_rows(base / "test.json")
-    results = core.train_and_eval(kind, train, rank_pool, test, epochs=epochs,
-                                  seed=seed, device="cuda", dtype=dtype,
-                                  model_id=model_id)
-
-    out = base
-    for k, res in results.items():
-        (out / f"result_{k}.json").write_text(json.dumps(res, indent=1, ensure_ascii=False))
+    r = data_v2.build_rank_variants(Path("/cache/data_v2"))
     vol.commit()
-    return results
+    return r
 
 
-# ---------------------------------------------------------------- 入口
+@app.function(image=image, gpu="A10G", cpu=4, memory=32768, volumes={"/cache": vol}, timeout=8 * 3600,
+              max_containers=MAX_GPU_CONTAINERS)
+def gpu_job(cfg: dict, smoke: bool = False):
+    sys.path.insert(0, "/root/pkg/rankrag_mini")
+    import rr_model
+
+    vol.reload()
+    d = cfg.get("data", "data")
+    out = rr_model.run_job(cfg, f"/cache/{d}_smoke" if smoke else f"/cache/{d}", "/cache/work",
+                           n_eval=16 if smoke else cfg.get("n_eval", 500), log=print)
+    vol.commit()
+    return out
+
+
 @app.local_entrypoint()
-def main(stage: str = "prepare", epochs: int = EPOCHS,
-         kinds: str = "qa_only,rank_small,rank_full,specialist,rankonly4k,mix_matched10,mix_half",
-         seeds: str = "0,1,2", dtype: str = "bfloat16",
-         model_id: str = MODEL_ID, tag: str = "05b", n_test: int = 250):
-    seed_list = [int(s) for s in seeds.split(",") if s.strip() != ""]
-    kind_list = [k.strip() for k in kinds.split(",") if k.strip()]
-    if stage in ("prepare", "all"):
-        with ThreadPoolExecutor(max_workers=len(seed_list)) as pool:
-            futs = [pool.submit(prepare_data.remote, 4000, n_test, s)
-                    for s in seed_list]
-            for f in futs:
-                print(f.result())
-    if stage in ("train", "all"):
-        pairs = [(s, k) for s in seed_list for k in kind_list]
-        out_dir = HERE / "results"
-        out_dir.mkdir(exist_ok=True)
-        for i in range(0, len(pairs), 6):
-            chunk = pairs[i:i + 6]
-            with ThreadPoolExecutor(max_workers=6) as pool:
-                futs = [pool.submit(train_eval.remote, k, epochs, s, dtype,
-                                    model_id, tag)
-                        for s, k in chunk]
-                for (s, k), f in zip(chunk, futs):
-                    res = f.result()[k]
-                    (out_dir / f"rankrag_{k}_seed{s}_{tag}_mini.json").write_text(
-                        json.dumps(res, indent=1, ensure_ascii=False))
-                    print(f"保存: rankrag_{k}_seed{s}_{tag}_mini.json "
-                          f"norerank EM={res['norerank']['em']:.3f} "
-                          f"reranked EM={res['reranked']['em']:.3f} "
-                          f"AUROC={res['reranked'].get('auroc', float('nan')):.3f}")
+def main(stage: str = "run", jobs: str = "", smoke: bool = False, v2: bool = False):
+    out_dir = HERE / "results"
+    out_dir.mkdir(exist_ok=True)
+    if stage == "prepare-rankvar":
+        print(prepare_rank_variants.remote())
+        return
+    if stage == "prepare":
+        print(prepare.remote(smoke, v2))
+        return
+    if stage == "smoke":
+        print(prepare.remote(True, v2))
+        names, smoke = (["v2_smoke_base", "v2_smoke_rr"] if v2 else ["smoke_base", "smoke_rr", "smoke_specialist"]), True
+    elif stage == "run":
+        names = (MAIN_ORDER if jobs == "main" else SEED_ORDER if jobs == "seeds" else V2_ORDER if jobs == "v2"
+                 else V2_SEED_ORDER if jobs == "v2seeds"
+                 else V2B_ORDER if jobs == "v2b" else V2B_SEED_ORDER if jobs == "v2bseeds" else V2_EVAL_ORDER if jobs == "v2eval"
+                 else V2C_ORDER if jobs == "v2c" else [j for j in jobs.split(",") if j])
+    else:
+        raise SystemExit(f"不明な stage: {stage}")
+    bad = [n for n in names if n not in JOBS]
+    if bad:
+        raise SystemExit(f"不明な条件: {bad}")
+    print(f"{len(names)} 条件を実行(GPU コンテナは同時に最大 {MAX_GPU_CONTAINERS}): {names}")
+    for res in gpu_job.map([JOBS[n] for n in names], kwargs={"smoke": smoke}, order_outputs=False, return_exceptions=True):
+        if isinstance(res, Exception):
+            print("失敗:", repr(res)[:300])
+            continue
+        name = res["cfg"]["name"]
+        old = out_dir / f"{name}.json"
+        if res["cfg"].get("eval_only") and old.exists():  # 学習の記録は前回の結果から引き継ぐ
+            prev = json.loads(old.read_text())
+            res["train"] = prev.get("train")
+            res["cfg"] = prev["cfg"]
+        (out_dir / f"{name}.json").write_text(json.dumps(res, indent=1, ensure_ascii=False))
+        print("保存:", out_dir / f"{name}.json")

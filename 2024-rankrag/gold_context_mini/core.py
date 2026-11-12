@@ -186,7 +186,8 @@ def auroc(pos: list, neg: list) -> float:
 def train_and_eval(kind: str, train_qa: list, train_rank_pool: list, test: list,
                    model_id: str = MODEL_ID, epochs: int = EPOCHS,
                    seed: int = SEED, device: str = "cuda",
-                   batch: int = BATCH, log=print, dtype: str | None = None) -> dict:
+                   batch: int = BATCH, log=print, dtype: str | None = None,
+                   lr: float = 2e-4) -> dict:
     """LoRA 学習して評価。kind: qa_only / rank_small / rank_full。
     dtype: None なら fp16 (cuda) / fp32 (cpu)。Modal 側では bf16 を指定する。"""
     import torch
@@ -217,7 +218,8 @@ def train_and_eval(kind: str, train_qa: list, train_rank_pool: list, test: list,
     except AttributeError:
         pass
     model.train()
-    opt = torch.optim.AdamW(model.parameters(), lr=2e-4)
+    opt = torch.optim.AdamW(model.parameters(), lr=lr)
+    log(f"[{kind}] model={model_id} lr={lr} epochs={epochs} seed={seed}")
 
     if kind in NO_QA:
         train = []  # ranking のみ (生成の学習なし)

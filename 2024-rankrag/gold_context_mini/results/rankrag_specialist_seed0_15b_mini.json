@@ -1,0 +1,53 @@
+{
+ "kind": "specialist",
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 8000,
+ "n_test": 250,
+ "wall_s": 3592,
+ "norerank": {
+  "em": 0.0,
+  "f1": 0.01243295223520101,
+  "recall": 0.43,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "False.",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "False True False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "False True False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.0,
+  "f1": 0.014801383219750892,
+  "recall": 0.948,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "False True False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "False True False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "False True False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ],
+  "auroc": 0.968334
+ }
+}

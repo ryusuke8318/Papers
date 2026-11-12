@@ -1,0 +1,781 @@
+{
+ "cfg": {
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "train": false,
+  "n_qa": 4000,
+  "n_rqa": 4000,
+  "n_rar": 2000,
+  "use_qa": true,
+  "use_rqa": true,
+  "use_rar": true,
+  "rank_rows": 0,
+  "rank_only": false,
+  "lr": 0.0001,
+  "batch": 32,
+  "seed": 0,
+  "do_gen": true,
+  "name": "15b_base"
+ },
+ "eval": {
+  "squad": {
+   "n_questions": 500,
+   "ranking": {
+    "dense": {
+     "retriever": {
+      "R@1": 0.672,
+      "R@3": 0.844,
+      "R@5": 0.892,
+      "R@10": 0.94,
+      "MRR": 0.7691766215266211
+     },
+     "reranked": {
+      "R@1": 0.716,
+      "R@3": 0.88,
+      "R@5": 0.93,
+      "R@10": 0.96,
+      "MRR": 0.806922935580994
+     },
+     "sec_per_question": 0.39483577823638916,
+     "rerank_by_N": {
+      "10": 0.928,
+      "20": 0.928,
+      "30": 0.93
+     }
+    },
+    "bm25": {
+     "retriever": {
+      "R@1": 0.804,
+      "R@3": 0.914,
+      "R@5": 0.938,
+      "R@10": 0.962,
+      "MRR": 0.8649320968303725
+     },
+     "reranked": {
+      "R@1": 0.74,
+      "R@3": 0.904,
+      "R@5": 0.952,
+      "R@10": 0.966,
+      "MRR": 0.8293689155671913
+     },
+     "sec_per_question": 0.39545914793014525,
+     "rerank_by_N": {
+      "10": 0.956,
+      "20": 0.952,
+      "30": 0.952
+     }
+    }
+   },
+   "generation": {
+    "retriever_k1": {
+     "EM": 0.008,
+     "F1": 0.17293177075507654,
+     "Acc": 0.454,
+     "sec_per_question": 0.036175525665283204,
+     "examples": [
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "The name of the NFL championship game mentioned in the passage is Super Bowl 50.",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "What year did the Carolina Panthers form?",
+       "pred": "The passage does not provide any information about when the Carolina Panthers formed. It only mentions that they won Super Bowl 5",
+       "gold": [
+        "1995",
+        "1995."
+       ]
+      },
+      {
+       "q": "How many turnovers did Cam Newton have?",
+       "pred": "Based on the passage provided, Cam Newton had one turnover. Specifically, he lost the football when Von Miller sacked him and",
+       "gold": [
+        "three"
+       ]
+      },
+      {
+       "q": "Which network broadcasted Super Bowl 50 in the U.S.?",
+       "pred": "CBS broadcasted Super Bowl 50 in the U.S.",
+       "gold": [
+        "CBS"
+       ]
+      }
+     ]
+    },
+    "rerank_k1": {
+     "EM": 0.01,
+     "F1": 0.1834178030395428,
+     "Acc": 0.488,
+     "sec_per_question": 0.03650161933898926,
+     "examples": [
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "The name of the NFL championship game mentioned in the passage is Super Bowl 50.",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "What year did the Carolina Panthers form?",
+       "pred": "The passage does not provide information about when the Carolina Panthers formed. It only mentions that they had a \"regular season with",
+       "gold": [
+        "1995",
+        "1995."
+       ]
+      },
+      {
+       "q": "How many turnovers did Cam Newton have?",
+       "pred": "Based on the passage provided, Cam Newton had three turnovers during Super Bowl 50. These turnovers included:",
+       "gold": [
+        "three"
+       ]
+      },
+      {
+       "q": "Which network broadcasted Super Bowl 50 in the U.S.?",
+       "pred": "CBS broadcasted Super Bowl 50 in the U.S.",
+       "gold": [
+        "CBS"
+       ]
+      }
+     ]
+    },
+    "retriever_k3": {
+     "EM": 0.002,
+     "F1": 0.13554049400413812,
+     "Acc": 0.374,
+     "sec_per_question": 0.06532292890548706,
+     "examples": [
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "Based on the provided passages, the name of the NFL championship game mentioned is Super Bowl 50. This can be",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "What year did the Carolina Panthers form?",
+       "pred": "Based on the information provided in the passages, the Carolina Panthers formed in 1995. This can be inferred",
+       "gold": [
+        "1995",
+        "1995."
+       ]
+      },
+      {
+       "q": "How many turnovers did Cam Newton have?",
+       "pred": "Based on the information provided in Passage 3:",
+       "gold": [
+        "three"
+       ]
+      },
+      {
+       "q": "Which network broadcasted Super Bowl 50 in the U.S.?",
+       "pred": "Based on the information provided in the passages, CBS broadcasted Super Bowl 50 in the United States.",
+       "gold": [
+        "CBS"
+       ]
+      }
+     ]
+    },
+    "rerank_k3": {
+     "EM": 0.002,
+     "F1": 0.1364315734301797,
+     "Acc": 0.384,
+     "sec_per_question": 0.06742244338989258,
+     "examples": [
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "Based on the information provided in the passages, the name of the NFL championship game for Super Bowl 50 was Super",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "What year did the Carolina Panthers form?",
+       "pred": "Based on the information provided in the passages, the Carolina Panthers formed in 1995. This can be inferred",
+       "gold": [
+        "1995",
+        "1995."
+       ]
+      },
+      {
+       "q": "How many turnovers did Cam Newton have?",
+       "pred": "Based on the information provided in Passage 1, Cam Newton had three turnovers during Super Bowl 50 against the Denver",
+       "gold": [
+        "three"
+       ]
+      },
+      {
+       "q": "Which network broadcasted Super Bowl 50 in the U.S.?",
+       "pred": "Based on the information provided in the passages:",
+       "gold": [
+        "CBS"
+       ]
+      }
+     ]
+    },
+    "retriever_k5": {
+     "EM": 0.0,
+     "F1": 0.14110218152124665,
+     "Acc": 0.406,
+     "sec_per_question": 0.10503784132003784,
+     "examples": [
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "Based on the information provided in the passages, the name of the NFL championship game referred to in the passage about Super Bowl",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "What year did the Carolina Panthers form?",
+       "pred": "Based on the information provided in the passages, the Carolina Panthers formed in 1995. This can be inferred",
+       "gold": [
+        "1995",
+        "1995."
+       ]
+      },
+      {
+       "q": "How many turnovers did Cam Newton have?",
+       "pred": "Based on the information provided in Passage 1, there is no specific mention of turnovers committed by Cam Newton or any other",
+       "gold": [
+        "three"
+       ]
+      },
+      {
+       "q": "Which network broadcasted Super Bowl 50 in the U.S.?",
+       "pred": "Based on the information provided in the passages, CBS broadcasted Super Bowl 50 in the United States.",
+       "gold": [
+        "CBS"
+       ]
+      }
+     ]
+    },
+    "rerank_k5": {
+     "EM": 0.004,
+     "F1": 0.14542087912353127,
+     "Acc": 0.422,
+     "sec_per_question": 0.11114766454696655,
+     "examples": [
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "Based on the information provided in the passages, the name of the NFL championship game referred to in the passage is:",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "What year did the Carolina Panthers form?",
+       "pred": "Based on the information provided in the passages, the Carolina Panthers formed in 1995. The passage states:",
+       "gold": [
+        "1995",
+        "1995."
+       ]
+      },
+      {
+       "q": "How many turnovers did Cam Newton have?",
+       "pred": "Based on the information provided in Passage 3, Cam Newton had 45 total touchdowns. Specifically, it states:",
+       "gold": [
+        "three"
+       ]
+      },
+      {
+       "q": "Which network broadcasted Super Bowl 50 in the U.S.?",
+       "pred": "Based on the information provided in the passages, CBS broadcast Super Bowl 50 in the U.S.",
+       "gold": [
+        "CBS"
+       ]
+      }
+     ]
+    },
+    "rerank_N10_k5": {
+     "EM": 0.0,
+     "F1": 0.14702863860509777,
+     "Acc": 0.428,
+     "sec_per_question": 0.10778578329086304,
+     "examples": [
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "The name of the NFL championship game mentioned in the passages is **Super Bowl 50**.",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "What year did the Carolina Panthers form?",
+       "pred": "Based on the information provided in the passages, the Carolina Panthers formed in 1995. This can be inferred",
+       "gold": [
+        "1995",
+        "1995."
+       ]
+      },
+      {
+       "q": "How many turnovers did Cam Newton have?",
+       "pred": "Based on the information provided in Passage 4:",
+       "gold": [
+        "three"
+       ]
+      },
+      {
+       "q": "Which network broadcasted Super Bowl 50 in the U.S.?",
+       "pred": "Based on the information provided in the passages, CBS broadcast Super Bowl 50 in the U.S.",
+       "gold": [
+        "CBS"
+       ]
+      }
+     ]
+    },
+    "rerank_N20_k5": {
+     "EM": 0.002,
+     "F1": 0.14495012938573668,
+     "Acc": 0.42,
+     "sec_per_question": 0.10905178737640381,
+     "examples": [
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "Based on the information provided in the passages, the name of the NFL championship game referred to in the passage is:",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "What year did the Carolina Panthers form?",
+       "pred": "Based on the information provided in the passages, the Carolina Panthers formed in 1995. The passage states:",
+       "gold": [
+        "1995",
+        "1995."
+       ]
+      },
+      {
+       "q": "How many turnovers did Cam Newton have?",
+       "pred": "Based on the information provided in Passage 3, Cam Newton had 45 total touchdowns. Specifically, it states:",
+       "gold": [
+        "three"
+       ]
+      },
+      {
+       "q": "Which network broadcasted Super Bowl 50 in the U.S.?",
+       "pred": "Based on the information provided in the passages, CBS broadcast Super Bowl 50 in the U.S.",
+       "gold": [
+        "CBS"
+       ]
+      }
+     ]
+    },
+    "gold": {
+     "EM": 0.012,
+     "F1": 0.2209752297306193,
+     "Acc": 0.614,
+     "sec_per_question": 0.03646309185028076,
+     "examples": [
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "The name of the NFL championship game mentioned in the passage is Super Bowl 50.",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "What year did the Carolina Panthers form?",
+       "pred": "The Carolina Panthers formed in 1995.",
+       "gold": [
+        "1995",
+        "1995."
+       ]
+      },
+      {
+       "q": "How many turnovers did Cam Newton have?",
+       "pred": "Based on the passage provided, Cam Newton had three turnovers during Super Bowl 50. These turnovers included:",
+       "gold": [
+        "three"
+       ]
+      },
+      {
+       "q": "Which network broadcasted Super Bowl 50 in the U.S.?",
+       "pred": "CBS broadcasted Super Bowl 50 in the U.S.",
+       "gold": [
+        "CBS"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "hotpot": {
+   "n_questions": 500,
+   "ranking": {
+    "dense": {
+     "retriever": {
+      "R@1": 0.446,
+      "R@3": 0.794,
+      "R@5": 0.861,
+      "R@10": 0.915,
+      "MRR": 0.9323371794871794
+     },
+     "reranked": {
+      "R@1": 0.363,
+      "R@3": 0.667,
+      "R@5": 0.768,
+      "R@10": 0.885,
+      "MRR": 0.8249225961458718
+     },
+     "sec_per_question": 0.3696022047996521,
+     "rerank_by_N": {
+      "10": 0.826,
+      "20": 0.796,
+      "30": 0.768
+     }
+    },
+    "bm25": {
+     "retriever": {
+      "R@1": 0.394,
+      "R@3": 0.631,
+      "R@5": 0.728,
+      "R@10": 0.87,
+      "MRR": 0.8619984126984123
+     },
+     "reranked": {
+      "R@1": 0.348,
+      "R@3": 0.647,
+      "R@5": 0.736,
+      "R@10": 0.87,
+      "MRR": 0.8004940921335442
+     },
+     "sec_per_question": 0.3655809836387634,
+     "rerank_by_N": {
+      "10": 0.751,
+      "20": 0.747,
+      "30": 0.736
+     }
+    }
+   },
+   "generation": {
+    "retriever_k1": {
+     "EM": 0.004,
+     "F1": 0.08358341587042772,
+     "Acc": 0.236,
+     "sec_per_question": 0.033369425296783446,
+     "examples": [
+      {
+       "q": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+       "pred": "The science fantasy young adult series that fits the description you provided is \"Animorphs.\" This series was written by Katherine",
+       "gold": [
+        "Animorphs"
+       ]
+      },
+      {
+       "q": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+       "pred": "The passage does not provide information about any vote or ranking regarding the father of Kasper Schmeichel being voted to be",
+       "gold": [
+        "World's Best Goalkeeper"
+       ]
+      },
+      {
+       "q": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+       "pred": "The passage does not provide specific information about when the civil war ended or who defeated whom. It only mentions that the Red",
+       "gold": [
+        "October 1922"
+       ]
+      },
+      {
+       "q": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+       "pred": "The Livesey Hal War Memorial commemorates the fallen soldiers who died during World War I and World War II. These were",
+       "gold": [
+        "World War II"
+       ]
+      }
+     ]
+    },
+    "rerank_k1": {
+     "EM": 0.004,
+     "F1": 0.09501379097089997,
+     "Acc": 0.284,
+     "sec_per_question": 0.03423071336746216,
+     "examples": [
+      {
+       "q": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+       "pred": "The science fantasy young adult series that fits the description you provided is \"Animorphs.\" This series was written by Katherine",
+       "gold": [
+        "Animorphs"
+       ]
+      },
+      {
+       "q": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+       "pred": "The passage does not provide information about any specific vote or award given to the father of Kasper Schmeichel by the",
+       "gold": [
+        "World's Best Goalkeeper"
+       ]
+      },
+      {
+       "q": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+       "pred": "The passage does not provide specific information about when the civil war ended. It only mentions that the civil war occurred after the",
+       "gold": [
+        "October 1922"
+       ]
+      },
+      {
+       "q": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+       "pred": "The Livesey Hal War Memorial commemorates the fallen soldiers who died during World War I and World War II. These were",
+       "gold": [
+        "World War II"
+       ]
+      }
+     ]
+    },
+    "retriever_k3": {
+     "EM": 0.002,
+     "F1": 0.04199811028943224,
+     "Acc": 0.128,
+     "sec_per_question": 0.05293568515777588,
+     "examples": [
+      {
+       "q": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+       "pred": "Based on the provided passages, the science fantasy young adult series that fits the description given is:",
+       "gold": [
+        "Animorphs"
+       ]
+      },
+      {
+       "q": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+       "pred": "Based on the information provided in the passages:",
+       "gold": [
+        "World's Best Goalkeeper"
+       ]
+      },
+      {
+       "q": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+       "pred": "The passage does not provide specific information about when the civil war ended or who defeated whom. It only mentions that the Bolshevik",
+       "gold": [
+        "October 1922"
+       ]
+      },
+      {
+       "q": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+       "pred": "Based on the information provided in the passages:",
+       "gold": [
+        "World War II"
+       ]
+      }
+     ]
+    },
+    "rerank_k3": {
+     "EM": 0.002,
+     "F1": 0.04085931212533443,
+     "Acc": 0.132,
+     "sec_per_question": 0.05787106609344483,
+     "examples": [
+      {
+       "q": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+       "pred": "Based on the provided passages, the science fantasy young adult series that fits the description given is:",
+       "gold": [
+        "Animorphs"
+       ]
+      },
+      {
+       "q": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+       "pred": "Based on the information provided in the passages:",
+       "gold": [
+        "World's Best Goalkeeper"
+       ]
+      },
+      {
+       "q": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+       "pred": "Based on the information provided in the passages:",
+       "gold": [
+        "October 1922"
+       ]
+      },
+      {
+       "q": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+       "pred": "Based on the information provided in the passages:",
+       "gold": [
+        "World War II"
+       ]
+      }
+     ]
+    },
+    "retriever_k5": {
+     "EM": 0.0,
+     "F1": 0.04560120666554382,
+     "Acc": 0.162,
+     "sec_per_question": 0.08228570652008056,
+     "examples": [
+      {
+       "q": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+       "pred": "Based on the provided passages, the science fantasy young adult series that fits the description given is:",
+       "gold": [
+        "Animorphs"
+       ]
+      },
+      {
+       "q": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+       "pred": "Based on the information provided in the passages:",
+       "gold": [
+        "World's Best Goalkeeper"
+       ]
+      },
+      {
+       "q": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+       "pred": "Based on the information provided:",
+       "gold": [
+        "October 1922"
+       ]
+      },
+      {
+       "q": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+       "pred": "Based on the information provided in the passages:",
+       "gold": [
+        "World War II"
+       ]
+      }
+     ]
+    },
+    "rerank_k5": {
+     "EM": 0.0,
+     "F1": 0.04945711556423102,
+     "Acc": 0.158,
+     "sec_per_question": 0.09410308361053467,
+     "examples": [
+      {
+       "q": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+       "pred": "Based on the provided passages, the science fantasy young adult series that fits the description given is:",
+       "gold": [
+        "Animorphs"
+       ]
+      },
+      {
+       "q": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+       "pred": "Based on the information provided in the passages:",
+       "gold": [
+        "World's Best Goalkeeper"
+       ]
+      },
+      {
+       "q": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+       "pred": "The passage does not provide specific information about when the civil war ended. However, based on the historical context provided:",
+       "gold": [
+        "October 1922"
+       ]
+      },
+      {
+       "q": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+       "pred": "Based on the information provided:",
+       "gold": [
+        "World War II"
+       ]
+      }
+     ]
+    },
+    "rerank_N10_k5": {
+     "EM": 0.002,
+     "F1": 0.04817733950430285,
+     "Acc": 0.156,
+     "sec_per_question": 0.08916446113586426,
+     "examples": [
+      {
+       "q": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+       "pred": "Based on the provided passages, the science fantasy young adult series that fits the description given is:",
+       "gold": [
+        "Animorphs"
+       ]
+      },
+      {
+       "q": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+       "pred": "Based on the information provided in the passages:",
+       "gold": [
+        "World's Best Goalkeeper"
+       ]
+      },
+      {
+       "q": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+       "pred": "The passage does not provide specific information about when the civil war ended. It only mentions that the Bolsheviks defeated the SR",
+       "gold": [
+        "October 1922"
+       ]
+      },
+      {
+       "q": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+       "pred": "Based on the information provided in the passages:",
+       "gold": [
+        "World War II"
+       ]
+      }
+     ]
+    },
+    "rerank_N20_k5": {
+     "EM": 0.002,
+     "F1": 0.05295833855176979,
+     "Acc": 0.164,
+     "sec_per_question": 0.09176721429824829,
+     "examples": [
+      {
+       "q": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+       "pred": "Based on the provided passages, the science fantasy young adult series that fits the description given is:",
+       "gold": [
+        "Animorphs"
+       ]
+      },
+      {
+       "q": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+       "pred": "Based on the information provided in the passages:",
+       "gold": [
+        "World's Best Goalkeeper"
+       ]
+      },
+      {
+       "q": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+       "pred": "The passage does not provide specific information on when the civil war ended. However, based on historical knowledge:",
+       "gold": [
+        "October 1922"
+       ]
+      },
+      {
+       "q": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+       "pred": "Based on the information provided:",
+       "gold": [
+        "World War II"
+       ]
+      }
+     ]
+    },
+    "gold": {
+     "EM": 0.0,
+     "F1": 0.05712006672607459,
+     "Acc": 0.17,
+     "sec_per_question": 0.041049647331237796,
+     "examples": [
+      {
+       "q": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+       "pred": "Based on the given passages, the science fantasy young adult series that fits the description you provided is the \"Animorphs",
+       "gold": [
+        "Animorphs"
+       ]
+      },
+      {
+       "q": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+       "pred": "The passage does not provide information about Kasper Schmeichel being voted the IFFHS World's Best Goalkeeper in",
+       "gold": [
+        "World's Best Goalkeeper"
+       ]
+      },
+      {
+       "q": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+       "pred": "The passage does not provide specific information about when the Russian Civil War ended. It only mentions that the Russian Civil War lasted",
+       "gold": [
+        "October 1922"
+       ]
+      },
+      {
+       "q": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+       "pred": "Based on the information provided in the passages, the Livesey Hal War Memorial commemorates the fallen soldiers who died during World",
+       "gold": [
+        "World War II"
+       ]
+      }
+     ]
+    }
+   }
+  }
+ },
+ "eval_sec": 1389
+}

@@ -1,0 +1,53 @@
+{
+ "kind": "mix_half",
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 250,
+ "wall_s": 3543,
+ "norerank": {
+  "em": 0.0,
+  "f1": 0.057609860713461886,
+  "recall": 0.43,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Yolanda Adams. Answer: Yolanda Adams. Answer: Yolanda Adams. Answer: Yolanda Adams. Answer: Yolanda Adams. Answer: Yolanda Adams. Answer: Yolanda Adams. Answer: Yolanda Adams. Answer: Yolanda Adams. Answer: Y",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Curmudgeons (film) Answer: Curmudgeons (film) Answer: Curmudgeons (film) Answer: Curmudgeons (film) Answer: Curmudgeons (film) Answer: Curmudgeons (film) Answer: Curmudgeons (film) Answer: Cur",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Jungle (formerly known as Jungleboys) Answer Jungle (formerly known as Jungleboys) is a production company owned by Executive Producer Jason Burrows, Writer / Director Trent O'Donnell, Writer/ Performer Phil Lloyd and Head of Production Chloe Rickard. Jungle produces TV commercials, TV programs, and branded entertainment.",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.0,
+  "f1": 0.09283078305147191,
+  "recall": 0.946,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Larnelle Steward Harris (born July 6, 1947) is an American gospel singer and songwriter. During his 30-plus years of ministry, Harris has recorded 18 albums, won five Grammy Awards and 11 Dove Awards, and has had several number one songs on the",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "The Lorax (also known as Dr. Seuss' The Lorax) is a 2012 American 3D computer-animated musical fantasy–comedy film produced by Illumination Entertainment and based on Dr. Seuss's children's book of the same name. The film was released by Universal Pictures",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "40 Acres and a Mule Filmworks Answer: 40 Acres and a Mule Filmworks Answer: 40 Acres and a Mule Filmworks Answer: 40 Acres and a Mule Filmworks Answer: 40 Acres and a Mule Filmworks Answer: 40 Acres",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ],
+  "auroc": 0.9541565
+ }
+}

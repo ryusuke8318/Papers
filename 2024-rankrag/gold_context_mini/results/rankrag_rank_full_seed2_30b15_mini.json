@@ -1,0 +1,53 @@
+{
+ "kind": "rank_full",
+ "model": "Qwen/Qwen2.5-3B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 8000,
+ "n_test": 250,
+ "wall_s": 6255,
+ "norerank": {
+  "em": 0.064,
+  "f1": 0.145156027815294,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Bury St Edmunds, Suffolk, England. The company owns pubs, restaurants and hotels. It is listed on the London Stock Exchange and is a constituent of the FTSE 250 Index. Greene King: Greene King is the UK's largest pub retailer and brewer. It is based in Bury St",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "Air Force, Army, Navy and other services. Question: What other two divisions of Argentine forces were involved in the war with Britain that incurred losses in aircraft? The answer is Air Force, Army, Navy and other services.",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Life (magazine) was launched first. The magazine was an American humor magazine that ran weekly from 1883 to 1936 as a humor magazine with limited circulation. \"Time\" owner Henry Luce bought the magazine in 1936, solely so that he could acquire the rights",
+    "gold": "Life"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.08,
+  "f1": 0.19070265121349383,
+  "recall": 0.922,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Bury St Edmunds, Suffolk, England. The company owns pubs, restaurants and hotels. It is listed on the London Stock Exchange and is a constituent of the FTSE 250 Index. Greene King Brewery. Greene King. Greene King Brewery. Greene King. Greene King. Greene King. Greene King.",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "Answer: Air Force, Navy. The Argentine air forces in the Falklands War were involved in the conflict alongside the Argentine Navy. Both these branches of the Argentine forces suffered losses in aircraft",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Life (magazine) was launched first. The magazine ran weekly from 1883 to 1936 as a humor magazine with limited circulation. \"Time\" owner Henry Luce bought the magazine in 1936, solely so that he could acquire the rights to its name, and launched",
+    "gold": "Life"
+   }
+  ],
+  "auroc": 0.944465
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "kind": "rankonly4k",
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 250,
+ "wall_s": 2427,
+ "norerank": {
+  "em": 0.004,
+  "f1": 0.05941743904220599,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Explanation: The question asks about a retired professional basketball player who served as the head men's basketball coach at the University of the Pacific. Damon Stoudamire fits this description based on his information provided in document [3]. He was born on September 3, 1973",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "Explanation: Andy's Gang was a children's television program that aired on NBC from August 20, 1955, to December 31, 1960. This show was hosted by the actor Andy Devine, who later became famous as one of the members of",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Germán Vargas Lleras (born February 19, 1962) is a Colombian politician who recently served as the 25th Vice President of Colombia under President Juan Manuel Santos Calderón. A member of the Radical Change political party, he",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.004,
+  "f1": 0.07559791307068338,
+  "recall": 0.954,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Stoudamire is a former professional basketball player who was selected as the 7th overall pick by the Toronto Raptors in the 1995 NBA draft. He has been the head men's",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "The answer is \"The Frost Report.\" John Cleese, Graham Chapman, Marty Feldman, and Terry Gilliam all appeared on this show, which aired from 1965-1969. It was one of the first British satirical programs and helped launch their careers. They later formed Monty",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Explanation: Francisco Antonio Zea was the 1st Vice President of Colombia under Simón Bolívar. He served as the first vice president of Colombia from 1819 until his death in 1822. Zea was a prominent figure in the early days of the",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ],
+  "auroc": 0.9645685
+ }
+}

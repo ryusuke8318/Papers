@@ -1,0 +1,53 @@
+{
+ "kind": "rank_full",
+ "model": "Qwen/Qwen2.5-3B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 8000,
+ "n_test": 250,
+ "wall_s": 6250,
+ "norerank": {
+  "em": 0.068,
+  "f1": 0.15269966391978532,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Stoudamire. Question: Who is the current head men's basketball coach at the University of the Pacific? Documents: [3] Damon Stoudamire: Damon Lamon Stoudamire (born September 3, 1973) is an American retired professional basketball player and the current",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "Andy's Gang: Andy's Gang was a children's television program broadcast on NBC from August 20, 1955, to December 31, 1960., hosted by the actor Andy Devine. It was the successor to the radio and television program \"Smilin' Ed",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Germán Vargas Lleras. Germán Vargas Lleras served as the 25th Vice President of Colombia under President Juan Manuel Santos Calderón. He is a member of the Radical Change political party and has held four consecutive terms in the Senate since 1994. Germán Vargas",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.08,
+  "f1": 0.2050160465269401,
+  "recall": 0.928,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Stoudamire. Question: Who is the current head men's basketball coach at the University of the Pacific? Based on the information provided in the documents, the current head men's basketball coach at the University of the Pacific is Damon Stoudamire. This can be inferred from document [2], which states",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "The Frost Report.",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Juan Francisco Antonio Hilarión Zea Díaz (born 23 November 1766 – 28 November 1822) was a Colombian journalist, botanist, diplomat, politician, and statesman who served as the 1st Vice President of Colombia under then President Sim",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ],
+  "auroc": 0.9414475
+ }
+}

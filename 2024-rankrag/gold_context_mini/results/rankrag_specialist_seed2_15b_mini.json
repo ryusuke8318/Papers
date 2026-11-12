@@ -1,0 +1,53 @@
+{
+ "kind": "specialist",
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 8000,
+ "n_test": 250,
+ "wall_s": 3722,
+ "norerank": {
+  "em": 0.0,
+  "f1": 0.0,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "Life"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.0,
+  "f1": 0.0,
+  "recall": 0.946,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "True True True True True False False False True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "False True False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "Life"
+   }
+  ],
+  "auroc": 0.9661825
+ }
+}

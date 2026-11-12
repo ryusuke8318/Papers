@@ -1,0 +1,53 @@
+{
+ "kind": "rank_small",
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4400,
+ "n_test": 250,
+ "wall_s": 2724,
+ "norerank": {
+  "em": 0.068,
+  "f1": 0.1940253209153931,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Bury St Edmunds, Suffolk, England.",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "South Division (OHL) and East Division (OHL)",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Life was an American magazine that ran weekly from 1883 to 1936 as a humor magazine with limited circulation. \"Time\" owner Henry Luce bought the magazine in 1936, solely so that he could acquire the rights to its name, and launched a major weekly news magazine",
+    "gold": "Life"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.124,
+  "f1": 0.2679905720140381,
+  "recall": 0.818,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Bury St Edmunds, Suffolk, England.",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "navy and army divisions of the Argentine National Guard's ground forces. The navy division included the naval aviation branch of the Argentine Navy. The army division included the ground forces of the Argentine Army.\"",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Life magazine was launched first in 1936.",
+    "gold": "Life"
+   }
+  ],
+  "auroc": 0.852938
+ }
+}

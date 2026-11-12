@@ -1,0 +1,794 @@
+{
+ "cfg": {
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "train": true,
+  "n_qa": 4000,
+  "n_rqa": 4000,
+  "n_rar": 2000,
+  "use_qa": true,
+  "use_rqa": true,
+  "use_rar": false,
+  "rank_rows": 0,
+  "rank_only": false,
+  "lr": 0.0002,
+  "batch": 32,
+  "seed": 0,
+  "do_gen": true,
+  "name": "05b_chatqa"
+ },
+ "train": {
+  "rows": 8000,
+  "tasks": {
+   "qa": 4000,
+   "rqa": 4000,
+   "rar": 0,
+   "rank": 0
+  },
+  "steps": 250,
+  "sec": 736,
+  "loss_first": 1.1852983062155544,
+  "loss_last": 0.366634831239935
+ },
+ "eval": {
+  "squad": {
+   "n_questions": 500,
+   "ranking": {
+    "dense": {
+     "retriever": {
+      "R@1": 0.672,
+      "R@3": 0.844,
+      "R@5": 0.892,
+      "R@10": 0.94,
+      "MRR": 0.7691766215266211
+     },
+     "reranked": {
+      "R@1": 0.196,
+      "R@3": 0.362,
+      "R@5": 0.448,
+      "R@10": 0.594,
+      "MRR": 0.3284226096256675
+     },
+     "sec_per_question": 0.14962649536132813,
+     "rerank_by_N": {
+      "10": 0.668,
+      "20": 0.498,
+      "30": 0.448
+     }
+    },
+    "bm25": {
+     "retriever": {
+      "R@1": 0.804,
+      "R@3": 0.914,
+      "R@5": 0.938,
+      "R@10": 0.962,
+      "MRR": 0.8649320968303725
+     },
+     "reranked": {
+      "R@1": 0.192,
+      "R@3": 0.354,
+      "R@5": 0.456,
+      "R@10": 0.594,
+      "MRR": 0.32586814204090747
+     },
+     "sec_per_question": 0.15016326332092286,
+     "rerank_by_N": {
+      "10": 0.692,
+      "20": 0.538,
+      "30": 0.456
+     }
+    }
+   },
+   "generation": {
+    "retriever_k1": {
+     "EM": 0.554,
+     "F1": 0.6342248873271678,
+     "Acc": 0.612,
+     "sec_per_question": 0.02036136722564697,
+     "examples": [
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "Super Bowl 50",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "What year did the Carolina Panthers form?",
+       "pred": "1978",
+       "gold": [
+        "1995",
+        "1995."
+       ]
+      },
+      {
+       "q": "How many turnovers did Cam Newton have?",
+       "pred": "two",
+       "gold": [
+        "three"
+       ]
+      },
+      {
+       "q": "Which network broadcasted Super Bowl 50 in the U.S.?",
+       "pred": "CBS",
+       "gold": [
+        "CBS"
+       ]
+      }
+     ]
+    },
+    "rerank_k1": {
+     "EM": 0.182,
+     "F1": 0.22422010387019548,
+     "Acc": 0.198,
+     "sec_per_question": 0.0202959623336792,
+     "examples": [
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "NFC Championship Game",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "What year did the Carolina Panthers form?",
+       "pred": "1968",
+       "gold": [
+        "1995",
+        "1995."
+       ]
+      },
+      {
+       "q": "How many turnovers did Cam Newton have?",
+       "pred": "45",
+       "gold": [
+        "three"
+       ]
+      },
+      {
+       "q": "Which network broadcasted Super Bowl 50 in the U.S.?",
+       "pred": "Fox",
+       "gold": [
+        "CBS"
+       ]
+      }
+     ]
+    },
+    "retriever_k3": {
+     "EM": 0.624,
+     "F1": 0.6975117403784452,
+     "Acc": 0.682,
+     "sec_per_question": 0.0320109133720398,
+     "examples": [
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "Super Bowl 50",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "What year did the Carolina Panthers form?",
+       "pred": "1978",
+       "gold": [
+        "1995",
+        "1995."
+       ]
+      },
+      {
+       "q": "How many turnovers did Cam Newton have?",
+       "pred": "45",
+       "gold": [
+        "three"
+       ]
+      },
+      {
+       "q": "Which network broadcasted Super Bowl 50 in the U.S.?",
+       "pred": "CBS",
+       "gold": [
+        "CBS"
+       ]
+      }
+     ]
+    },
+    "rerank_k3": {
+     "EM": 0.3,
+     "F1": 0.3477831312936577,
+     "Acc": 0.32,
+     "sec_per_question": 0.030442604064941405,
+     "examples": [
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "NFC Championship Game",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "What year did the Carolina Panthers form?",
+       "pred": "1978",
+       "gold": [
+        "1995",
+        "1995."
+       ]
+      },
+      {
+       "q": "How many turnovers did Cam Newton have?",
+       "pred": "fourteen",
+       "gold": [
+        "three"
+       ]
+      },
+      {
+       "q": "Which network broadcasted Super Bowl 50 in the U.S.?",
+       "pred": "ESPN Deportes",
+       "gold": [
+        "CBS"
+       ]
+      }
+     ]
+    },
+    "retriever_k5": {
+     "EM": 0.634,
+     "F1": 0.7133796611380822,
+     "Acc": 0.698,
+     "sec_per_question": 0.04555205392837525,
+     "examples": [
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "Super Bowl 50",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "What year did the Carolina Panthers form?",
+       "pred": "1995",
+       "gold": [
+        "1995",
+        "1995."
+       ]
+      },
+      {
+       "q": "How many turnovers did Cam Newton have?",
+       "pred": "45",
+       "gold": [
+        "three"
+       ]
+      },
+      {
+       "q": "Which network broadcasted Super Bowl 50 in the U.S.?",
+       "pred": "CBS",
+       "gold": [
+        "CBS"
+       ]
+      }
+     ]
+    },
+    "rerank_k5": {
+     "EM": 0.348,
+     "F1": 0.4004316506163256,
+     "Acc": 0.372,
+     "sec_per_question": 0.04486039781570435,
+     "examples": [
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "NFC Championship Game",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "What year did the Carolina Panthers form?",
+       "pred": "1978",
+       "gold": [
+        "1995",
+        "1995."
+       ]
+      },
+      {
+       "q": "How many turnovers did Cam Newton have?",
+       "pred": "45",
+       "gold": [
+        "three"
+       ]
+      },
+      {
+       "q": "Which network broadcasted Super Bowl 50 in the U.S.?",
+       "pred": "ESPN Deportes",
+       "gold": [
+        "CBS"
+       ]
+      }
+     ]
+    },
+    "rerank_N10_k5": {
+     "EM": 0.502,
+     "F1": 0.5683199556126062,
+     "Acc": 0.548,
+     "sec_per_question": 0.04711443424224854,
+     "examples": [
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "NFC Championship Game",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "What year did the Carolina Panthers form?",
+       "pred": "1995",
+       "gold": [
+        "1995",
+        "1995."
+       ]
+      },
+      {
+       "q": "How many turnovers did Cam Newton have?",
+       "pred": "45",
+       "gold": [
+        "three"
+       ]
+      },
+      {
+       "q": "Which network broadcasted Super Bowl 50 in the U.S.?",
+       "pred": "CBS",
+       "gold": [
+        "CBS"
+       ]
+      }
+     ]
+    },
+    "rerank_N20_k5": {
+     "EM": 0.384,
+     "F1": 0.44139815078282574,
+     "Acc": 0.414,
+     "sec_per_question": 0.046225247383117674,
+     "examples": [
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "NFC Championship Game",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "What year did the Carolina Panthers form?",
+       "pred": "1995",
+       "gold": [
+        "1995",
+        "1995."
+       ]
+      },
+      {
+       "q": "How many turnovers did Cam Newton have?",
+       "pred": "45",
+       "gold": [
+        "three"
+       ]
+      },
+      {
+       "q": "Which network broadcasted Super Bowl 50 in the U.S.?",
+       "pred": "ESPN Deportes",
+       "gold": [
+        "CBS"
+       ]
+      }
+     ]
+    },
+    "gold": {
+     "EM": 0.79,
+     "F1": 0.8618706433121078,
+     "Acc": 0.858,
+     "sec_per_question": 0.018577508449554442,
+     "examples": [
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "Super Bowl 50",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "What year did the Carolina Panthers form?",
+       "pred": "1995",
+       "gold": [
+        "1995",
+        "1995."
+       ]
+      },
+      {
+       "q": "How many turnovers did Cam Newton have?",
+       "pred": "three",
+       "gold": [
+        "three"
+       ]
+      },
+      {
+       "q": "Which network broadcasted Super Bowl 50 in the U.S.?",
+       "pred": "CBS",
+       "gold": [
+        "CBS"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "hotpot": {
+   "n_questions": 500,
+   "ranking": {
+    "dense": {
+     "retriever": {
+      "R@1": 0.446,
+      "R@3": 0.794,
+      "R@5": 0.861,
+      "R@10": 0.915,
+      "MRR": 0.9323371794871794
+     },
+     "reranked": {
+      "R@1": 0.104,
+      "R@3": 0.221,
+      "R@5": 0.315,
+      "R@10": 0.489,
+      "MRR": 0.36197667369702435
+     },
+     "sec_per_question": 0.14011032676696777,
+     "rerank_by_N": {
+      "10": 0.543,
+      "20": 0.382,
+      "30": 0.315
+     }
+    },
+    "bm25": {
+     "retriever": {
+      "R@1": 0.394,
+      "R@3": 0.631,
+      "R@5": 0.728,
+      "R@10": 0.87,
+      "MRR": 0.8619984126984123
+     },
+     "reranked": {
+      "R@1": 0.086,
+      "R@3": 0.207,
+      "R@5": 0.298,
+      "R@10": 0.47,
+      "MRR": 0.3297790883668522
+     },
+     "sec_per_question": 0.13838027095794678,
+     "rerank_by_N": {
+      "10": 0.517,
+      "20": 0.361,
+      "30": 0.298
+     }
+    }
+   },
+   "generation": {
+    "retriever_k1": {
+     "EM": 0.188,
+     "F1": 0.2893405927405928,
+     "Acc": 0.244,
+     "sec_per_question": 0.019399231910705566,
+     "examples": [
+      {
+       "q": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+       "pred": "Animorphs",
+       "gold": [
+        "Animorphs"
+       ]
+      },
+      {
+       "q": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+       "pred": "Peter",
+       "gold": [
+        "World's Best Goalkeeper"
+       ]
+      },
+      {
+       "q": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+       "pred": "October 1922",
+       "gold": [
+        "October 1922"
+       ]
+      },
+      {
+       "q": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+       "pred": "World War I and World War II",
+       "gold": [
+        "World War II"
+       ]
+      }
+     ]
+    },
+    "rerank_k1": {
+     "EM": 0.12,
+     "F1": 0.17750360750360752,
+     "Acc": 0.136,
+     "sec_per_question": 0.017146315574645996,
+     "examples": [
+      {
+       "q": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+       "pred": "Travelers",
+       "gold": [
+        "Animorphs"
+       ]
+      },
+      {
+       "q": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+       "pred": "Abdelaziz bin Khalifa Al Thani",
+       "gold": [
+        "World's Best Goalkeeper"
+       ]
+      },
+      {
+       "q": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+       "pred": "June 1919",
+       "gold": [
+        "October 1922"
+       ]
+      },
+      {
+       "q": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+       "pred": "World War",
+       "gold": [
+        "World War II"
+       ]
+      }
+     ]
+    },
+    "retriever_k3": {
+     "EM": 0.318,
+     "F1": 0.43419461070330645,
+     "Acc": 0.382,
+     "sec_per_question": 0.029064343452453612,
+     "examples": [
+      {
+       "q": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+       "pred": "Animorphs",
+       "gold": [
+        "Animorphs"
+       ]
+      },
+      {
+       "q": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+       "pred": "Peter Bolesław Schmeichel MBE",
+       "gold": [
+        "World's Best Goalkeeper"
+       ]
+      },
+      {
+       "q": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+       "pred": "October Revolution",
+       "gold": [
+        "October 1922"
+       ]
+      },
+      {
+       "q": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+       "pred": "World War I and World War II",
+       "gold": [
+        "World War II"
+       ]
+      }
+     ]
+    },
+    "rerank_k3": {
+     "EM": 0.16,
+     "F1": 0.22928689789742418,
+     "Acc": 0.182,
+     "sec_per_question": 0.027918461799621583,
+     "examples": [
+      {
+       "q": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+       "pred": "The First Men in the Moon",
+       "gold": [
+        "Animorphs"
+       ]
+      },
+      {
+       "q": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+       "pred": "Khalifa bin Hamad Al Thani",
+       "gold": [
+        "World's Best Goalkeeper"
+       ]
+      },
+      {
+       "q": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+       "pred": "October 1922",
+       "gold": [
+        "October 1922"
+       ]
+      },
+      {
+       "q": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+       "pred": "World War",
+       "gold": [
+        "World War II"
+       ]
+      }
+     ]
+    },
+    "retriever_k5": {
+     "EM": 0.302,
+     "F1": 0.4258740423827382,
+     "Acc": 0.37,
+     "sec_per_question": 0.03903806066513062,
+     "examples": [
+      {
+       "q": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+       "pred": "Animorphs",
+       "gold": [
+        "Animorphs"
+       ]
+      },
+      {
+       "q": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+       "pred": "Peter Bolesław Schmeichel MBE",
+       "gold": [
+        "World's Best Goalkeeper"
+       ]
+      },
+      {
+       "q": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+       "pred": "October Revolution",
+       "gold": [
+        "October 1922"
+       ]
+      },
+      {
+       "q": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+       "pred": "World War I and World War II",
+       "gold": [
+        "World War II"
+       ]
+      }
+     ]
+    },
+    "rerank_k5": {
+     "EM": 0.204,
+     "F1": 0.26887978792449385,
+     "Acc": 0.234,
+     "sec_per_question": 0.04221718263626099,
+     "examples": [
+      {
+       "q": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+       "pred": "The Divide trilogy",
+       "gold": [
+        "Animorphs"
+       ]
+      },
+      {
+       "q": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+       "pred": "Khalifa bin Hamad Al Thani",
+       "gold": [
+        "World's Best Goalkeeper"
+       ]
+      },
+      {
+       "q": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+       "pred": "October 1922",
+       "gold": [
+        "October 1922"
+       ]
+      },
+      {
+       "q": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+       "pred": "World War II",
+       "gold": [
+        "World War II"
+       ]
+      }
+     ]
+    },
+    "rerank_N10_k5": {
+     "EM": 0.24,
+     "F1": 0.33231055611055615,
+     "Acc": 0.288,
+     "sec_per_question": 0.03992468786239624,
+     "examples": [
+      {
+       "q": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+       "pred": "The Shadow Speaker",
+       "gold": [
+        "Animorphs"
+       ]
+      },
+      {
+       "q": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+       "pred": "World's Best Goalkeeper",
+       "gold": [
+        "World's Best Goalkeeper"
+       ]
+      },
+      {
+       "q": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+       "pred": "the Russian Civil War",
+       "gold": [
+        "October 1922"
+       ]
+      },
+      {
+       "q": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+       "pred": "World War II",
+       "gold": [
+        "World War II"
+       ]
+      }
+     ]
+    },
+    "rerank_N20_k5": {
+     "EM": 0.214,
+     "F1": 0.2872775535575536,
+     "Acc": 0.256,
+     "sec_per_question": 0.04095135307312012,
+     "examples": [
+      {
+       "q": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+       "pred": "The Divide trilogy",
+       "gold": [
+        "Animorphs"
+       ]
+      },
+      {
+       "q": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+       "pred": "World's Best Goalkeeper",
+       "gold": [
+        "World's Best Goalkeeper"
+       ]
+      },
+      {
+       "q": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+       "pred": "the Russian Civil War",
+       "gold": [
+        "October 1922"
+       ]
+      },
+      {
+       "q": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+       "pred": "World War II",
+       "gold": [
+        "World War II"
+       ]
+      }
+     ]
+    },
+    "gold": {
+     "EM": 0.404,
+     "F1": 0.5319605236868398,
+     "Acc": 0.482,
+     "sec_per_question": 0.021038047313690186,
+     "examples": [
+      {
+       "q": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+       "pred": "Animorphs",
+       "gold": [
+        "Animorphs"
+       ]
+      },
+      {
+       "q": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+       "pred": "Peter Schmeichel",
+       "gold": [
+        "World's Best Goalkeeper"
+       ]
+      },
+      {
+       "q": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+       "pred": "the Russian Civil War",
+       "gold": [
+        "October 1922"
+       ]
+      },
+      {
+       "q": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+       "pred": "World War I and World War II",
+       "gold": [
+        "World War II"
+       ]
+      }
+     ]
+    }
+   }
+  }
+ },
+ "eval_sec": 580
+}

@@ -1,0 +1,53 @@
+{
+ "kind": "rank_small",
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4400,
+ "n_test": 250,
+ "wall_s": 2839,
+ "norerank": {
+  "em": 0.084,
+  "f1": 0.18139266182218186,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Stoudamire. Damon Lamon Stoudamire (born September 3, 1973) is an American retired professional basketball player and the current head men's basketball coach at the University of the Pacific. The 5 ft , 171 lb point guard was selected with the",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "Monty Python and the Flying Circus.",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Juan Manuel Santos Calderón. A member of the Radical Change political party, he served four consecutive terms in the Senate, having been elected in 1994. German Vargas also served in the Cabinet as the Minister of Interior.",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.128,
+  "f1": 0.26304276184744524,
+  "recall": 0.916,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Stoudamire. Damon Lamon Stoudamire (born September 3, 1973) is an American retired professional basketball player and the current head men's basketball coach at the University of the Pacific. The 5 ft , 171 lb point guard was selected with the",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "The Frost Report. In the late 1960s, he co-founded Monty Python, the comedy troupe responsible for the sketch show \"Monty Python's Flying Circus\" and the four...",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Juan Francisco Antonio Hilarión Zea Díaz (born 23 November 1766 – 28 November 1822) was a Colombian journalist, botanist, diplomat, politician, and statesman who served as the 1st Vice President of Colombia under then President Sim",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ],
+  "auroc": 0.9262005
+ }
+}

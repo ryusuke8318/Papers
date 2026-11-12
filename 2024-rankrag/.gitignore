@@ -1,0 +1,8 @@
+rankrag_mini/data/
+rankrag_mini/data_smoke/
+rankrag_mini/work/
+rankrag_mini/results/*_local.json
+rankrag_mini/results/smoke_*.json
+rankrag_mini/data_v2/
+rankrag_mini/data_v2_smoke/
+rankrag_mini/results/v2_smoke_*.json

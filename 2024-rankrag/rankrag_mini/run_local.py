@@ -1,69 +1,47 @@
-"""ローカル試運転: core.py と同じコードで小規模に学習・評価する。
+"""ローカル実行(Modal なし)。試運転向け。本番規模の学習・評価は Modal を推奨する。
 
-  pip install -r rankrag_mini/requirements-local.txt
-  python rankrag_mini/run_local.py --smoke        # 試運転 (train 32 / test 8 / 1 epoch)
-  python rankrag_mini/run_local.py                # 本番規模 (train 4000 / test 150 / 2 epoch)
+  python rankrag_mini/run_local.py prepare --smoke       # 小さなデータを作る(初回はデータセットを取得)
+  python rankrag_mini/run_local.py job smoke_rr --smoke  # 小さな学習 + 評価(GPU が必要)
+  python rankrag_mini/run_local.py prepare               # 本番規模のデータ(CPU でも可。時間がかかる)
+  python rankrag_mini/run_local.py job 05b_chatqa        # 本番規模の 1 条件(VRAM 12GB 以上を目安)
 
-結果は rankrag_mini/results/rankrag_*_local.json に保存される。
+データは rankrag_mini/data/、LoRA の重みは rankrag_mini/work/、結果は rankrag_mini/results/ に保存される。
 """
-
 from __future__ import annotations
 
 import argparse
 import json
 import sys
-import warnings
 from pathlib import Path
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
-
-import core  # noqa: E402
-
-DATA_DIR = HERE / "data"
-RESULTS_DIR = HERE / "results"
+from jobs import JOBS  # noqa: E402
 
 
-def main() -> None:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--smoke", action="store_true", help="試運転: train 32 / test 8 / 1 epoch")
-    ap.add_argument("--n-train", type=int, default=core.N_TRAIN)
-    ap.add_argument("--n-test", type=int, default=core.N_TEST)
-    ap.add_argument("--epochs", type=int, default=core.EPOCHS)
-    ap.add_argument("--kinds", nargs="+", default=["qa_only", "rank_small", "rank_full", "specialist"])
-    ap.add_argument("--model", default=core.MODEL_ID)
-    ap.add_argument("--seed", type=int, default=core.SEED)
-    args = ap.parse_args()
-    if args.smoke:
-        args.n_train, args.n_test, args.epochs = 32, 8, 1
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    sub = ap.add_subparsers(dest="cmd", required=True)
+    p = sub.add_parser("prepare")
+    p.add_argument("--smoke", action="store_true")
+    j = sub.add_parser("job")
+    j.add_argument("name", choices=sorted(JOBS))
+    j.add_argument("--smoke", action="store_true", help="小さなデータと 16 問の評価")
+    a = ap.parse_args()
 
-    import torch
+    data_dir = HERE / ("data_smoke" if a.smoke else "data")
+    if a.cmd == "prepare":
+        import data
 
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    if device == "cpu":
-        warnings.warn("CUDA がないため CPU で動かします。試運転でも時間がかかります。")
-    else:
-        print(f"GPU: {torch.cuda.get_device_name(0)}")
+        data.prepare(str(data_dir), a.smoke)
+        return
+    import rr_model
 
-    DATA_DIR.mkdir(exist_ok=True)
-    RESULTS_DIR.mkdir(exist_ok=True)
-    train_p, test_p = DATA_DIR / "train.json", DATA_DIR / "test.json"
-    if not (train_p.exists() and test_p.exists()):
-        print("データ作成中...")
-        seed_data = core.load_seed(HERE / "data_seed.json")
-        core.save_rows(core.build_rows("train", args.n_train, seed_data, seed=args.seed), train_p)
-        core.save_rows(core.build_rows("validation", args.n_test, seed_data, seed=args.seed), test_p)
-    train_qa, test = core.load_rows(train_p), core.load_rows(test_p)
-    rank_pool = core.build_rank_rows(train_qa, 10 * args.n_train, seed=args.seed)
-    print(f"train_qa {len(train_qa)} / rank_pool {len(rank_pool)} / test {len(test)}")
-
-    for kind in args.kinds:
-        res = core.train_and_eval(kind, train_qa, rank_pool, test, model_id=args.model,
-                                  epochs=args.epochs, seed=args.seed, device=device)
-        for tag, r in res.items():
-            p = RESULTS_DIR / f"rankrag_{tag}_local.json"
-            p.write_text(json.dumps(r, indent=1, ensure_ascii=False))
-            print(f"保存: {p}")
+    out = rr_model.run_job(JOBS[a.name], str(data_dir), str(HERE / "work"), n_eval=16 if a.smoke else 500)
+    (HERE / "results").mkdir(exist_ok=True)
+    path = HERE / "results" / f"{a.name}{'_local' if a.smoke else ''}.json"
+    path.write_text(json.dumps(out, indent=1, ensure_ascii=False))
+    print("保存:", path)
 
 
 if __name__ == "__main__":

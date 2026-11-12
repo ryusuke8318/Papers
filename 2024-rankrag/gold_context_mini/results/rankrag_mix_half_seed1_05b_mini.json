@@ -1,0 +1,53 @@
+{
+ "kind": "mix_half",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 250,
+ "wall_s": 1532,
+ "norerank": {
+  "em": 0.124,
+  "f1": 0.21297427970447969,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Stoudamire (born September 3, 1973) is an American retired professional basketball player and the current head men's basketball coach at the University of the Pacific. The 5 ft , 171 lb point guard was selected with the 7th overall pick by the Toronto Raptors",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "NBC from August 20, 1955, to December 31, 1960. hosted by the actor Andy Devine. It was the successor to the radio and television program \"Smilin' Ed McConnell and His Buster Brown Gang\" (later shortened to \"Smilin",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Germán Vargas Lleras (born February 19, 1962) is a Colombian politician who recently served as the 25th Vice President of Colombia under President Juan Manuel Santos Calderón. A member of the Radical Change political party, he served four consecutive terms in the Senate, having",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.212,
+  "f1": 0.34462567170041836,
+  "recall": 0.902,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Stoudamire (born September 3, 1973) is an American retired professional basketball player and the current head men's basketball coach at the University of the Pacific. The 5 ft , 171 lb point guard was selected with the 7th overall pick by the Toronto Raptors",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "The Frost Report",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Juan Francisco Antonio Hilarión Zea Díaz (born 23 November 1766 – 28 November 1822) was a Colombian journalist, botanist, diplomat, and statesman who served as the 1st Vice President of Colombia under then President Simón Bol",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ],
+  "auroc": 0.937488
+ }
+}

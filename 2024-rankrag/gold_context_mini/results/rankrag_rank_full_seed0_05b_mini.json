@@ -1,0 +1,53 @@
+{
+ "kind": "rank_full",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 8000,
+ "n_test": 250,
+ "wall_s": 2749,
+ "norerank": {
+  "em": 0.032,
+  "f1": 0.12342469784767995,
+  "recall": 0.43,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "July",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Curmudgeons (film)",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "The director of \"She Hate Me\" is not mentioned in the given documents, but it's possible that she was produced by Paramount Pictures or another production company. However, Paramount Pictures is owned by the director of \"She Hate Me.\" This is an interesting observation, as Paramount Pictures has been owned by other",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.096,
+  "f1": 0.24310900609323355,
+  "recall": 0.918,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "July 6, 1947) is an American gospel singer and songwriter.",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "The Lorax (film)",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "40 Acres and a Mule Filmworks, 40 Acres and a Mule Filmworks, is a production company owned by 40 Acres and a Mule Filmworks, has produced over 35 films since 1983.",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ],
+  "auroc": 0.947848
+ }
+}

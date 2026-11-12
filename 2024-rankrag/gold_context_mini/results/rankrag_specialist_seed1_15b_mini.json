@@ -1,0 +1,53 @@
+{
+ "kind": "specialist",
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 8000,
+ "n_test": 250,
+ "wall_s": 4963,
+ "norerank": {
+  "em": 0.0,
+  "f1": 0.012840722224847353,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "The given document [1] mentions that the 2013-14 Pacific Tigers men's basketball team was led by a former head coach who has since left the position. However, the document [2] states that the 2015-16 Pacific Tigers men's basketball",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "False True False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "The statement \"Germán Vargas Lleras\" is True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.0,
+  "f1": 0.018341398207223913,
+  "recall": 0.956,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "True False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "True False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "True False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ],
+  "auroc": 0.968701
+ }
+}

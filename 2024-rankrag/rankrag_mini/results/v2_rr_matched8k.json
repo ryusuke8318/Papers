@@ -1,0 +1,832 @@
+{
+ "cfg": {
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "train": true,
+  "n_qa": 3000,
+  "n_rqa": 2000,
+  "n_rar": 1000,
+  "use_qa": true,
+  "use_rqa": true,
+  "use_rar": true,
+  "rank_rows": 2000,
+  "rank_only": false,
+  "lr": 0.0002,
+  "batch": 32,
+  "seed": 0,
+  "do_gen": true,
+  "data": "data_v2",
+  "n_eval": 1000,
+  "max_len": 3072,
+  "name": "v2_rr_matched8k"
+ },
+ "train": {
+  "rows": 8000,
+  "tasks": {
+   "qa": 3000,
+   "rqa": 2000,
+   "rar": 1000,
+   "rank": 2000
+  },
+  "steps": 250,
+  "sec": 1015,
+  "loss_first": 1.802308014035225,
+  "loss_last": 0.4122249046340585
+ },
+ "eval": {
+  "squad": {
+   "n_questions": 1000,
+   "ranking": {
+    "dense": {
+     "retriever": {
+      "R@1": 0.588,
+      "R@3": 0.752,
+      "R@5": 0.8,
+      "R@10": 0.877,
+      "MRR": 0.6851500279425992,
+      "AUROC": 0.9361733819915079
+     },
+     "reranked": {
+      "R@1": 0.659,
+      "R@3": 0.799,
+      "R@5": 0.837,
+      "R@10": 0.881,
+      "MRR": 0.7392737284588404,
+      "AUROC": 0.8830528040515361
+     },
+     "sec_per_question": 0.13770429849624632,
+     "rerank_by_N": {
+      "10": 0.834,
+      "20": 0.838,
+      "30": 0.837
+     }
+    },
+    "bm25": {
+     "retriever": {
+      "R@1": 0.731,
+      "R@3": 0.853,
+      "R@5": 0.883,
+      "R@10": 0.919,
+      "MRR": 0.8003363929960107,
+      "AUROC": 0.9594320486815405
+     },
+     "reranked": {
+      "R@1": 0.699,
+      "R@3": 0.828,
+      "R@5": 0.863,
+      "R@10": 0.906,
+      "MRR": 0.7740587916556169,
+      "AUROC": 0.8876412634019105
+     },
+     "sec_per_question": 0.13739526319503784,
+     "rerank_by_N": {
+      "10": 0.885,
+      "20": 0.869,
+      "30": 0.863
+     }
+    }
+   },
+   "generation": {
+    "retriever_k1": {
+     "EM": 0.44,
+     "F1": 0.5145826277604499,
+     "Acc": 0.492,
+     "sec_per_question": 0.017337862730026247,
+     "examples": [
+      {
+       "q": "Where did Super Bowl 50 take place?",
+       "pred": "San Diego",
+       "gold": [
+        "Levi's Stadium",
+        "Levi's Stadium in the San Francisco Bay Area at Santa Clara, California.",
+        "Santa Clara, California"
+       ]
+      },
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "Super Bowl 50",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "Who did the Broncos prevent from going to the Super Bowl?",
+       "pred": "New England Patriots",
+       "gold": [
+        "New England Patriots",
+        "the New England Patriots"
+       ]
+      },
+      {
+       "q": "Who did Carolina beat in the NFC championship game?",
+       "pred": "Seattle Seahawks",
+       "gold": [
+        "Arizona Cardinals",
+        "the Arizona Cardinals"
+       ]
+      }
+     ]
+    },
+    "rerank_k1": {
+     "EM": 0.507,
+     "F1": 0.572409244841584,
+     "Acc": 0.555,
+     "sec_per_question": 0.01663636326789856,
+     "examples": [
+      {
+       "q": "Where did Super Bowl 50 take place?",
+       "pred": "Levi's Stadium",
+       "gold": [
+        "Levi's Stadium",
+        "Levi's Stadium in the San Francisco Bay Area at Santa Clara, California.",
+        "Santa Clara, California"
+       ]
+      },
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "Super Bowl 50",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "Who did the Broncos prevent from going to the Super Bowl?",
+       "pred": "Malik Jackson",
+       "gold": [
+        "New England Patriots",
+        "the New England Patriots"
+       ]
+      },
+      {
+       "q": "Who did Carolina beat in the NFC championship game?",
+       "pred": "Seattle Seahawks",
+       "gold": [
+        "Arizona Cardinals",
+        "the Arizona Cardinals"
+       ]
+      }
+     ]
+    },
+    "retriever_k3": {
+     "EM": 0.508,
+     "F1": 0.5793207286074781,
+     "Acc": 0.554,
+     "sec_per_question": 0.026561891555786133,
+     "examples": [
+      {
+       "q": "Where did Super Bowl 50 take place?",
+       "pred": "San Francisco Bay Area",
+       "gold": [
+        "Levi's Stadium",
+        "Levi's Stadium in the San Francisco Bay Area at Santa Clara, California.",
+        "Santa Clara, California"
+       ]
+      },
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "Super Bowl 50",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "Who did the Broncos prevent from going to the Super Bowl?",
+       "pred": "New England Patriots",
+       "gold": [
+        "New England Patriots",
+        "the New England Patriots"
+       ]
+      },
+      {
+       "q": "Who did Carolina beat in the NFC championship game?",
+       "pred": "Seattle Seahawks",
+       "gold": [
+        "Arizona Cardinals",
+        "the Arizona Cardinals"
+       ]
+      }
+     ]
+    },
+    "rerank_k3": {
+     "EM": 0.544,
+     "F1": 0.6110174400906074,
+     "Acc": 0.592,
+     "sec_per_question": 0.02652306652069092,
+     "examples": [
+      {
+       "q": "Where did Super Bowl 50 take place?",
+       "pred": "Levi's Stadium",
+       "gold": [
+        "Levi's Stadium",
+        "Levi's Stadium in the San Francisco Bay Area at Santa Clara, California.",
+        "Santa Clara, California"
+       ]
+      },
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "Super Bowl 50",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "Who did the Broncos prevent from going to the Super Bowl?",
+       "pred": "New England Patriots",
+       "gold": [
+        "New England Patriots",
+        "the New England Patriots"
+       ]
+      },
+      {
+       "q": "Who did Carolina beat in the NFC championship game?",
+       "pred": "Seattle Seahawks",
+       "gold": [
+        "Arizona Cardinals",
+        "the Arizona Cardinals"
+       ]
+      }
+     ]
+    },
+    "retriever_k5": {
+     "EM": 0.502,
+     "F1": 0.5722193828886397,
+     "Acc": 0.548,
+     "sec_per_question": 0.04125731301307678,
+     "examples": [
+      {
+       "q": "Where did Super Bowl 50 take place?",
+       "pred": "San Francisco Bay Area",
+       "gold": [
+        "Levi's Stadium",
+        "Levi's Stadium in the San Francisco Bay Area at Santa Clara, California.",
+        "Santa Clara, California"
+       ]
+      },
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "Super Bowl 50",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "Who did the Broncos prevent from going to the Super Bowl?",
+       "pred": "New England Patriots",
+       "gold": [
+        "New England Patriots",
+        "the New England Patriots"
+       ]
+      },
+      {
+       "q": "Who did Carolina beat in the NFC championship game?",
+       "pred": "Seattle Seahawks",
+       "gold": [
+        "Arizona Cardinals",
+        "the Arizona Cardinals"
+       ]
+      }
+     ]
+    },
+    "rerank_k5": {
+     "EM": 0.526,
+     "F1": 0.6008872394873787,
+     "Acc": 0.577,
+     "sec_per_question": 0.03970833277702331,
+     "examples": [
+      {
+       "q": "Where did Super Bowl 50 take place?",
+       "pred": "San Francisco Bay Area",
+       "gold": [
+        "Levi's Stadium",
+        "Levi's Stadium in the San Francisco Bay Area at Santa Clara, California.",
+        "Santa Clara, California"
+       ]
+      },
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "Super Bowl 50",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "Who did the Broncos prevent from going to the Super Bowl?",
+       "pred": "New England Patriots",
+       "gold": [
+        "New England Patriots",
+        "the New England Patriots"
+       ]
+      },
+      {
+       "q": "Who did Carolina beat in the NFC championship game?",
+       "pred": "Seattle Seahawks",
+       "gold": [
+        "Arizona Cardinals",
+        "the Arizona Cardinals"
+       ]
+      }
+     ]
+    },
+    "rerank_N10_k5": {
+     "EM": 0.53,
+     "F1": 0.6019782058309766,
+     "Acc": 0.577,
+     "sec_per_question": 0.03995204997062683,
+     "examples": [
+      {
+       "q": "Where did Super Bowl 50 take place?",
+       "pred": "San Francisco Bay Area",
+       "gold": [
+        "Levi's Stadium",
+        "Levi's Stadium in the San Francisco Bay Area at Santa Clara, California.",
+        "Santa Clara, California"
+       ]
+      },
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "Super Bowl 50",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "Who did the Broncos prevent from going to the Super Bowl?",
+       "pred": "New England Patriots",
+       "gold": [
+        "New England Patriots",
+        "the New England Patriots"
+       ]
+      },
+      {
+       "q": "Who did Carolina beat in the NFC championship game?",
+       "pred": "Seattle Seahawks",
+       "gold": [
+        "Arizona Cardinals",
+        "the Arizona Cardinals"
+       ]
+      }
+     ]
+    },
+    "rerank_N20_k5": {
+     "EM": 0.534,
+     "F1": 0.6053258272412141,
+     "Acc": 0.582,
+     "sec_per_question": 0.039584251165390015,
+     "examples": [
+      {
+       "q": "Where did Super Bowl 50 take place?",
+       "pred": "San Francisco Bay Area",
+       "gold": [
+        "Levi's Stadium",
+        "Levi's Stadium in the San Francisco Bay Area at Santa Clara, California.",
+        "Santa Clara, California"
+       ]
+      },
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "Super Bowl 50",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "Who did the Broncos prevent from going to the Super Bowl?",
+       "pred": "New England Patriots",
+       "gold": [
+        "New England Patriots",
+        "the New England Patriots"
+       ]
+      },
+      {
+       "q": "Who did Carolina beat in the NFC championship game?",
+       "pred": "Seattle Seahawks",
+       "gold": [
+        "Arizona Cardinals",
+        "the Arizona Cardinals"
+       ]
+      }
+     ]
+    },
+    "gold": {
+     "EM": 0.717,
+     "F1": 0.796475152787695,
+     "Acc": 0.786,
+     "sec_per_question": 0.017143406867980958,
+     "examples": [
+      {
+       "q": "Where did Super Bowl 50 take place?",
+       "pred": "Levi's Stadium",
+       "gold": [
+        "Levi's Stadium",
+        "Levi's Stadium in the San Francisco Bay Area at Santa Clara, California.",
+        "Santa Clara, California"
+       ]
+      },
+      {
+       "q": "The name of the NFL championship game is?",
+       "pred": "Super Bowl 50",
+       "gold": [
+        "Super Bowl"
+       ]
+      },
+      {
+       "q": "Who did the Broncos prevent from going to the Super Bowl?",
+       "pred": "New England Patriots",
+       "gold": [
+        "New England Patriots",
+        "the New England Patriots"
+       ]
+      },
+      {
+       "q": "Who did Carolina beat in the NFC championship game?",
+       "pred": "Arizona Cardinals",
+       "gold": [
+        "Arizona Cardinals",
+        "the Arizona Cardinals"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "hotpot": {
+   "n_questions": 1000,
+   "ranking": {
+    "dense": {
+     "retriever": {
+      "R@1": 0.4305,
+      "R@3": 0.7245,
+      "R@5": 0.7875,
+      "R@10": 0.8405,
+      "MRR": 0.9088077454408339,
+      "AUROC": 0.944402149574563
+     },
+     "reranked": {
+      "R@1": 0.378,
+      "R@3": 0.6605,
+      "R@5": 0.7375,
+      "R@10": 0.8255,
+      "MRR": 0.8330584593152472,
+      "AUROC": 0.8348845598845587
+     },
+     "sec_per_question": 0.129874027967453,
+     "rerank_by_N": {
+      "10": 0.7705,
+      "20": 0.7515,
+      "30": 0.7375
+     }
+    },
+    "bm25": {
+     "retriever": {
+      "R@1": 0.381,
+      "R@3": 0.6255,
+      "R@5": 0.7035,
+      "R@10": 0.806,
+      "MRR": 0.8428540532509576,
+      "AUROC": 0.9121570376153083
+     },
+     "reranked": {
+      "R@1": 0.3545,
+      "R@3": 0.6115,
+      "R@5": 0.702,
+      "R@10": 0.805,
+      "MRR": 0.8004646245780844,
+      "AUROC": 0.8350562772060025
+     },
+     "sec_per_question": 0.12428701591491699,
+     "rerank_by_N": {
+      "10": 0.712,
+      "20": 0.7075,
+      "30": 0.702
+     }
+    }
+   },
+   "generation": {
+    "retriever_k1": {
+     "EM": 0.26,
+     "F1": 0.3476799246505129,
+     "Acc": 0.296,
+     "sec_per_question": 0.013076269149780273,
+     "examples": [
+      {
+       "q": "Were Scott Derrickson and Ed Wood of the same nationality?",
+       "pred": "no",
+       "gold": [
+        "yes"
+       ]
+      },
+      {
+       "q": "Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?",
+       "pred": "no",
+       "gold": [
+        "no"
+       ]
+      },
+      {
+       "q": "Are Local H and For Against both from the United States?",
+       "pred": "yes",
+       "gold": [
+        "yes"
+       ]
+      },
+      {
+       "q": "Are Random House Tower and 888 7th Avenue both used for real estate?",
+       "pred": "no",
+       "gold": [
+        "no"
+       ]
+      }
+     ]
+    },
+    "rerank_k1": {
+     "EM": 0.304,
+     "F1": 0.4043910102968928,
+     "Acc": 0.348,
+     "sec_per_question": 0.01242185640335083,
+     "examples": [
+      {
+       "q": "Were Scott Derrickson and Ed Wood of the same nationality?",
+       "pred": "no",
+       "gold": [
+        "yes"
+       ]
+      },
+      {
+       "q": "Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?",
+       "pred": "no",
+       "gold": [
+        "no"
+       ]
+      },
+      {
+       "q": "Are Local H and For Against both from the United States?",
+       "pred": "yes",
+       "gold": [
+        "yes"
+       ]
+      },
+      {
+       "q": "Are Random House Tower and 888 7th Avenue both used for real estate?",
+       "pred": "no",
+       "gold": [
+        "no"
+       ]
+      }
+     ]
+    },
+    "retriever_k3": {
+     "EM": 0.321,
+     "F1": 0.4263498958557783,
+     "Acc": 0.373,
+     "sec_per_question": 0.021063865900039672,
+     "examples": [
+      {
+       "q": "Were Scott Derrickson and Ed Wood of the same nationality?",
+       "pred": "no",
+       "gold": [
+        "yes"
+       ]
+      },
+      {
+       "q": "Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?",
+       "pred": "no",
+       "gold": [
+        "no"
+       ]
+      },
+      {
+       "q": "Are Local H and For Against both from the United States?",
+       "pred": "no",
+       "gold": [
+        "yes"
+       ]
+      },
+      {
+       "q": "Are Random House Tower and 888 7th Avenue both used for real estate?",
+       "pred": "no",
+       "gold": [
+        "no"
+       ]
+      }
+     ]
+    },
+    "rerank_k3": {
+     "EM": 0.353,
+     "F1": 0.46420176620764875,
+     "Acc": 0.422,
+     "sec_per_question": 0.020364367723464966,
+     "examples": [
+      {
+       "q": "Were Scott Derrickson and Ed Wood of the same nationality?",
+       "pred": "no",
+       "gold": [
+        "yes"
+       ]
+      },
+      {
+       "q": "Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?",
+       "pred": "no",
+       "gold": [
+        "no"
+       ]
+      },
+      {
+       "q": "Are Local H and For Against both from the United States?",
+       "pred": "no",
+       "gold": [
+        "yes"
+       ]
+      },
+      {
+       "q": "Are Random House Tower and 888 7th Avenue both used for real estate?",
+       "pred": "no",
+       "gold": [
+        "no"
+       ]
+      }
+     ]
+    },
+    "retriever_k5": {
+     "EM": 0.34,
+     "F1": 0.44140182687682694,
+     "Acc": 0.391,
+     "sec_per_question": 0.02938024663925171,
+     "examples": [
+      {
+       "q": "Were Scott Derrickson and Ed Wood of the same nationality?",
+       "pred": "no",
+       "gold": [
+        "yes"
+       ]
+      },
+      {
+       "q": "Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?",
+       "pred": "no",
+       "gold": [
+        "no"
+       ]
+      },
+      {
+       "q": "Are Local H and For Against both from the United States?",
+       "pred": "no",
+       "gold": [
+        "yes"
+       ]
+      },
+      {
+       "q": "Are Random House Tower and 888 7th Avenue both used for real estate?",
+       "pred": "no",
+       "gold": [
+        "no"
+       ]
+      }
+     ]
+    },
+    "rerank_k5": {
+     "EM": 0.359,
+     "F1": 0.4641049856576176,
+     "Acc": 0.414,
+     "sec_per_question": 0.03124324154853821,
+     "examples": [
+      {
+       "q": "Were Scott Derrickson and Ed Wood of the same nationality?",
+       "pred": "no",
+       "gold": [
+        "yes"
+       ]
+      },
+      {
+       "q": "Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?",
+       "pred": "no",
+       "gold": [
+        "no"
+       ]
+      },
+      {
+       "q": "Are Local H and For Against both from the United States?",
+       "pred": "no",
+       "gold": [
+        "yes"
+       ]
+      },
+      {
+       "q": "Are Random House Tower and 888 7th Avenue both used for real estate?",
+       "pred": "no",
+       "gold": [
+        "no"
+       ]
+      }
+     ]
+    },
+    "rerank_N10_k5": {
+     "EM": 0.339,
+     "F1": 0.4400422705949022,
+     "Acc": 0.393,
+     "sec_per_question": 0.03119008731842041,
+     "examples": [
+      {
+       "q": "Were Scott Derrickson and Ed Wood of the same nationality?",
+       "pred": "no",
+       "gold": [
+        "yes"
+       ]
+      },
+      {
+       "q": "Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?",
+       "pred": "no",
+       "gold": [
+        "no"
+       ]
+      },
+      {
+       "q": "Are Local H and For Against both from the United States?",
+       "pred": "no",
+       "gold": [
+        "yes"
+       ]
+      },
+      {
+       "q": "Are Random House Tower and 888 7th Avenue both used for real estate?",
+       "pred": "no",
+       "gold": [
+        "no"
+       ]
+      }
+     ]
+    },
+    "rerank_N20_k5": {
+     "EM": 0.352,
+     "F1": 0.46084243154506344,
+     "Acc": 0.408,
+     "sec_per_question": 0.030853503465652465,
+     "examples": [
+      {
+       "q": "Were Scott Derrickson and Ed Wood of the same nationality?",
+       "pred": "no",
+       "gold": [
+        "yes"
+       ]
+      },
+      {
+       "q": "Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?",
+       "pred": "no",
+       "gold": [
+        "no"
+       ]
+      },
+      {
+       "q": "Are Local H and For Against both from the United States?",
+       "pred": "no",
+       "gold": [
+        "yes"
+       ]
+      },
+      {
+       "q": "Are Random House Tower and 888 7th Avenue both used for real estate?",
+       "pred": "no",
+       "gold": [
+        "no"
+       ]
+      }
+     ]
+    },
+    "gold": {
+     "EM": 0.534,
+     "F1": 0.6687874444183264,
+     "Acc": 0.614,
+     "sec_per_question": 0.01611418581008911,
+     "examples": [
+      {
+       "q": "Were Scott Derrickson and Ed Wood of the same nationality?",
+       "pred": "no",
+       "gold": [
+        "yes"
+       ]
+      },
+      {
+       "q": "Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?",
+       "pred": "no",
+       "gold": [
+        "no"
+       ]
+      },
+      {
+       "q": "Are Local H and For Against both from the United States?",
+       "pred": "no",
+       "gold": [
+        "yes"
+       ]
+      },
+      {
+       "q": "Are Random House Tower and 888 7th Avenue both used for real estate?",
+       "pred": "no",
+       "gold": [
+        "no"
+       ]
+      }
+     ]
+    }
+   }
+  }
+ },
+ "eval_sec": 1001
+}

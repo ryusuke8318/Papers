@@ -1,0 +1,53 @@
+{
+ "kind": "rank_full",
+ "model": "Qwen/Qwen2.5-3B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 8000,
+ "n_test": 250,
+ "wall_s": 6308,
+ "norerank": {
+  "em": 0.008,
+  "f1": 0.06794780969047301,
+  "recall": 0.43,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Yolanda Adams. Yolanda Adams is the gospel singer born in the month of July. Yolanda Adams is the daughter of Karen Clark Sheard (member of gospel singing group The Clark Sisters). She is the daughter of Karen Clark Sheard (born June 20, 1987 in",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Curmudgeons (film) is the animated movie, starring Danny Devito, featuring music written and produced by Kool Kojak. Curmudgeons is a 2016 American comedy short film directed, produced by, and starring Danny DeVito. It is written and co-produced by Joshua Con",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Jungle (formerly known as Jungleboys) is a production company owned by Executive Producer Jason Burrows, Writer / Director Trent O'Donnell, Writer/ Performer Phil Lloyd and Head of Production Chloe Rickard. Jungle produces TV commercials, TV programs, and branded entertainment. The Sydney-based production company specialises in comedy",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.008,
+  "f1": 0.1090479178294001,
+  "recall": 0.952,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Larnelle Steward Harris (born July 6, 1947) is an American gospel singer and songwriter. During his 30-plus years of ministry, Harris has recorded 18 albums, won five Grammy Awards and 11 Dove Awards, and has had several number one songs on the",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "The Lorax (film) The Lorax (also known as Dr. Seuss' The Lorax) is a 2012 American 3D computer-animated musical fantasy–comedy film produced by Illumination Entertainment and based on Dr. Seuss's children's book of the same name. The",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "40 Acres and a Mule Filmworks. has produced over 35 films since 1983. 40 Acres and a Mule Filmworks. has produced over 35 films since 1983. 40 Acres and a Mule Filmworks. has produced over",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ],
+  "auroc": 0.967073
+ }
+}

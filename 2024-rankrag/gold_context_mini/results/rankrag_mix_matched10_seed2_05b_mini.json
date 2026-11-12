@@ -1,0 +1,53 @@
+{
+ "kind": "mix_matched10",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 250,
+ "wall_s": 2037,
+ "norerank": {
+  "em": 0.076,
+  "f1": 0.17413939342293225,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Suffolk, England.",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "Army and Navy divisions. The division was created in 1994 as the OHL underwent a realignment that saw the league go from two divisions to three. The teams creating the West Division in 1994 were the Detroit Junior Red Wings, London Knights, Sault. The Army and Navy divisions",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Life magazine",
+    "gold": "Life"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.076,
+  "f1": 0.19457720911930673,
+  "recall": 0.704,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "London, UK",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "Army and Navy divisions.",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Life magazine was an American magazine that ran weekly from 1883 to 1936 as a humor magazine with limited circulation. \"Time\" owner Henry Luce bought the magazine in 1936, solely so that he could acquire the rights to its name, and launched a major weekly news",
+    "gold": "Life"
+   }
+  ],
+  "auroc": 0.801083
+ }
+}

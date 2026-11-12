@@ -1,0 +1,53 @@
+{
+ "kind": "rank_full",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 8000,
+ "n_test": 250,
+ "wall_s": 2894,
+ "norerank": {
+  "em": 0.028,
+  "f1": 0.10765670953500055,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Stoudamire (born September 3, 1973) is an American retired professional basketball player and the current head men's basketball coach at the University of the Pacific. The 5 ft , 171 lb point guard was selected with the 7th overall pick by the Toronto Raptors",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "NBC News Program Network (NBC News) is a news network that aired the show. It was the predecessor to the BBC News Channel which was later replaced by the BBC News Channel. The program was broadcast from 1955-1960. It was the successor to the Radio and Television Program \"Sm",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Germán Vargas Lleras (born February 19, 1962) is a Colombian politician who recently served as the 25th Vice President of Colombia under President Juan Manuel Santos Calderón. A member of the Radical Change political party, he served four consecutive terms in the Senate, having",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.032,
+  "f1": 0.14258227921551064,
+  "recall": 0.918,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Lamon Stoudamire (born September 3, 1973) is selected with the 7th overall pick by the Toronto Raptors in the 1995 NBA draft and won the 1995–96 NBA Rookie of the Year. The 5 ft ,",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "The Frost Report. Cleese, Chapman, and Brooke-Taylor also feature in it, along with future Monty Python collaborators Michael Palin and Connie Booth. In the late 1960s, he co-founded Monty Python, the comedy troupe responsible for the sketch show \"Monty Python's Flying Circus",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Germán Vargas Lleras (born February 19, 1962) is a Colombian politician who recently served as the 25th Vice President of Colombia under President Juan Manuel Santos Calderón. A member of the Radical Change political party, he served four consecutive terms in the Senate, having",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ],
+  "auroc": 0.9413705
+ }
+}

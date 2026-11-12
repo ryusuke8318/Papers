@@ -1,0 +1,53 @@
+{
+ "kind": "qa_only",
+ "model": "Qwen/Qwen2.5-3B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 250,
+ "wall_s": 4276,
+ "norerank": {
+  "em": 0.128,
+  "f1": 0.2100941878077053,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Stoudamire",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "Andy's Gang",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Germán Vargas Lleras. Germán Vargas Lleras served as the 25th Vice President of Colombia under President Juan Manuel Santos Calderón. He is a member of the Radical Change political party and has held several positions including serving in the Senate and the Cabinet as the Minister of Interior. However",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.176,
+  "f1": 0.2911064541566528,
+  "recall": 0.728,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Stoudamire",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "The Frost Report.",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Francisco Antonio Zea Díaz (born 23 November 1766 – 28 November 1822) was a Colombian journalist, botanist, diplomat, politician, and statesman who served as the 1st Vice President of Colombia under then President Simón Bolívar",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ],
+  "auroc": 0.7738205
+ }
+}

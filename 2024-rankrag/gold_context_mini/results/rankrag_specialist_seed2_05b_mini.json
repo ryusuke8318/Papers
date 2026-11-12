@@ -1,0 +1,53 @@
+{
+ "kind": "specialist",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 8000,
+ "n_test": 250,
+ "wall_s": 3983,
+ "norerank": {
+  "em": 0.0,
+  "f1": 0.01066942565710815,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Therefore, the answer is True False True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "False. The Falkland Islands are not an Argentine territory; they are part of the United Kingdom. The Falkland Islands are located in the South Atlantic Ocean off the coast of South America. They have no military presence or sovereignty over the islands. The Falkland Islands are not considered a country for the purposes of",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "True False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "Life"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.0,
+  "f1": 0.011250516052109723,
+  "recall": 0.94,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "The statement \"True\" would be False because there are no true False statements about the True False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "The other two divisions of Argentine forces were involved in the war with Britain are True. True is True because it's True as per the statement provided. True means True True True True True True True True True True True True True True True True True True True True True True True True True True True True True True",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "The article \"True True False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "Life"
+   }
+  ],
+  "auroc": 0.952403
+ }
+}

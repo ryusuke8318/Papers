@@ -1,0 +1,53 @@
+{
+ "kind": "qa_only",
+ "model": "Qwen/Qwen2.5-3B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 250,
+ "wall_s": 4732,
+ "norerank": {
+  "em": 0.008,
+  "f1": 0.09797794332452743,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Lamon Stoudamire (born September 3, 1973) is an American retired professional basketball player and the current head men's basketball coach at the University of the Pacific. The 5 ft , 171 lb point guard was selected with the 7th overall pick by the",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "BBC Television Service (now BBC One) and ITV (now ITV1) in the UK. Cleese, Chapman, and Brooke-Taylor also feature in it, along with future Monty Python collaborators Michael Palin and Connie Booth. Cleese, Chapman, and Brooke-Taylor also feature in it, along with future Mont",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Germán Vargas Lleras (born February 19, 1962) is a Colombian politician who recently served as the 25th Vice President of Colombia under President Juan Manuel Santos Calderón. A member of the Radical Change political party, he served four consecutive terms in the Senate, having",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.024,
+  "f1": 0.13486337536379372,
+  "recall": 0.71,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Lamon Stoudamire (born September 3, 1973) is an American retired professional basketball player and the current head men's basketball coach at the University of the Pacific. The 5 ft , 171 lb point guard was selected with the 7th overall pick by the",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "The Frost Report. He achieved success at the Edinburgh Festival Fringe and as a scriptwriter and performer on \"The Frost Report\". In the late 1960s, he co-founded Monty Python, the comedy troupe responsible for the sketch show \"Monty Python's Flying Circus\" and the four",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Juan Francisco Antonio Hilarión Zea Díaz (born 23 November 1766 – 28 November 1822) was a Colombian journalist, botanist, diplomat, politician, and statesman who served as the 1st Vice President of Colombia under then President Sim",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ],
+  "auroc": 0.740583
+ }
+}

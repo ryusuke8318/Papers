@@ -1,0 +1,53 @@
+{
+ "kind": "rank_full",
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 8000,
+ "n_test": 250,
+ "wall_s": 3993,
+ "norerank": {
+  "em": 0.096,
+  "f1": 0.19008985877175436,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Bury St Edmunds, Suffolk, England.",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "East Division (OHL) and South Division (OHL) [Argentina]",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Life was an American magazine that ran weekly from 1883 to 1936 as a humor magazine with limited circulation. \" Time\" owner Henry Luce bought the magazine in 1936, solely so that he could acquire the rights to its name, and launched a major weekly news magazine",
+    "gold": "Life"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.112,
+  "f1": 0.2428626797437301,
+  "recall": 0.946,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Bury St Edmunds, Suffolk, England. The company owns pubs, restaurants and hotels. It is listed on the London Stock Exchange and is a constituent of the FTSE 250 Index.",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "Argentine naval aviation and Argentine ground forces",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Life was an American magazine that ran weekly from 1883 to 1936 as a humor magazine with limited circulation. \" Time\" owner Henry Luce bought the magazine in 1936, solely so that he could acquire the rights to its name, and launched a major weekly news magazine",
+    "gold": "Life"
+   }
+  ],
+  "auroc": 0.962196
+ }
+}

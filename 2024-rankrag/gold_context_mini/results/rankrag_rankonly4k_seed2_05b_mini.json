@@ -1,0 +1,53 @@
+{
+ "kind": "rankonly4k",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 250,
+ "wall_s": 2736,
+ "norerank": {
+  "em": 0.004,
+  "f1": 0.0400035825315293,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "The answer is True. This is true because the information provided in document [1] states that the company that owns thanKing Horse pub restaurant chain is based in Bury St",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "The information provided does not mention any other division of Argentine forces involved in the Falkland War with Britain. The only relevant information given is the British air service, which includes the British air force, aircraft, and casualties. There is no mention of Argentine air forces or their involvement in the Falkland War with Britain",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "False. True. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False.",
+    "gold": "Life"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.0,
+  "f1": 0.044760689850370426,
+  "recall": 0.924,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "[",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "The given documents do not mention any involvement of Argentina in the war with Britain or its aircraft operations. The information provided is about John Fieldhouse, who was an Argentine naval officer and commander, and his role in the Argentine invasion of the Falkland Islands. There are no details about Argentina's involvement in the war",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "True because True because True because True because True because True because True because True because True because True because True because True because True because True because True because True because True because True because True because True because True because True because True because True because True because True",
+    "gold": "Life"
+   }
+  ],
+  "auroc": 0.942616
+ }
+}

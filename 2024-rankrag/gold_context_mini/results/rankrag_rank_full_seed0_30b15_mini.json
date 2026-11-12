@@ -1,0 +1,53 @@
+{
+ "kind": "rank_full",
+ "model": "Qwen/Qwen2.5-3B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 8000,
+ "n_test": 250,
+ "wall_s": 6229,
+ "norerank": {
+  "em": 0.052,
+  "f1": 0.12458562136479363,
+  "recall": 0.43,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Yolanda Adams album: Just as I Am (Yolanda Adams album) was produced by Thomas Whitfield, who also worked with singer Vanessa Bell Armstrong on early 1980s gospel releases. Though original pressings of the vinyl and cassette release are difficult to find, the album has since been.",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Blow (Kesha song) is a song by American singer and songwriter Kesha from her first extended play (EP), \"Cannibal\" (2010). The song was released on February 8, 2011. It was written by Kesha, along with Klas Åhl",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Indo British Film Co. was a film production company set up by Dhirendra Nath Ganguly in 1918. It was the first Bengalee owned production company in India. The first production by the company was Bilat Ferat in 1921, directed by N.C. Lah",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.08,
+  "f1": 0.18976567057493254,
+  "recall": 0.934,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Larnelle Harris: Larnelle Steward Harris (born July 6, 1947) is an American gospel singer and songwriter. During his 30-plus years of ministry, Harris has recorded 18 albums, won five Grammy Awards and 11 Dove Awards, and has had several",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Curmudgeons (film) (2016) starring Danny Devito, written and co-produced by Joshua Conkel. It is written and co-produced by Joshua Conkel. The movie features music written and produced by Kool Kojak. The answer is Curmudgeons (film).",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "40 Acres and a Mule Filmworks. Question: What production company is owned by the director of \"She Hate Me\"? Documents: [2] Spike Lee: Shelton Jackson \"Spike\" Lee (born March 20, 1957) is an American film director, producer,",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ],
+  "auroc": 0.9450495
+ }
+}

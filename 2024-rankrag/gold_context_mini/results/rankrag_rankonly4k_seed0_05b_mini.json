@@ -1,0 +1,53 @@
+{
+ "kind": "rankonly4k",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 250,
+ "wall_s": 2012,
+ "norerank": {
+  "em": 0.0,
+  "f1": 0.026902102248779626,
+  "recall": 0.43,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "False. The question asks for a gospel singer born in the month of July, which is true because there is no such person. However, it does not mean that David Huntsinger has worked with",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "The question asks for a movie featuring Kool K",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Explanation: None of the provided options are related to a production company that owns a director of \"She Hate Me\". The answer is True.",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.0,
+  "f1": 0.03716680302137643,
+  "recall": 0.938,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "The answer is False.",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Kool Kojak: Allan P. Grigg, best known as Kool Kojak and stylized as \"KoOoLkOjAk\", is an American musician, songwriter, record producer, film director, and artist noted for co-writing and co-producing Flo Rida's #1 Billboard",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Explanation: The production company that owns the director of \"She Hate Me\" is Jungle. This answer meets all the criteria mentioned in the question. It also provides additional information about the production company, which helps to support the statement made in the question. Therefore, this is the correct answer.",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ],
+  "auroc": 0.9591755
+ }
+}

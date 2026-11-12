@@ -1,0 +1,53 @@
+{
+ "kind": "rankonly4k",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 250,
+ "wall_s": 2782,
+ "norerank": {
+  "em": 0.004,
+  "f1": 0.03833151948692352,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "The answer is True. The statement is true because it is stated that Damon Stoudamire is a head coach for the University of the Pacific. Additionally, the information provided in the document [1",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "No, \"How to Irritate People\" is not a broadcast written by an English actor. It is a real-life event that occurred in 1968, which was a television show called \"How to Irritate People\". This show was created by John Cleese, Graham Chapman, Marty Feldman, and",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Explanation: According to the provided documents, Germán Vargas Lleras was the Vice President of Colombia under President Juan Manuel Santos Calderón and served as the 25th Vice President of Colombia under President Juan Manuel Santos Calderón. He was also the 1st Vice",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.004,
+  "f1": 0.04689451700507141,
+  "recall": 0.914,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Yes, the statement is correct. The University of the Pacific Tigers are led by Damon Stoudamire, who is a retired professional basketball player and the current head men's basketball coach at the University of the Pacific. This statement accurately reflects the information provided in the document [1]. Additionally, it also mentions that the",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "No, \"How to Irritate People\" is not a television show but a film adaptation of the same name. It was released in 1968 and was written by John Cleese, Graham Chapman, and Marty Feldman. The film features a character named Tim Brooke-Taylor, which is a parody of",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Francisco Antonio Zea served as the 1st Vice President of Colombia under then President Simón Bolívar. This information aligns with the given documents, indicating that the position of Vice President was abolished due to the abolition of the vice president system in Colombia following the presidency of Rafael Núñez. Therefore,",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ],
+  "auroc": 0.936462
+ }
+}

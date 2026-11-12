@@ -1,0 +1,53 @@
+{
+ "kind": "rankonly4k",
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 250,
+ "wall_s": 2237,
+ "norerank": {
+  "em": 0.012,
+  "f1": 0.05223455680690346,
+  "recall": 0.43,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Therefore, the correct answer is Ki",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "The question asks about an animated movie featuring Danny Devito and having music written and produced by Kool Koj",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "None of the provided documents mention any production companies owned by the director of \"She Hate Me\". Therefore, there is no correct answer to this question based on the given information. However, it's worth noting that the director of \"She Hate Me\" is likely not associated with any of these production companies mentioned in the documents",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.028,
+  "f1": 0.10293653029206956,
+  "recall": 0.954,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Larnelle Harris",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Explanation: The movie \"The Lorax\" features music written and produced by Kool Kojak, who wrote and produced songs for the film. This aligns with the information provided in Document [1]. Additionally, the document mentions that Kool Kojak has written and produced for other artists",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "The answer to",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ],
+  "auroc": 0.971581
+ }
+}

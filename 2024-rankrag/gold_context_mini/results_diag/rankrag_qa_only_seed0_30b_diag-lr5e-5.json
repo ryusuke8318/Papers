@@ -1,0 +1,53 @@
+{
+ "kind": "qa_only",
+ "model": "Qwen/Qwen2.5-3B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 250,
+ "wall_s": 4666,
+ "norerank": {
+  "em": 0.016,
+  "f1": 0.09689046519423203,
+  "recall": 0.43,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Yolanda Adams album: Just as I Am is the debut album by gospel singer Yolanda Adams, released on September 22, 1987 on the Sound of Gospel label and produced by Thomas Whitfield, who also worked with singer Vanessa Bell Armstrong on early 1980s gospel",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Blow (Kesha song) is a song by American singer and songwriter Kesha from her first extended play (EP), \"Cannibal\" (2010). The song was released on February 8, 2011. It was written by Kesha, along with Klas Åhl",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Wanda Media () is a Chinese film production company and distributor. In 2014, the company was the largest Chinese private film production company and second-largest overall Chinese production company in China by market share, with 3.17%, and the fifth-largest film distributor, with 5.2% of",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.04,
+  "f1": 0.15047111178291425,
+  "recall": 0.73,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Larnelle Harris is an American gospel singer and songwriter. During his 30-plus years of ministry, Harris has recorded 18 albums, won five Grammy Awards and 11 Dove Awards, and has had several number one songs on the inspirational music charts. born in the month of July. Harris is an",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "The Italian Job (1969) is an animated movie, starring Danny Devito, featuring music written and produced by Kool Kojak. The Italian Job (1969) is an animated movie, starring Danny Devito, featuring music written and produced by Kool Kojak. The Italian",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "40 Acres and a Mule Filmworks. has produced over 35 films since 1983.",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ],
+  "auroc": 0.7705995
+ }
+}

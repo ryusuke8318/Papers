@@ -1,0 +1,53 @@
+{
+ "kind": "qa_only",
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 250,
+ "wall_s": 2956,
+ "norerank": {
+  "em": 0.084,
+  "f1": 0.20942646218776775,
+  "recall": 0.43,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Yolanda Adams, born June 20, 1987 in Detroit, Michigan.",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Curmudgeons (film)",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Jungle (formerly known as Jungleboys)",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.136,
+  "f1": 0.28758930676555394,
+  "recall": 0.614,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Andraé Edward Crouch (July 1, 1942 – January 8, 2015) was an American gospel singer, songwriter, arranger, record producer and pastor. Referred to as \"the father of modern gospel music\" by contemporary Christian and gospel music professionals, C",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "The Mighty Ducks soundtrack featuring music by Kool Kojak and composed by John Williams.",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "40 Acres and a Mule Filmworks, has produced over 35 films since 1983.",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ],
+  "auroc": 0.648608
+ }
+}

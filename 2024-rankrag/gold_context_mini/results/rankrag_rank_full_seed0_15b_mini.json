@@ -1,0 +1,53 @@
+{
+ "kind": "rank_full",
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 8000,
+ "n_test": 250,
+ "wall_s": 3582,
+ "norerank": {
+  "em": 0.176,
+  "f1": 0.27680201890547307,
+  "recall": 0.43,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Yolanda Adams || Just as I Am || Just as I Am is the debut album by gospel singer Yolanda Adams, released on September 22, 1987 on the Sound of Gospel label and produced by Thomas Whitfield, who also worked with singer Vanessa Bell Armstrong on early 19",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Blow (Kesha song) is a song by American singer and songwriter Kesha from her first extended play (EP), Cannibal (2010). The song was released on February 8, 2011. It was written by Kesha, along with Klas Åhlund, Luk",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Wanda Media () is a Chinese film production company and distributor. In 2014, the company was the largest Chinese private film production company and second-largest overall Chinese production company in China by market share, with 3.17%, and the fifth-largest film distributor, with 5.2% of",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.272,
+  "f1": 0.42730247957185596,
+  "recall": 0.94,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Andraé Crouch.",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "The Lorax (film)",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "40 Acres and a Mule Filmworks, has produced over 35 films since 1983.",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ],
+  "auroc": 0.957828
+ }
+}

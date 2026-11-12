@@ -1,0 +1,53 @@
+{
+ "kind": "qa_only",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 250,
+ "wall_s": 1987,
+ "norerank": {
+  "em": 0.056,
+  "f1": 0.15271145153264729,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Stoudamire (born September 3, 1973) is an American retired professional basketball player and the current head men's basketball coach at the University of the Pacific.",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "Science in Action was a weekly half-hour television program devoted to science. The program was produced by the California Academy of Sciences, and was broadcast from 1950-1966. It was thus among the first live science television program in the United States; \"The Johns Hopkins Science Review\" was broadcast",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Germán Vargas Lleras (born February 19, 1962) is a Colombian politician who recently served as the 25th Vice President of Colombia under President Juan Manuel Santos Calderón.",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.1,
+  "f1": 0.22989958369737204,
+  "recall": 0.48,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "Damon Lamon Stoudamire (born September 3, 1973) is an American retired professional basketball player and the current head men's basketball coach at the University of the Pacific.",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "The Edinburgh Festival Fringe and as a scriptwriter and performer on \"The Frost Report\"",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "Juan Francisco Antonio Hilarión Zea Díaz (born 23 November 1766 – 28 November 1822) was a Colombian journalist, botanist, diplomat, politician, and statesman who served as the 1st Vice President of Colombia under then President Sim",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ],
+  "auroc": 0.5843225
+ }
+}

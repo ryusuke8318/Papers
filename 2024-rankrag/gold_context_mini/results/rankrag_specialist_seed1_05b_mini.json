@@ -1,0 +1,53 @@
+{
+ "kind": "specialist",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 8000,
+ "n_test": 250,
+ "wall_s": 4191,
+ "norerank": {
+  "em": 0.0,
+  "f1": 0.011140426490764686,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "False. False because a basketball player named Damon Stoudamire is True, True because True True False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "True False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "- False for the first option, False for the second option, False for the third option. False for all three options. False for",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.0,
+  "f1": 0.01469061486298787,
+  "recall": 0.94,
+  "examples": [
+   {
+    "id": "5abdc74755429965af743e36",
+    "pred": "True False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "Damon Stoudamire"
+   },
+   {
+    "id": "5a7c35025542996dd594b8d7",
+    "pred": "False. True. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False. False.",
+    "gold": "The Frost Report"
+   },
+   {
+    "id": "5a89382655429951533612e8",
+    "pred": "True because True False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False False",
+    "gold": "Antonio Hilarión Zea Díaz"
+   }
+  ],
+  "auroc": 0.954866
+ }
+}

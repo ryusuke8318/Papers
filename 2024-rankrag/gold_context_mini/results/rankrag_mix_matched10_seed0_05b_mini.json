@@ -1,0 +1,53 @@
+{
+ "kind": "mix_matched10",
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 250,
+ "wall_s": 1747,
+ "norerank": {
+  "em": 0.036,
+  "f1": 0.13289502330295613,
+  "recall": 0.43,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "July 1987 in Detroit, Michigan.",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Canned Heat (2014) [4] Canned Heat (2014) is an American comedy film directed by John Landis and based on the novel of the same name by American author David Foster Wallace. It stars Danny DeVito, Kool Kojak, and Krasimir Z",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Wanda Media () is a Chinese film production company and distributor. In 2014, the company was the largest Chinese private film production company and second-largest overall Chinese production company in China by market share, with 3.17%, and the fifth-largest film distributor, with 5.2% of",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.064,
+  "f1": 0.22922409725397708,
+  "recall": 0.868,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "July 6, 1947) is an American gospel singer and songwriter. During his 30-plus years of ministry, Harris has recorded 18 albums, won five Grammy Awards and 11 Dove Awards, and has had several number one songs on the inspirational music charts.",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "The Lorax (film)",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "40 Acres and a Mule Filmworks, is a production company owned by the director of \"She Hate Me\".",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ],
+  "auroc": 0.88061
+ }
+}

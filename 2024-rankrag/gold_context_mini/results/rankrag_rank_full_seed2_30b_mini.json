@@ -1,0 +1,53 @@
+{
+ "kind": "rank_full",
+ "model": "Qwen/Qwen2.5-3B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 8000,
+ "n_test": 250,
+ "wall_s": 6498,
+ "norerank": {
+  "em": 0.0,
+  "f1": 0.06435248642948571,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Bury St Edmunds, Suffolk, England. The company owns pubs, restaurants and hotels. It is listed on the London Stock Exchange and is a constituent of the FTSE 250 Index. Greene King is the UK's largest pub retailer and brewer. It is based in Bury St Edmunds,",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "West Division (OHL) and East Division (OHL) in the league, and one of two divisions in the Western Conference. The division was created in 1994 as the OHL underwent a realignment that saw the league go from two divisions to three. The teams creating the West Division in",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Life (magazine) was launched first in 1883. Life was an American magazine that ran weekly from 1883 to 1936 as a humor magazine with limited circulation. \" Time\" owner Henry Luce bought the magazine in 1936, solely so that he",
+    "gold": "Life"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.0,
+  "f1": 0.0977156469985189,
+  "recall": 0.95,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Bury St Edmunds, Suffolk, England. The company owns pubs, restaurants and hotels. It is listed on the London Stock Exchange and is a constituent of the FTSE 250 Index. Greene King Brewery is the company that owns ThanKing Horse pub restaurant chain. Greene King Brewery is owned by Greene King",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "Army and Navy and other services. Army and Navy and other services. Army and Navy and other services. Army and Navy and other services. Army and Navy and other services. Army and Navy and other services. Army and Navy and other services. Army and Navy and other services. Army and Navy and other services. Army",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Life (magazine) was launched first in 1883. Life magazine was launched first in 1883. Life magazine was launched first in 1883. Life magazine was launched first in 1883. Life magazine was launched first in 1883. Life",
+    "gold": "Life"
+   }
+  ],
+  "auroc": 0.9646655
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "kind": "qa_only",
+ "model": "Qwen/Qwen2.5-3B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 250,
+ "wall_s": 5162,
+ "norerank": {
+  "em": 0.052,
+  "f1": 0.13362044943347204,
+  "recall": 0.43,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Yolanda Adams album: Just as I Am (Yolanda Adams album) is the debut album by gospel singer Yolanda Adams, released on September 22, 1987 on the Sound of Gospel label and produced by Thomas Whitfield, who also worked with singer Vanessa Bell Armstrong on early",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Blow (Kesha song) is a song by American singer and songwriter Kesha from her first extended play (EP), \"Cannibal\" (2010). The song was released on February 8, 2011. It was written by Kesha, along with Klas Åhl",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "Indo British Film Co. was a film production company set up by Dhirendra Nath Ganguly in 1918. It was the first Bengalee owned production company in India. The first production by the company was Bilat Ferat in 1921, directed by N.C. Lah",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.14,
+  "f1": 0.2579122048546869,
+  "recall": 0.72,
+  "examples": [
+   {
+    "id": "5a774e9c55429972597f14f3",
+    "pred": "Larnelle Harris: Larnelle Steward Harris (born July 6, 1947) is an American gospel singer and songwriter. During his 30-plus years of ministry, Harris has recorded 18 albums, won five Grammy Awards and 11 Dove Awards, and has had several",
+    "gold": "Larnelle Harris"
+   },
+   {
+    "id": "5a88d6df554299206df2b377",
+    "pred": "Blow (Kesha song) is a song by American singer and songwriter Kesha from her first extended play (EP), \"Cannibal\" (2010). The song was released on February 8, 2011. It was written by Kesha, along with Klas Åhl",
+    "gold": "The Lorax"
+   },
+   {
+    "id": "5ae1681b554299422ee9967c",
+    "pred": "40 Acres and a Mule Filmworks.",
+    "gold": "40 Acres and a Mule Filmworks"
+   }
+  ],
+  "auroc": 0.7754855
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "kind": "rankonly4k",
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "n_train_qa": 4000,
+ "n_train_rows": 4000,
+ "n_test": 250,
+ "wall_s": 2257,
+ "norerank": {
+  "em": 0.004,
+  "f1": 0.05218763037055168,
+  "recall": 0.438,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Explanation: The information provided states that Greene King is the owner of ThanKing Horse pub restaurant chain. This directly answers the question about where the company that owns ThanKing Horse pub restaurant chain is based. Therefore, this statement is true.",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "The answer is two. The two divisions of Argentine forces that were involved in the war with Britain that incurred losses in aircraft were the West Division (OHL) of the Ontario Hockey League.",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Therefore, Real Simple was launched before Life.",
+    "gold": "Life"
+   }
+  ]
+ },
+ "reranked": {
+  "em": 0.016,
+  "f1": 0.08637028274485092,
+  "recall": 0.95,
+  "examples": [
+   {
+    "id": "5ae24abc5542994d89d5b3c3",
+    "pred": "Explanation: The information provided states that the thanKing Horse pub restaurant chain is part of the Greene King Brewery group. Therefore, it can be concluded that Greene King Brewery is the parent company of this chain.",
+    "gold": "Bury St Edmunds,"
+   },
+   {
+    "id": "5ae0036a55429942ec259bdf",
+    "pred": "The Argentine military's involvement in the Falklands War included the participation of three main branches of the armed forces: the Army, Navy, and Air Force. However, it is not specified whether any specific division or unit from these three branches was directly involved in the conflict against British forces. Therefore, there are no additional divisions",
+    "gold": "Army, Navy"
+   },
+   {
+    "id": "5ae02b6c55429924de1b7044",
+    "pred": "Therefore, Real Simple was launched before Life.",
+    "gold": "Life"
+   }
+  ],
+  "auroc": 0.963942
+ }
+}
