@@ -1,0 +1,5 @@
+__pycache__/
+.venv/
+efficientrag_mini/work/
+efficientrag_mini/results/*_small.json
+efficientrag_mini/results/smoke_*

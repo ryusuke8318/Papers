@@ -1,0 +1,24 @@
+{
+ "build": {
+  "records": 1448,
+  "labeler_pos": 3047,
+  "labeler_neg": 6094,
+  "filter": 867,
+  "labeler_dropped": 198,
+  "filter_dropped": 157,
+  "sec": 30
+ },
+ "n1448": {
+  "questions": 1448,
+  "labeler": {
+   "examples": 9141,
+   "sec": 633,
+   "path": "/cache/er/2wiki/models/n1448/labeler.pt"
+  },
+  "filter": {
+   "examples": 867,
+   "sec": 25,
+   "path": "/cache/er/2wiki/models/n1448/filter.pt"
+  }
+ }
+}

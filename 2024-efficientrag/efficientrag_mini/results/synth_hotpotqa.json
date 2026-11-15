@@ -1,0 +1,15 @@
+{
+ "questions": 3000,
+ "decomp_parsed": 2820,
+ "decomp_valid": 2820,
+ "labels_prompts": 5640,
+ "filter_prompts": 1345,
+ "fail_json": 0,
+ "fail_fields": 0,
+ "fail_invalid": 180,
+ "retried": 81,
+ "records": 2820,
+ "sec_load": 132,
+ "sec_generate": 226,
+ "llm_prompts": 9985
+}

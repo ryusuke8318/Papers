@@ -1,0 +1,5 @@
+numpy>=1.26
+pytest>=8
+matplotlib>=3.8   # 図の作成(make_report.py)のみ
+# Modal 上の GPU 実行(vLLM 0.26.0 / torch 2.11.0 / transformers / datasets)は efficientrag_mini/modal_app.py の image で固定している
+modal

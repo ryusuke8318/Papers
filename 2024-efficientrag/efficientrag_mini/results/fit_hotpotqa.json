@@ -1,0 +1,50 @@
+{
+ "build": {
+  "records": 2820,
+  "labeler_pos": 4752,
+  "labeler_neg": 9504,
+  "filter_dropped": 236,
+  "filter": 909,
+  "labeler_dropped": 652,
+  "sec": 56
+ },
+ "n250": {
+  "questions": 250,
+  "labeler": {
+   "examples": 1239,
+   "sec": 63,
+   "path": "/cache/er/hotpotqa/models/n250/labeler.pt"
+  },
+  "filter": {
+   "examples": 75,
+   "sec": 6,
+   "path": "/cache/er/hotpotqa/models/n250/filter.pt"
+  }
+ },
+ "n1000": {
+  "questions": 1000,
+  "labeler": {
+   "examples": 5022,
+   "sec": 233,
+   "path": "/cache/er/hotpotqa/models/n1000/labeler.pt"
+  },
+  "filter": {
+   "examples": 320,
+   "sec": 12,
+   "path": "/cache/er/hotpotqa/models/n1000/filter.pt"
+  }
+ },
+ "n2820": {
+  "questions": 2820,
+  "labeler": {
+   "examples": 14256,
+   "sec": 653,
+   "path": "/cache/er/hotpotqa/models/n2820/labeler.pt"
+  },
+  "filter": {
+   "examples": 909,
+   "sec": 27,
+   "path": "/cache/er/hotpotqa/models/n2820/filter.pt"
+  }
+ }
+}

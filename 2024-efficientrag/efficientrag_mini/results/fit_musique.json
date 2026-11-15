@@ -1,0 +1,24 @@
+{
+ "build": {
+  "records": 1298,
+  "labeler_pos": 2368,
+  "labeler_neg": 4736,
+  "filter": 493,
+  "labeler_dropped": 429,
+  "filter_dropped": 106,
+  "sec": 39
+ },
+ "n1298": {
+  "questions": 1298,
+  "labeler": {
+   "examples": 7104,
+   "sec": 376,
+   "path": "/cache/er/musique/models/n1298/labeler.pt"
+  },
+  "filter": {
+   "examples": 493,
+   "sec": 17,
+   "path": "/cache/er/musique/models/n1298/filter.pt"
+  }
+ }
+}
