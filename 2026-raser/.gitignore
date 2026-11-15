@@ -1,0 +1,5 @@
+raser_mini/data/
+raser_mini/results/smoke/
+__pycache__/
+.venv/
+.pytest_cache/
