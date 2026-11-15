@@ -1,0 +1,4 @@
+catrag_mini/work/
+__pycache__/
+.venv/
+.pytest_cache/
