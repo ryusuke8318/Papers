@@ -1,0 +1,5 @@
+grapher_mini/work/
+grapher_mini/results/*_small.json
+__pycache__/
+.pytest_cache/
+.venv/
