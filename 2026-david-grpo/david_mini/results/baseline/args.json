@@ -1,0 +1,1 @@
+{"name": "baseline", "warm_steps": 0, "main_steps": 50, "batch": 24, "group": 6, "lam": 0.0, "expansion": 0, "n_expand": 5, "lr_warm": 0.0002, "lr": 0.0001, "temperature": 0.8, "micro": 4, "seed": 0, "eval_n": 300, "no_eval": false}

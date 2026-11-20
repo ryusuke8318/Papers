@@ -1,0 +1,8 @@
+david_mini/work/
+__pycache__/
+.pytest_cache/
+.venv/
+*.pt
+*.pth
+*.safetensors
+*.npy

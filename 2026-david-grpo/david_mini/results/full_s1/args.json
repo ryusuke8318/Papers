@@ -1,0 +1,1 @@
+{"name": "full_s1", "warm_steps": 15, "main_steps": 50, "batch": 24, "group": 5, "lam": 0.5, "expansion": 1, "n_expand": 5, "lr_warm": 0.0002, "lr": 0.0001, "temperature": 0.8, "micro": 4, "seed": 1, "eval_n": 300, "no_eval": false}
