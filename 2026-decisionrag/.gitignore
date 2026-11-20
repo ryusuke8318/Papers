@@ -1,0 +1,4 @@
+decisionrag_mini/work/
+decisionrag_mini/results/smoke*.json
+__pycache__/
+.venv/

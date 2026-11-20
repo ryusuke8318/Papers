@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" font-family="sans-serif" font-size="12">
+<rect width="820" height="380" fill="#ffffff"/>
+<text x="410.0" y="22.0" font-size="14" text-anchor="middle" fill="#1f2933" font-weight="bold">1 請求あたりの候補数 m と Hit@1(候補 200 件の池)</text>
+<line x1="70.0" y1="326.0" x2="630.0" y2="326.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="62.0" y="330.0" font-size="11" text-anchor="end" fill="#6b7785" font-weight="normal">0.0</text>
+<line x1="70.0" y1="270.0" x2="630.0" y2="270.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="62.0" y="274.0" font-size="11" text-anchor="end" fill="#6b7785" font-weight="normal">0.2</text>
+<line x1="70.0" y1="214.0" x2="630.0" y2="214.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="62.0" y="218.0" font-size="11" text-anchor="end" fill="#6b7785" font-weight="normal">0.4</text>
+<line x1="70.0" y1="158.0" x2="630.0" y2="158.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="62.0" y="162.0" font-size="11" text-anchor="end" fill="#6b7785" font-weight="normal">0.6</text>
+<line x1="70.0" y1="102.0" x2="630.0" y2="102.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="62.0" y="106.0" font-size="11" text-anchor="end" fill="#6b7785" font-weight="normal">0.8</text>
+<line x1="70.0" y1="46.0" x2="630.0" y2="46.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="62.0" y="50.0" font-size="11" text-anchor="end" fill="#6b7785" font-weight="normal">1.0</text>
+<line x1="70.0" y1="46.0" x2="70.0" y2="326.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="70.0" y="342.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">1</text>
+<line x1="143.3" y1="46.0" x2="143.3" y2="326.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="143.3" y="342.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">2</text>
+<line x1="240.1" y1="46.0" x2="240.1" y2="326.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="240.1" y="342.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">5</text>
+<line x1="313.4" y1="46.0" x2="313.4" y2="326.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="313.4" y="342.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">10</text>
+<line x1="410.2" y1="46.0" x2="410.2" y2="326.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="410.2" y="342.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">25</text>
+<line x1="483.5" y1="46.0" x2="483.5" y2="326.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="483.5" y="342.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">50</text>
+<line x1="556.7" y1="46.0" x2="556.7" y2="326.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="556.7" y="342.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">100</text>
+<line x1="630.0" y1="46.0" x2="630.0" y2="326.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="630.0" y="342.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">200</text>
+<text x="350.0" y="368.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">1 請求あたりの候補数 m</text>
+<text x="14.0" y="186.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">Hit@1</text>
+<line x1="70.0" y1="131.9" x2="143.3" y2="139.3" stroke="#1b6ca8" stroke-width="2"/>
+<line x1="143.3" y1="139.3" x2="240.1" y2="148.7" stroke="#1b6ca8" stroke-width="2"/>
+<line x1="240.1" y1="148.7" x2="313.4" y2="144.9" stroke="#1b6ca8" stroke-width="2"/>
+<line x1="313.4" y1="144.9" x2="410.2" y2="144.9" stroke="#1b6ca8" stroke-width="2"/>
+<line x1="410.2" y1="144.9" x2="483.5" y2="144.9" stroke="#1b6ca8" stroke-width="2"/>
+<line x1="483.5" y1="144.9" x2="556.7" y2="141.2" stroke="#1b6ca8" stroke-width="2"/>
+<line x1="556.7" y1="141.2" x2="630.0" y2="150.5" stroke="#1b6ca8" stroke-width="2"/>
+<circle cx="70.0" cy="131.9" r="4" fill="#1b6ca8"/>
+<circle cx="143.3" cy="139.3" r="4" fill="#1b6ca8"/>
+<circle cx="240.1" cy="148.7" r="4" fill="#1b6ca8"/>
+<circle cx="313.4" cy="144.9" r="4" fill="#1b6ca8"/>
+<circle cx="410.2" cy="144.9" r="4" fill="#1b6ca8"/>
+<circle cx="483.5" cy="144.9" r="4" fill="#1b6ca8"/>
+<circle cx="556.7" cy="141.2" r="4" fill="#1b6ca8"/>
+<circle cx="630.0" cy="150.5" r="4" fill="#1b6ca8"/>
+<text x="640.0" y="70.0" font-size="11" text-anchor="start" fill="#1b6ca8" font-weight="normal">hit1</text>
+<line x1="70.0" y1="131.9" x2="630.0" y2="131.9" stroke="#2f855a" stroke-width="1.5" stroke-dasharray="5,4"/>
+<text x="640.0" y="90.0" font-size="11" text-anchor="start" fill="#2f855a" font-weight="normal">複数選択(全候補)</text>
+</svg>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 400" font-family="sans-serif" font-size="12">
+<rect width="820" height="400" fill="#ffffff"/>
+<text x="410.0" y="22.0" font-size="14" text-anchor="middle" fill="#1f2933" font-weight="bold">予算と再現率(1 点 = 1 設定。左上ほど良い)</text>
+<line x1="70.0" y1="346.0" x2="780.0" y2="346.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="62.0" y="350.0" font-size="11" text-anchor="end" fill="#6b7785" font-weight="normal">0.0</text>
+<line x1="70.0" y1="286.0" x2="780.0" y2="286.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="62.0" y="290.0" font-size="11" text-anchor="end" fill="#6b7785" font-weight="normal">0.2</text>
+<line x1="70.0" y1="226.0" x2="780.0" y2="226.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="62.0" y="230.0" font-size="11" text-anchor="end" fill="#6b7785" font-weight="normal">0.4</text>
+<line x1="70.0" y1="166.0" x2="780.0" y2="166.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="62.0" y="170.0" font-size="11" text-anchor="end" fill="#6b7785" font-weight="normal">0.6</text>
+<line x1="70.0" y1="106.0" x2="780.0" y2="106.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="62.0" y="110.0" font-size="11" text-anchor="end" fill="#6b7785" font-weight="normal">0.8</text>
+<line x1="70.0" y1="46.0" x2="780.0" y2="46.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="62.0" y="50.0" font-size="11" text-anchor="end" fill="#6b7785" font-weight="normal">1.0</text>
+<line x1="70.0" y1="46.0" x2="70.0" y2="346.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="70.0" y="362.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">0</text>
+<line x1="212.1" y1="46.0" x2="212.1" y2="346.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="212.1" y="362.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">146</text>
+<line x1="354.2" y1="46.0" x2="354.2" y2="346.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="354.2" y="362.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">292</text>
+<line x1="496.4" y1="46.0" x2="496.4" y2="346.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="496.4" y="362.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">438</text>
+<line x1="637.5" y1="46.0" x2="637.5" y2="346.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="637.5" y="362.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">583</text>
+<line x1="779.6" y1="46.0" x2="779.6" y2="346.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="779.6" y="362.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">729</text>
+<text x="425.0" y="388.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">1 問あたりの判定数(費用の目安)</text>
+<text x="14.0" y="196.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">R@10</text>
+<circle cx="170.8" cy="230.0" r="5" fill="#1b6ca8"/>
+<text x="177.8" y="225.0" font-size="9" text-anchor="start" fill="#6b7785" font-weight="normal">k1 1 / k2 1</text>
+<circle cx="217.7" cy="221.0" r="5" fill="#1b6ca8"/>
+<text x="224.7" y="216.0" font-size="9" text-anchor="start" fill="#6b7785" font-weight="normal">k1 1 / k2 2</text>
+<circle cx="261.9" cy="220.0" r="5" fill="#1b6ca8"/>
+<text x="268.9" y="215.0" font-size="9" text-anchor="start" fill="#6b7785" font-weight="normal">k1 1 / k2 3</text>
+<circle cx="200.6" cy="212.0" r="5" fill="#1b6ca8"/>
+<text x="207.6" y="207.0" font-size="9" text-anchor="start" fill="#6b7785" font-weight="normal">k1 2 / k2 1</text>
+<circle cx="247.1" cy="200.0" r="5" fill="#1b6ca8"/>
+<text x="254.1" y="195.0" font-size="9" text-anchor="start" fill="#6b7785" font-weight="normal">k1 2 / k2 2</text>
+<circle cx="292.9" cy="190.0" r="5" fill="#1b6ca8"/>
+<text x="299.9" y="185.0" font-size="9" text-anchor="start" fill="#6b7785" font-weight="normal">k1 2 / k2 3</text>
+<circle cx="231.6" cy="210.0" r="5" fill="#1b6ca8"/>
+<text x="238.6" y="205.0" font-size="9" text-anchor="start" fill="#6b7785" font-weight="normal">k1 3 / k2 1</text>
+<circle cx="277.5" cy="194.0" r="5" fill="#1b6ca8"/>
+<text x="284.5" y="189.0" font-size="9" text-anchor="start" fill="#6b7785" font-weight="normal">k1 3 / k2 2</text>
+<circle cx="324.4" cy="187.0" r="5" fill="#1b6ca8"/>
+<text x="331.4" y="182.0" font-size="9" text-anchor="start" fill="#6b7785" font-weight="normal">k1 3 / k2 3</text>
+<circle cx="288.1" cy="190.0" r="5" fill="#1b6ca8"/>
+<text x="295.1" y="185.0" font-size="9" text-anchor="start" fill="#6b7785" font-weight="normal">k1 5 / k2 1</text>
+<circle cx="334.4" cy="172.0" r="5" fill="#1b6ca8"/>
+<text x="341.4" y="167.0" font-size="9" text-anchor="start" fill="#6b7785" font-weight="normal">k1 5 / k2 2</text>
+<circle cx="382.8" cy="169.0" r="5" fill="#1b6ca8"/>
+<text x="389.8" y="164.0" font-size="9" text-anchor="start" fill="#6b7785" font-weight="normal">k1 5 / k2 3</text>
+<circle cx="420.6" cy="184.0" r="5" fill="#1b6ca8"/>
+<text x="427.6" y="179.0" font-size="9" text-anchor="start" fill="#6b7785" font-weight="normal">k1 10 / k2 1</text>
+<circle cx="465.6" cy="162.0" r="5" fill="#1b6ca8"/>
+<text x="472.6" y="157.0" font-size="9" text-anchor="start" fill="#6b7785" font-weight="normal">k1 10 / k2 2</text>
+<circle cx="511.4" cy="157.0" r="5" fill="#1b6ca8"/>
+<text x="518.4" y="152.0" font-size="9" text-anchor="start" fill="#6b7785" font-weight="normal">k1 10 / k2 3</text>
+<circle cx="622.4" cy="176.0" r="5" fill="#1b6ca8"/>
+<text x="629.4" y="171.0" font-size="9" text-anchor="start" fill="#6b7785" font-weight="normal">k1 all / k2 1</text>
+<circle cx="667.6" cy="156.0" r="5" fill="#1b6ca8"/>
+<text x="674.6" y="151.0" font-size="9" text-anchor="start" fill="#6b7785" font-weight="normal">k1 all / k2 2</text>
+<circle cx="715.5" cy="147.0" r="5" fill="#1b6ca8"/>
+<text x="722.5" y="142.0" font-size="9" text-anchor="start" fill="#6b7785" font-weight="normal">k1 all / k2 3</text>
+</svg>

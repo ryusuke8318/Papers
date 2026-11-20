@@ -1,0 +1,10 @@
+numpy>=1.26
+scipy>=1.11
+pytest>=8
+# 判定モデル(torch と transformers が要る。テストの一部は、無ければ飛ばす)
+torch>=2.8
+transformers>=5.22
+peft>=0.21
+datasets
+# Modal 上の GPU 実行は decisionrag_mini/modal_app.py の image で固定している
+modal
