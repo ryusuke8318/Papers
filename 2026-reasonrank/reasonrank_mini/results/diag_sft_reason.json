@@ -1,0 +1,26 @@
+{
+ "eval": {
+  "ndcg10": 0.8176396495707587,
+  "recall10": 0.83,
+  "ndcg1": 0.9,
+  "n": 100,
+  "init_ndcg10": 0.7131432386769221,
+  "calls": 100,
+  "out_tokens_per_query": 1521.08,
+  "invalid_rate": 0.26,
+  "sec": 28
+ },
+ "info": {
+  "n": 100,
+  "invalid": 26,
+  "invalid_hit_cap": 25,
+  "invalid_no_think_end": 25,
+  "invalid_no_answer": 25
+ },
+ "bad_tails": [
+  " the instruction says to rank all 20. So the answer is [1] > [3] > [2] > [4] > [5] > [6] > [7] > [8] > [9] > [10] > [11] > [12] > [13] > [14] > [15] > [16] > [17] > [18] > [19] > [20]. \n\nBut the user wants the most useful first, so [1] and [3] are first, then the rest. So the final answer is [1] > [3] > [others in any order]. But the user wants all 20, so I have to list all 20. So the answer would be:\n\n<answer>[1] > [3] > [2] > [4] > [5] > [6] > [7] > [8] > [9] > [10] > [11] > [12] > [13] > [14] > [15] > [16] > [17] > [18] > [19] > [20]</answer>\n</think>\n<answer>[1] > [3] > [4] > [5] > [6] > [7] > [8] > [9] > [10] > [11] > [12] > [13] > [14] > [15] > [16] > [17] > [18] > [19] > [20]</answer>",
+  "perors. For example, Marcus Aurelius was co-emperor with his adoptive brother Antoninus Pius. So the answer would be Antoninus Pius and Marcus Aurelius. But the question is about adoptive brothers. Wait, maybe the user is confused. Alternatively, maybe the question is about the adoptive sons. Wait, the Five Good Emperors are the ones who were adopted. So Antoninus Pius was adopted by Marcus Aurelius. So the adoptive brothers would be Marcus Aurelius and Antoninus Pius. But the question is about co-emperors. Wait, the Five Good Emperors are the ones who were co-emperors. For example, Marcus Aurelius was co-emperor with his adoptive brother Antoninus Pius. So the answer would be Antoninus Pius",
+  "> [13], and the rest are not useful. \n\nBut the user wants all 20. So the answer is [8] is the most useful, then [1] and [13], and the rest are not useful. \n\nBut the user might have other passages that mention the state ballad. Let me check again. \n\nNo, I don't think so. So the answer is [8] is the most useful, then [1] and [13], and the rest are not useful. \n\nSo the final ranking would be [8] > [1] > [13], and the rest are not useful. \n\nBut the user wants all 20. So the answer is [8] is the most useful, then [1] and [13], and the rest are not useful. \n\nBut the user might have other passages that mention the state ballad. Let me check again. \n\nNo, I don't think so. So the answer is [8] is the"
+ ],
+ "ok_sample": "<think>\nOkay, let's tackle this query. The user is asking if both Centaurium and Dacrydium are genera of plant species. So, I need to check each passage to see if they mention these genera and confirm they are plant species.\n\nStarting with passage [1], it talks about Centaurium pulchellum, which is a species in the gentian family. So that's a genus, Centaurium, but it's a species, not the genus itself. So maybe [1] is useful for Centaurium but not the genus.\n\nPassage [2] is about Dacrydium, which is a genus of conifers in the podocarp family. That's a direct mention of Dacrydium as a genus. So [2] is useful for Dacrydium.\n\nPassage [3] mentions Zeltnera, which is a genus split from Centaurium. But the user is asking about Centaurium and Dacrydium specifically. So [3] might not be directly relevant unless the user is confused between Centaurium and Zeltnera, but the query is about both gen"
+}

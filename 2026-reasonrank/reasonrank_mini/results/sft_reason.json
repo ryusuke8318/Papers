@@ -1,0 +1,42 @@
+{
+ "name": "sft_reason",
+ "spec": {
+  "kind": "sft",
+  "data": "reason",
+  "epochs": 3,
+  "lr": 1e-05,
+  "reasoning": true,
+  "max_tokens": 3072
+ },
+ "train": {
+  "examples": 2795,
+  "steps": 1050,
+  "loss_first": 1.0114352032542229,
+  "loss_last": 0.22265748834858337,
+  "sec": 3418
+ },
+ "eval": {
+  "eval20": {
+   "ndcg10": 0.8026297754802958,
+   "recall10": 0.8283333333333334,
+   "ndcg1": 0.8833333333333333,
+   "n": 300,
+   "init_ndcg10": 0.7159282714173897,
+   "calls": 300,
+   "out_tokens_per_query": 1746.1766666666667,
+   "invalid_rate": 0.38333333333333336,
+   "sec": 84
+  },
+  "eval100": {
+   "ndcg10": 0.7753652726955312,
+   "recall10": 0.795,
+   "ndcg1": 0.875,
+   "n": 200,
+   "init_ndcg10": 0.6903491870142462,
+   "calls": 1800,
+   "out_tokens_per_query": 23063.55,
+   "invalid_rate": 0.7027777777777777,
+   "sec": 694
+  }
+ }
+}

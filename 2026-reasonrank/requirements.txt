@@ -1,0 +1,5 @@
+numpy>=1.26
+scipy>=1.11
+pytest>=8
+# Modal 上の GPU 実行(vLLM 0.26.0 / torch 2.11.0 / transformers / datasets)は reasonrank_mini/modal_app.py の image で固定している
+modal

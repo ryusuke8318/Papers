@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 448" font-family="sans-serif" font-size="12">
+<rect width="760" height="448" fill="#ffffff"/>
+<text x="380.0" y="22.0" font-size="14" text-anchor="middle" fill="#1f2933" font-weight="bold">NDCG@10(HotpotQA、100 件のスライディングウィンドウ)</text>
+<line x1="250.0" y1="42.0" x2="250.0" y2="408.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="250.0" y="424.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">0.60</text>
+<line x1="328.3" y1="42.0" x2="328.3" y2="408.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="328.3" y="424.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">0.65</text>
+<line x1="406.7" y1="42.0" x2="406.7" y2="408.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="406.7" y="424.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">0.70</text>
+<line x1="485.0" y1="42.0" x2="485.0" y2="408.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="485.0" y="424.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">0.75</text>
+<line x1="563.3" y1="42.0" x2="563.3" y2="408.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="563.3" y="424.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">0.80</text>
+<line x1="641.7" y1="42.0" x2="641.7" y2="408.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="641.7" y="424.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">0.85</text>
+<line x1="720.0" y1="42.0" x2="720.0" y2="408.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="720.0" y="424.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">0.90</text>
+<text x="240.0" y="67.0" font-size="12" text-anchor="end" fill="#1f2933" font-weight="normal">BM25(並べ替えなし)</text>
+<rect x="250.0" y="55.0" width="141.5" height="16.0" fill="#8a97a6"/>
+<line x1="343.6" y1="63.0" x2="438.9" y2="63.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="343.6" y1="58.0" x2="343.6" y2="68.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="438.9" y1="58.0" x2="438.9" y2="68.0" stroke="#1f2933" stroke-width="1.5"/>
+<text x="444.9" y="67.0" font-size="11" text-anchor="start" fill="#6b7785" font-weight="normal">0.690</text>
+<text x="240.0" y="97.0" font-size="12" text-anchor="end" fill="#1f2933" font-weight="normal">ゼロショット 1.5B(順位のみ)</text>
+<rect x="250.0" y="85.0" width="49.1" height="16.0" fill="#2f855a"/>
+<line x1="239.4" y1="93.0" x2="363.8" y2="93.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="239.4" y1="88.0" x2="239.4" y2="98.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="363.8" y1="88.0" x2="363.8" y2="98.0" stroke="#1f2933" stroke-width="1.5"/>
+<text x="369.8" y="97.0" font-size="11" text-anchor="start" fill="#6b7785" font-weight="normal">0.631</text>
+<text x="240.0" y="127.0" font-size="12" text-anchor="end" fill="#1f2933" font-weight="normal">ゼロショット 1.5B(推論)</text>
+<rect x="250.0" y="115.0" width="67.0" height="16.0" fill="#1b6ca8"/>
+<line x1="263.0" y1="123.0" x2="372.9" y2="123.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="263.0" y1="118.0" x2="263.0" y2="128.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="372.9" y1="118.0" x2="372.9" y2="128.0" stroke="#1f2933" stroke-width="1.5"/>
+<text x="378.9" y="127.0" font-size="11" text-anchor="start" fill="#6b7785" font-weight="normal">0.643</text>
+<text x="240.0" y="157.0" font-size="12" text-anchor="end" fill="#1f2933" font-weight="normal">ゼロショット 教師 8B(思考)</text>
+<rect x="250.0" y="145.0" width="410.0" height="16.0" fill="#6b46c1"/>
+<line x1="616.8" y1="153.0" x2="703.6" y2="153.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="616.8" y1="148.0" x2="616.8" y2="158.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="703.6" y1="148.0" x2="703.6" y2="158.0" stroke="#1f2933" stroke-width="1.5"/>
+<text x="709.6" y="157.0" font-size="11" text-anchor="start" fill="#6b7785" font-weight="normal">0.862</text>
+<text x="240.0" y="187.0" font-size="12" text-anchor="end" fill="#1f2933" font-weight="normal">SFT 順位のみ</text>
+<rect x="250.0" y="175.0" width="356.9" height="16.0" fill="#2f855a"/>
+<line x1="558.7" y1="183.0" x2="654.7" y2="183.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="558.7" y1="178.0" x2="558.7" y2="188.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="654.7" y1="178.0" x2="654.7" y2="188.0" stroke="#1f2933" stroke-width="1.5"/>
+<text x="660.7" y="187.0" font-size="11" text-anchor="start" fill="#6b7785" font-weight="normal">0.828</text>
+<text x="240.0" y="217.0" font-size="12" text-anchor="end" fill="#1f2933" font-weight="normal">SFT 推論(フィルタなし)</text>
+<rect x="250.0" y="205.0" width="308.7" height="16.0" fill="#1b6ca8"/>
+<line x1="512.2" y1="213.0" x2="608.5" y2="213.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="512.2" y1="208.0" x2="512.2" y2="218.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="608.5" y1="208.0" x2="608.5" y2="218.0" stroke="#1f2933" stroke-width="1.5"/>
+<text x="614.5" y="217.0" font-size="11" text-anchor="start" fill="#6b7785" font-weight="normal">0.797</text>
+<text x="240.0" y="247.0" font-size="12" text-anchor="end" fill="#1f2933" font-weight="normal">SFT 推論(フィルタあり)</text>
+<rect x="250.0" y="235.0" width="313.1" height="16.0" fill="#1b6ca8"/>
+<line x1="516.2" y1="243.0" x2="612.0" y2="243.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="516.2" y1="238.0" x2="516.2" y2="248.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="612.0" y1="238.0" x2="612.0" y2="248.0" stroke="#1f2933" stroke-width="1.5"/>
+<text x="618.0" y="247.0" font-size="11" text-anchor="start" fill="#6b7785" font-weight="normal">0.800</text>
+<text x="240.0" y="277.0" font-size="12" text-anchor="end" fill="#1f2933" font-weight="normal">SFT 推論 + GRPO(NDCG のみ)</text>
+<rect x="250.0" y="265.0" width="342.4" height="16.0" fill="#c2410c"/>
+<line x1="549.1" y1="273.0" x2="637.3" y2="273.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="549.1" y1="268.0" x2="549.1" y2="278.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="637.3" y1="268.0" x2="637.3" y2="278.0" stroke="#1f2933" stroke-width="1.5"/>
+<text x="643.3" y="277.0" font-size="11" text-anchor="start" fill="#6b7785" font-weight="normal">0.819</text>
+<text x="240.0" y="307.0" font-size="12" text-anchor="end" fill="#1f2933" font-weight="normal">SFT 推論 + GRPO(マルチビュー)</text>
+<rect x="250.0" y="295.0" width="323.6" height="16.0" fill="#c2410c"/>
+<line x1="525.9" y1="303.0" x2="621.9" y2="303.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="525.9" y1="298.0" x2="525.9" y2="308.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="621.9" y1="298.0" x2="621.9" y2="308.0" stroke="#1f2933" stroke-width="1.5"/>
+<text x="627.9" y="307.0" font-size="11" text-anchor="start" fill="#6b7785" font-weight="normal">0.807</text>
+<text x="240.0" y="337.0" font-size="12" text-anchor="end" fill="#1f2933" font-weight="normal">RL のみ(SFT なし)</text>
+<rect x="250.0" y="325.0" width="124.4" height="16.0" fill="#c2410c"/>
+<line x1="326.3" y1="333.0" x2="423.7" y2="333.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="326.3" y1="328.0" x2="326.3" y2="338.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="423.7" y1="328.0" x2="423.7" y2="338.0" stroke="#1f2933" stroke-width="1.5"/>
+<text x="429.7" y="337.0" font-size="11" text-anchor="start" fill="#6b7785" font-weight="normal">0.679</text>
+<text x="240.0" y="367.0" font-size="12" text-anchor="end" fill="#1f2933" font-weight="normal">3B SFT 順位のみ(2 エポック)</text>
+<rect x="250.0" y="355.0" width="406.8" height="16.0" fill="#2f855a"/>
+<line x1="613.7" y1="363.0" x2="699.7" y2="363.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="613.7" y1="358.0" x2="613.7" y2="368.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="699.7" y1="358.0" x2="699.7" y2="368.0" stroke="#1f2933" stroke-width="1.5"/>
+<text x="705.7" y="367.0" font-size="11" text-anchor="start" fill="#6b7785" font-weight="normal">0.860</text>
+<text x="240.0" y="397.0" font-size="12" text-anchor="end" fill="#1f2933" font-weight="normal">3B SFT 推論(2 エポック分で停止)</text>
+<rect x="250.0" y="385.0" width="364.8" height="16.0" fill="#1b6ca8"/>
+<line x1="569.5" y1="393.0" x2="661.6" y2="393.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="569.5" y1="388.0" x2="569.5" y2="398.0" stroke="#1f2933" stroke-width="1.5"/>
+<line x1="661.6" y1="388.0" x2="661.6" y2="398.0" stroke="#1f2933" stroke-width="1.5"/>
+<text x="667.6" y="397.0" font-size="11" text-anchor="start" fill="#6b7785" font-weight="normal">0.833</text>
+<text x="380.0" y="442.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">棒 = 平均、線 = 95% ブートストラップ信頼区間(質問を復元抽出)</text>
+</svg>

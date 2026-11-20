@@ -1,0 +1,12 @@
+{
+ "queries": 3000,
+ "exact": 0.899,
+ "mean_ndcg": 0.9399808353171542,
+ "pass": 2795,
+ "n_direct": 3000,
+ "n_reason": 2795,
+ "n_nofilter": 2989,
+ "n_prompts": 3000,
+ "n_samples": 12000,
+ "sec": 7097
+}

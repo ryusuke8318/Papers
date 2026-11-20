@@ -1,0 +1,4 @@
+reasonrank_mini/work/
+reasonrank_mini/results/*_small.json
+__pycache__/
+.venv/

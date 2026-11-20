@@ -1,0 +1,34 @@
+{
+ "name": "zs_cot",
+ "spec": {
+  "kind": "eval",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "reasoning": true,
+  "thinking": null,
+  "max_tokens": 2048
+ },
+ "eval": {
+  "eval20": {
+   "ndcg10": 0.6993259023498951,
+   "recall10": 0.7716666666666666,
+   "ndcg1": 0.7433333333333333,
+   "n": 300,
+   "init_ndcg10": 0.7159282714173897,
+   "calls": 300,
+   "out_tokens_per_query": 533.62,
+   "invalid_rate": 0.36,
+   "sec": 37
+  },
+  "eval100": {
+   "ndcg10": 0.679258580256108,
+   "recall10": 0.7375,
+   "ndcg1": 0.78,
+   "n": 200,
+   "init_ndcg10": 0.6903491870142462,
+   "calls": 1800,
+   "out_tokens_per_query": 5566.99,
+   "invalid_rate": 0.4911111111111111,
+   "sec": 259
+  }
+ }
+}

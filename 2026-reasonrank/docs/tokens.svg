@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" font-family="sans-serif" font-size="12">
+<rect width="760" height="400" fill="#ffffff"/>
+<text x="380.0" y="22.0" font-size="14" text-anchor="middle" fill="#1f2933" font-weight="bold">出力トークン数と NDCG@10(100 件のスライディング)</text>
+<line x1="70.0" y1="340.0" x2="730.0" y2="340.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="62.0" y="344.0" font-size="11" text-anchor="end" fill="#6b7785" font-weight="normal">0.6</text>
+<line x1="70.0" y1="243.3" x2="730.0" y2="243.3" stroke="#e3e8ee" stroke-width="1"/>
+<text x="62.0" y="247.3" font-size="11" text-anchor="end" fill="#6b7785" font-weight="normal">0.7</text>
+<line x1="70.0" y1="146.7" x2="730.0" y2="146.7" stroke="#e3e8ee" stroke-width="1"/>
+<text x="62.0" y="150.7" font-size="11" text-anchor="end" fill="#6b7785" font-weight="normal">0.8</text>
+<line x1="70.0" y1="50.0" x2="730.0" y2="50.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="62.0" y="54.0" font-size="11" text-anchor="end" fill="#6b7785" font-weight="normal">0.9</text>
+<line x1="70.0" y1="44.0" x2="70.0" y2="340.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="70.0" y="356.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">0</text>
+<line x1="215.4" y1="44.0" x2="215.4" y2="340.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="215.4" y="356.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">5,000</text>
+<line x1="360.7" y1="44.0" x2="360.7" y2="340.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="360.7" y="356.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">10,000</text>
+<line x1="506.1" y1="44.0" x2="506.1" y2="340.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="506.1" y="356.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">15,000</text>
+<line x1="651.5" y1="44.0" x2="651.5" y2="340.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="651.5" y="356.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">20,000</text>
+<circle cx="93.2" cy="309.7" r="6" fill="#2f855a"/>
+<text x="102.2" y="313.7" font-size="11" text-anchor="start" fill="#1f2933" font-weight="normal">ゼロショット 1.5B(順位のみ)</text>
+<circle cx="216.7" cy="298.6" r="6" fill="#1b6ca8"/>
+<text x="225.7" y="302.6" font-size="11" text-anchor="start" fill="#1f2933" font-weight="normal">ゼロショット 1.5B(推論)</text>
+<circle cx="574.0" cy="87.0" r="6" fill="#6b46c1"/>
+<text x="583.0" y="91.0" font-size="11" text-anchor="start" fill="#1f2933" font-weight="normal">ゼロショット 教師 8B(思考)</text>
+<circle cx="94.9" cy="119.8" r="6" fill="#2f855a"/>
+<text x="103.9" y="123.8" font-size="11" text-anchor="start" fill="#1f2933" font-weight="normal">SFT 順位のみ</text>
+<circle cx="681.1" cy="149.5" r="6" fill="#1b6ca8"/>
+<text x="690.1" y="153.5" font-size="11" text-anchor="start" fill="#1f2933" font-weight="normal">SFT 推論(フィルタなし)</text>
+<circle cx="633.4" cy="146.8" r="6" fill="#1b6ca8"/>
+<text x="642.4" y="150.8" font-size="11" text-anchor="start" fill="#1f2933" font-weight="normal">SFT 推論(フィルタあり)</text>
+<circle cx="581.5" cy="128.7" r="6" fill="#c2410c"/>
+<text x="590.5" y="132.7" font-size="11" text-anchor="start" fill="#1f2933" font-weight="normal">SFT 推論 + GRPO(NDCG のみ)</text>
+<circle cx="568.3" cy="140.3" r="6" fill="#c2410c"/>
+<text x="577.3" y="144.3" font-size="11" text-anchor="start" fill="#1f2933" font-weight="normal">SFT 推論 + GRPO(マルチビュー)</text>
+<circle cx="165.8" cy="263.3" r="6" fill="#c2410c"/>
+<text x="174.8" y="267.3" font-size="11" text-anchor="start" fill="#1f2933" font-weight="normal">RL のみ(SFT なし)</text>
+<circle cx="94.9" cy="89.0" r="6" fill="#2f855a"/>
+<text x="103.9" y="93.0" font-size="11" text-anchor="start" fill="#1f2933" font-weight="normal">3B SFT 順位のみ(2 エポック)</text>
+<circle cx="644.1" cy="114.9" r="6" fill="#1b6ca8"/>
+<text x="653.1" y="118.9" font-size="11" text-anchor="start" fill="#1f2933" font-weight="normal">3B SFT 推論(2 エポック分で停止)</text>
+<text x="380.0" y="386.0" font-size="11" text-anchor="middle" fill="#6b7785" font-weight="normal">質問あたりの出力トークン数(9 回の窓の合計)</text>
+</svg>

@@ -1,0 +1,42 @@
+{
+ "name": "sft_reason_nofilter",
+ "spec": {
+  "kind": "sft",
+  "data": "nofilter",
+  "epochs": 3,
+  "lr": 1e-05,
+  "reasoning": true,
+  "max_tokens": 3072
+ },
+ "train": {
+  "examples": 2989,
+  "steps": 1122,
+  "loss_first": 0.9702743776142597,
+  "loss_last": 0.27290522151937086,
+  "sec": 3951
+ },
+ "eval": {
+  "eval20": {
+   "ndcg10": 0.7858746409297612,
+   "recall10": 0.8183333333333334,
+   "ndcg1": 0.8766666666666667,
+   "n": 300,
+   "init_ndcg10": 0.7159282714173897,
+   "calls": 300,
+   "out_tokens_per_query": 2217.2266666666665,
+   "invalid_rate": 0.4633333333333333,
+   "sec": 97
+  },
+  "eval100": {
+   "ndcg10": 0.7343735158220654,
+   "recall10": 0.7725,
+   "ndcg1": 0.82,
+   "n": 200,
+   "init_ndcg10": 0.6903491870142462,
+   "calls": 1800,
+   "out_tokens_per_query": 24238.65,
+   "invalid_rate": 0.6838888888888889,
+   "sec": 699
+  }
+ }
+}
