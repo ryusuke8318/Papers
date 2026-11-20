@@ -6,16 +6,17 @@
 
 分野ごとに分けています。各分野の `▶` をクリックすると、表を開閉できます。
 
-- [RAG と検索](#rag-と検索)(6 本): RAG、reranking、ファインチューニング、法務への応用
+- [RAG と検索](#rag-と検索)(7 本): RAG、reranking、ファインチューニング、法務への応用
 - [表現学習](#表現学習)(1 本): JEPA、マルチモーダルの表現
 
 ### RAG と検索
 
 <details open>
-<summary>6 本(クリックで開閉)</summary>
+<summary>7 本(クリックで開閉)</summary>
 
 | 年 | タイトル | タグ | メモ・実装 |
 |----|----------|------|-----------|
+| 2026 | [ReasonRank: Empowering Passage Ranking with Strong Reasoning Ability](2026-reasonrank/) | reranking, 推論, GRPO, データ合成 | 要約 + 純 Python の中核実装 + 縮小再現 (Modal/Qwen2.5-1.5B・3B、HotpotQA) |
 | 2026 | [CatRAG: Breaking the Static Graph — Context-Aware Traversal for Robust Retrieval-Augmented Generation](2026-catrag/) | RAG, GraphRAG, Personalized PageRank, 多段検索 | 要約 + 純 Python の中核実装 + LLM を使わない縮小再現 (HotpotQA・2Wiki・MuSiQue、ローカル実行) |
 | 2026 | [RASER: Recoverability-Aware Selective Escalation Router for Multi-Hop Question Answering](2026-raser/) | RAG, 多段検索, ルーティング, 費用 | 要約 + 純 Python の中核実装 + 縮小再現 (Modal/Qwen2.5-3B・7B、MuSiQue・2Wiki・HotpotQA) |
 | 2026 | [Using LLMs for Legal Decision-Making in Austrian VAT Law](2026-vat-llm/) | RAG, fine-tuning, 法務, VAT | 要約 + 小規模検証 (numpy) + 縮小再現 (Modal/Qwen2.5-0.5B、合成ドイツ語事例) + 日本の消費税(内外判定)での検証 (Qwen2.5-1.5B/3B、検索の比較) |
